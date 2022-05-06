@@ -1,0 +1,78 @@
+{% extends 'co_servings/main.html' %}
+
+{% block content %}
+	{% load static %}
+
+
+
+		
+
+
+			
+			
+	<div class="container">
+
+	
+
+	  	<div class="row">
+
+	  		<div class="col" style="color:orange; text-transform:uppercase;">
+	  			<h5 style="color:orange;">PROJECT NAME:</h5>
+	  			{% for i in value %} 
+				
+					<tr>
+						
+						<td>{{i.location}}</td>
+					</tr>
+					
+					<br>
+					<hr>
+					
+					{% endfor %}
+			</div>
+			
+
+			<div class="col">
+			   	<h5 style="color:blue;">Construction Progress:</h5>
+			   
+			   	<p></p>
+			   	
+				<br>
+				<br>
+
+			  
+			   	<br>
+			   
+			   	
+			</div>
+
+			
+
+			<div class="col">
+			   <h5 style="color:blue;">SmartContract:</h5>
+			   
+			   	<p></p>
+			   	
+			</div>
+
+			<div class="col">
+			   <h5 style="color:blue;">Project Active:</h5>
+			   
+			   	<p></p>
+			   	
+			</div>
+
+	   	</div>
+
+	</div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>	
+    <br>
+    <br>
+    <br>	
+
+{% endblock content %}

@@ -1,0 +1,172 @@
+{% extends 'co_servings/main.html' %}
+{% load static %}
+
+
+{% block content %}
+<style type="text/css">
+
+
+  <style type="text/css">
+.button {
+  background-color: #04AA6D;
+  border: none;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+}
+
+.button1 {border-radius: 2px;}
+.button2 {border-radius: 4px;}
+.button3 {border-radius: 8px;}
+.button4 {border-radius: 12px;}
+.button5 {border-radius: 50%;}
+
+
+}
+
+
+
+h6 {
+    color:black;
+  }
+
+
+  h1{
+    color: black;
+  }
+ 
+  h4, h5 {
+    color: black;
+  }
+
+
+  
+</style>
+
+
+
+
+
+
+
+	
+<h5 style="color:orange;">Commit Agreements:</h5>
+
+<br>
+
+
+  <hr>    
+      
+
+ <div class="container">
+
+
+      <div class="row">
+
+        <div class="col">
+
+        
+          <h5 style="color:black;">Location:</h5>
+          <br>
+        
+          {% for i in value %}
+          <tr>
+          <td>{{i.location}}</td>
+        </tr>
+        <br>
+        <br>
+        <hr>
+        {% endfor %}
+      </div>
+
+
+
+
+
+      <div class="col"style="margin-left: -40px;">
+  
+          <h5 style="margin-left: -40px">Agreement Govern:</h5>
+          <br>
+     
+
+    
+         
+          {% for i in value %}
+        <tr>
+          <strong><td>{{i.agreement_govern}}</td></strong>
+        </tr>
+        <br>
+        <br>
+        <hr>
+        {% endfor %}
+      </div>
+
+      
+      <div class="col"style="margin-left: -20px;">
+          <h5 style="margin-left: -40px">Agreement Investor:</h5>
+          <br>
+         
+          {% for i in value %}
+        <tr>
+          <strong><td>{{i.agreement_investor}}</td></strong>
+        </tr>
+        <br>
+        <br>
+        <hr>
+        {% endfor %}
+      </div>
+
+       <div class="col"style="margin-left: -10px;">
+          <h5 style="margin-left: -40px">Agreement Pr. Owner:</h5>
+          <br>
+         
+          {% for i in value %}
+        <tr>
+          <strong><td>{{i.agreement_property_owner}}</td></strong>
+        </tr>
+        <br>
+        <br>
+        <hr>
+        {% endfor %}
+      </div>
+
+       <div class="col"style="margin-left: 20px;">
+          <h5 style="margin-left: -40px">Agreement Tenant:</h5>
+          <br>
+         
+          {% for i in value %}
+        <tr>
+          <strong><td>{{i.agreement_tenant}}</td></strong>
+        </tr>
+        <br>
+        <br>
+        <hr>
+        {% endfor %}
+      </div>
+
+
+       
+
+
+      </div>
+ 
+  </div>
+
+
+  <br />
+  <br />
+
+
+   <br />
+   <br />
+   <br />
+
+
+
+
+
+{% endblock content %}

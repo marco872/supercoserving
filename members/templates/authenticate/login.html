@@ -1,0 +1,70 @@
+{% extends 'co_servings/main.html' %}
+
+{% block content %}
+<style type="text/css">
+.button {
+
+  margin: 4px 2px;
+}
+
+.button1 {border-radius: 2px;}
+.button2 {border-radius: 4px;}
+.button3 {border-radius: 8px;}
+.button4 {border-radius: 12px;}
+.button5 {border-radius: 50%;}
+
+
+}
+
+
+
+h6 {
+    color:black;
+  }
+
+
+  h1 {
+    color: black;
+
+  }
+ 
+  h4, h5, td {
+    color: black;
+  }
+ 
+
+
+ 
+
+
+  
+</style>
+
+  <center>
+  <h1>Login</h1>
+
+  
+
+  		<form action=" " method="POST">
+      		{% csrf_token %}
+		 <form>
+  <div class="mb-3">
+    <label for="exampleInputEmail1">Username</label>
+    <input type="text" class="form-control" name="username" aria-describedby="emailHelp">
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" class="form-control" name="password">
+  </div>
+  
+  
+
+
+      <input type="submit" value="Submit" class="btn btn-secondary">
+
+  </form>
+
+ 
+   </center>
+
+{% endblock %}

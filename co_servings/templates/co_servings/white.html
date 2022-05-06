@@ -1,0 +1,167 @@
+{% extends 'co_servings/main.html' %}
+
+{% load static %}
+
+
+
+{% block content %}
+<style type="text/css">
+.button {
+
+  margin: 4px 2px;
+}
+
+.button1 {border-radius: 2px;}
+.button2 {border-radius: 4px;}
+.button3 {border-radius: 8px;}
+.button4 {border-radius: 12px;}
+.button5 {border-radius: 50%;}
+
+
+}
+
+
+
+h6 {
+    color:black;
+  }
+
+
+  h1 {
+    color: black;
+
+  }
+ 
+  h4, h5, td {
+    color: black;
+  }
+ 
+
+
+ 
+
+
+  
+</style>
+
+
+
+
+
+
+
+
+<h5 style="margin-left: 20px; margin-top: -40px;"><strong> Step-B </strong>: Co-Serving Algorithms, using uploaded data (Collateral, Liquidity Pool and Project) create ledgers: Collaterals, Liquidity Pools and Projects,  and  an extra ledger, called Developments, that determines stakeholder Actions (S-Actions)  </h2>
+
+<hr>
+
+<br>
+<br>
+
+
+
+<div class="container">
+
+
+		<div class="row">
+	
+
+	  		<div class="col">
+
+	  	
+
+	  			<h2 style="color:grey;">S-Action 1</h2><h4 style="color:blue;">Governments:</h4> <h3><em>  Collateralize Liquidity Pools</em></h3> 
+
+	  			<br>
+	  			
+
+	  		</div>
+
+				<br>
+				<br>
+
+
+			<div class="col">
+
+	  	
+
+	  			<h2 style="color:grey;">S-Action 2</h2><h4 style="color:blue;">Investors :</h4> 
+	  			
+	  			
+
+	  			<h3><em> Make Liquidity Pools</em></h3>
+
+	  			
+
+            </div>
+
+            <br>
+			<br>
+
+
+			<div class="col">
+
+
+	  			<h2 style="color:grey;">S-Action 3</h2><h4 style="color:blue;">  Property Owners:</h4>
+	  	
+
+	  			<h3><em>  Build Projects</em></h3>
+	  		
+	  		</div>
+	
+	  		<br>
+			<br>
+</div>
+
+
+<div class="container">
+
+	  	<div class="row">
+
+
+	  		
+	  	
+
+	  		
+
+			
+	
+	
+
+
+			
+
+		</div>
+</div>
+
+<br>
+<a href="{% url 'development1' %}">
+                    
+                  <button class="button button4" style="background-color:#795548; color:white; margin-left: 510px; padding-right: 10px;  margin-bottom: 30px;">  Step-A Uploads</button> 
+
+<br>
+
+<a href="{% url 'how' %}">
+                    
+                  <button class="button button4" style="background-color:#795548; color:white; margin-left: 500px; padding-right: 10px;  margin-bottom: 30px;">  Step-C Blockchain </button> 
+
+<br>
+
+	  	
+
+	  			
+	  				<a href="{% url 'payment1' %}">
+                    
+                  <button class="button button4" style="background-color:#795548; color:white; margin-left: 505px; padding-right: 10px;  margin-bottom: 30px;"> Step-D: Commit </button>    
+
+                </a> 
+
+	  		
+<br>
+<br>
+<br>
+<br>
+
+
+	
+{% endblock %}

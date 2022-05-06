@@ -1,0 +1,215 @@
+
+{% extends 'co_servings/main.html' %}
+{% load static %}
+
+
+{% block content %}
+<style type="text/css">
+
+
+  <style type="text/css">
+.button {
+  background-color: #04AA6D;
+  border: none;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+}
+
+.button1 {border-radius: 2px;}
+.button2 {border-radius: 4px;}
+.button3 {border-radius: 8px;}
+.button4 {border-radius: 12px;}
+.button5 {border-radius: 50%;}
+
+
+}
+
+
+
+h6 {
+    color:black;
+  }
+
+
+  h1 {
+    color: black;
+  }
+ 
+  h4, h5, td {
+    color: black;
+  }
+
+
+  
+</style>
+
+
+
+
+
+
+
+	
+
+
+<body style="background-color: #f9a40e;">
+
+
+{% load static %}
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+
+      <a href="{% url 'token' %}">
+                    
+                  <button class="button button4" style="color:orange">Tenants</button>    
+
+                </a> 
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+         Qualifications
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="{% url 'information1' %}">Membership</a>
+          <a class="dropdown-item" href="{% url 'hostingrules' %}">Hosting Rules</a>
+          <a class="dropdown-item" href="{% url 'vaccineprotocol1' %}">Vaccine Protocol</a>
+          
+        </div>
+      </li>
+
+       
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
+        Benefits
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <a class="dropdown-item" href="{% url 'rentreduction' %}">Rent Reduction</a>
+        <a class="dropdown-item" href="{% url 'tokenprogram1' %}">Token Program</a>
+       
+        </div>
+
+
+     </li>
+
+     
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  
+
+        Downloads
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="{% url 'venue' %}">Long Term Contracts</a>
+          <a class="dropdown-item" href="{% url 'liquidity' %}">Smart Contract</a>
+          
+        </div>
+      </li> 
+
+
+
+     
+      <li class="nav-item active">
+        <a class="nav-link" href="{% url 'rentopportunity' %}">2-Rental Opportunities</a>
+      </li>
+
+      <li class="nav-item active">
+        <a class="nav-link" href="{% url 'ourcommunity1' %}">Our Community</a>
+      </li>
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
+         Tenant's Activities
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="{% url 'payment1' %}">Payment</a>
+          <a class="dropdown-item" href="{% url 'overview1' %}">Overview</a>
+        </div>
+      </li>
+
+     
+
+
+      
+      {% if user.is_authenticated %}
+      <li class="nav-item active">
+        <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+      </li>
+      {% else %}
+      <li class="nav-item active">
+        <a class="nav-link" href="{% url 'register_user' %}">Register</a>
+      </li>
+
+       <li class="nav-item active">
+        <a class="nav-link" href="{% url 'login' %}">Login</a>
+      </li>
+      {% endif %}
+      
+    </ul>
+  </div>
+</nav>
+
+<br>
+
+
+	<div class="container">
+			<h4 style="margin-top:-10px; color: black;"><strong>Welcome to the  Agency Desk of  DeFi  Real Estate platform :</strong>
+</h4>
+      <h5 style="margin-left: 30px; color: black;">* Tenants read CO-SERVING conditions in  "Qualifications" of Tenants menu.</h5>
+      <h5 style="margin-left: 30px; color: black;">* Tenants select project  in  "Rent Opportunities" of Tenants menu.</h5>
+      <h5 style="margin-left: 30px; color: black;">* Tenants calculate rent  in  the following Rent Calculator.</h5>
+  <br>
+
+ <a href="https://onedrive.live.com/view.aspx?resid=23B9E6708E88205A!64624&ithint=file%2cxlsx&authkey=!AOE3UJ028qnKI9g">
+
+      <button class="button button4" style="background-color:orange; color:white; margin-left: 0px; font-size: 30px; padding: 5px;"><strong>Rent Calculator</strong></button> </a>
+  <br>
+
+      <h5 style="margin-left: 30px; color: white;">* Example Rent Value: 1650 euro, accepting CO-SERVING service conditions, rent reduces to: </h5>
+      <h5 style="margin-left: 30px; color: white">  50% commitment: 825 euro/ 60% comm.: 660 euro/ 70% comm.: 495 euro/ 80% comm.: 330 euro </h5>
+  <br>
+
+       <h5 style="margin-left: 30px; color: black;">* Tenants upload Smart Contract in "Add-Liquidity" in "Uploads" main menu. </h5>
+
+
+      
+      
+      <h5 style="margin-left: 30px; color: black;">* Tenants follow projects developments in main menu "Activities".</h5>
+     
+      <h5 style="margin-left: 30px; color: black;">* Tenants project administration  in Tenants menu " Tenant's Activities".</h5>
+</div>
+<br>
+<br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
+
+
+
+
+
+</body>

@@ -1,0 +1,70 @@
+{% extends 'co_servings/main.html' %}
+{% load static %}
+{% block content %}
+
+<style type="text/css">
+
+
+
+
+h5 {
+    color: gray;
+  }
+
+</style>
+
+
+
+  <h1 style="color:red;">Temp. Structure Types </h1>
+
+  <hr>
+
+  <h2 style="color:green;">Flex Office Model </h2>
+
+  <hr>
+
+ 
+          <h3 style="color:green;">fom-1</h3><h5 style="color:blue;"> "basic module :"</h5> <h5>   cost per unit all inclusive € 3500 </h5>
+
+
+
+          <img src="{% static 'images/temp.1.jpg' %}"
+            style="object-fit:contain;
+            width:400px;
+            height:300px;
+            border: solid 3px #ccc"/>
+
+                
+                
+          <br>
+          <br>
+
+         
+
+    <hr> 
+
+    <h2 style="color:green;">Flex Gastro Model </h2>
+
+  <hr>
+
+
+     <h3 style="color:green;">fom-2</h3><h5 style="color:blue;"> "basic module :"</h5> <h5>   cost per unit all inclusive € 11500 </h5>
+
+
+
+          <img src="{% static 'images/temp.2.jpg' %}"
+            style="object-fit:contain;
+            width:400px;
+            height:300px;
+            border: solid 3px #ccc"/>
+
+                
+                
+          <br>
+          <br>
+
+         
+
+    <hr> 
+
+{% endblock %}

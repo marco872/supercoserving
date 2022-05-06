@@ -1,0 +1,181 @@
+{% extends 'co_servings/main.html' %}
+
+{% block content %}
+
+<style type="text/css">
+.button {
+
+  margin: 4px 2px;
+}
+
+.button1 {border-radius: 2px;}
+.button2 {border-radius: 4px;}
+.button3 {border-radius: 8px;}
+.button4 {border-radius: 12px;}
+.button5 {border-radius: 50%;}
+
+
+}
+
+
+
+h6 {
+    color:black;
+  }
+
+
+  h1 {
+    color: black;
+
+  }
+ 
+  h4, h5, td {
+    color: black;
+  }
+ 
+
+
+ 
+
+
+  
+</style>
+	
+
+
+
+		
+<h5 style="color:black;">Developments:</h5>
+
+<br>
+
+
+			
+			
+
+	<div class="container">
+	<hr>
+
+	  	<div class="row">
+
+	  		<div class="col">
+
+				
+			   	<h5 style="color:black;">Location:</h5>
+			   	<br>
+			  
+			   	{% for i in value %}
+			   	<tr>
+					<td>{{i.location}}</td>
+				</tr>
+				<br>
+				<br>
+				<hr>
+				{% endfor %}
+			</div>
+
+			
+
+
+			<div class="col"style="margin-left: 20px;">
+			   	<h5>Category:</h5>
+			   	<br>
+			   
+			   	{% for i in value %}
+				<tr>
+					<td>{{i.category}}</td>
+				</tr>
+				<br>
+				<br>
+				<hr>
+				{% endfor %}
+			</div>
+
+			
+
+			<div class="col">
+			   	<h5 style="color:black;">Liq.Pool:</h5>
+			   	<br>
+			   
+			   	{% for i in topic %} 
+
+				<tr>
+					<td>{{i.name}}</td>
+				</tr>
+				<br>
+				<br>
+				<hr>
+
+				{% endfor %}
+
+			</div>
+
+			
+
+			
+
+			 <div class="col">
+         		 <h5>Building:</h5>
+         		 <br>
+         
+          		{% for item in list %}
+        			<tr>
+          				<td>{{item.building}}</td>
+        			</tr>
+        
+        		<br>
+        		<hr>
+        
+        		{% endfor %}
+
+        		{% for i in value %} 
+        
+          		<tr>
+            
+            		<td>{{i.building}}</td>
+          		</tr>
+          
+          		<br>
+          	
+          		<br>
+          		<hr>
+          
+          		{% endfor %}
+        
+
+      			</div>
+      
+			<div class="col">
+			   	<h5 style="color:black;">Proj.Cost:</h5>
+			   	<br>
+			   
+			   	{% for i in value %}
+				<tr>
+					<td>{{i.total_project_price}}</td>
+				</tr>
+				<br>
+				<br>
+				<hr>
+				{% endfor %}
+			</div>
+
+
+	   	</div>
+	<hr>
+	</div>
+
+
+	<br />
+	<br />
+
+
+	 <br />
+	 <br />
+	 <br />
+
+
+
+
+
+{% endblock content %}
+
