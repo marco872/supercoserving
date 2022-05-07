@@ -28,9 +28,9 @@ class VenueForm(ModelForm):
             'property_price': 'Property_Price : example € 2.500.000, etc...',
           
             'location': 'Location : example 1.1-milan/1, 2-berlin/1, etc...',
-            'building': 'Building : example fbm-2, fbm-3, etc...',
+            'building': 'Building : example fbm-2, fbm-3, etc... from Meta-Catalogue in main menu',
             'total_project_price': 'Total_Project_coast: example € 7.500.000, etc...',
-            'temp': 'Temp: example  fom-1, fom-2, etc...',
+            'temp': 'Temp: example  fom-1, fom-2, etc... from Meta-Catalogue in main menu',
            
             }
 
@@ -71,7 +71,7 @@ class CollateralForm(ModelForm):
 			}
 
 		labels = {
-            'state': 'State : example 1-ITALY, 2-GERMANY, etc..',
+            'state': 'State : example 1-ITALY, 2-GERMANY, 3-FRANCE, 4-USA',
            
             'city': 'City : example milan, berlin, etc...',
           
