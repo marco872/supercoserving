@@ -28,9 +28,9 @@ class VenueForm(ModelForm):
             'property_price': 'Property_Price : example € 2.500.000, etc...',
           
             'location': 'Location : example 1.1-milan/1, 2-berlin/1, etc...',
-            'building': 'Building : example fbm-2, fbm-3, etc... from Meta-Catalogue in main menu',
+            'building': 'Building : example fbm-2, fbm-3, etc... from Hyperspace-Catalogue in main menu',
             'total_project_price': 'Total_Project_coast: example € 7.500.000, etc...',
-            'temp': 'Temp: example  fom-1, fom-2, etc... from Meta-Catalogue in main menu',
+            'temp': 'Temp: example  fom-1, fom-2, etc... from Hyperspace-Catalogue in main menu',
            
             }
 
