@@ -6,7 +6,7 @@ from django.http import HttpResponseRedirect
 
 from .models import *
 
-from .forms import VenueForm, LiquidityForm, CollateralForm, CommitForm, BookingForm
+from .forms import VenueForm, LiquidityForm, CollateralForm, CommitForm, BookingForm, Booking1Form, Booking2Form, Booking3Form, Booking4Form
 
 # Create your views here.
 
@@ -309,20 +309,41 @@ def commit(request):
 
 
 def design1(request):
-	return render(request, 'co_servings/design1.html')
+	bookings = Booking.objects.all()
+
+	context = {'venue': bookings }
+	return render(request, 'co_servings/design1.html',context)
 
 
 def design2(request):
-	return render(request, 'co_servings/design2.html')
+	booking1s = Booking1.objects.all()
+
+	context = {'list': booking1s }
+	return render(request, 'co_servings/design2.html',context)
+	
+	
 
 def design3(request):
-	return render(request, 'co_servings/design3.html')
+	booking2s = Booking2.objects.all()
+	
+
+	context = {'venue': booking2s }
+	return render(request, 'co_servings/design3.html',context)	
+	
 
 def design4(request):
-	return render(request, 'co_servings/design4.html')
+	booking3s = Booking3.objects.all()
+
+	context = {'venue': booking3s }
+	return render(request, 'co_servings/design4.html',context)
+	
 
 def design5(request):
-	return render(request, 'co_servings/design5.html')
+	booking4s = Booking4.objects.all()
+
+	context = {'venue': booking4s }
+	return render(request, 'co_servings/design5.html',context)
+	
 
 
 def booking(request):
@@ -340,3 +361,85 @@ def booking(request):
 			submitted = True
 
 		return render(request, 'co_servings/booking.html', {'form':form, 'submitted':submitted })
+
+
+def booking1(request):
+	submitted = False
+	form = Booking1Form()
+	if request.method == "POST":
+		form = Booking1Form(request.POST)
+		if form.is_valid():
+			form.save()
+			return HttpResponseRedirect('/booking1?submitted=True')
+
+	else:
+		form = Booking1Form()
+		if 'submitted' in request.GET:
+			submitted = True
+
+		return render(request, 'co_servings/booking1.html', {'form':form, 'submitted':submitted })
+
+def booking2(request):
+	submitted = False
+	form = Booking2Form()
+	if request.method == "POST":
+		form = Booking2Form(request.POST)
+		if form.is_valid():
+			form.save()
+			return HttpResponseRedirect('/booking2?submitted=True')
+
+	else:
+		form = Booking2Form()
+		if 'submitted' in request.GET:
+			submitted = True
+
+		return render(request, 'co_servings/booking2.html', {'form':form, 'submitted':submitted })
+
+
+def booking3(request):
+	submitted = False
+	form = Booking3Form()
+	if request.method == "POST":
+		form = Booking3Form(request.POST)
+		if form.is_valid():
+			form.save()
+			return HttpResponseRedirect('/booking3?submitted=True')
+
+	else:
+		form = Booking3Form()
+		if 'submitted' in request.GET:
+			submitted = True
+
+		return render(request, 'co_servings/booking3.html', {'form':form, 'submitted':submitted })
+
+def booking4(request):
+	submitted = False
+	form = Booking4Form()
+	if request.method == "POST":
+		form = Booking4Form(request.POST)
+		if form.is_valid():
+			form.save()
+			return HttpResponseRedirect('/booking4?submitted=True')
+
+	else:
+		form = Booking4Form()
+		if 'submitted' in request.GET:
+			submitted = True
+
+		return render(request, 'co_servings/booking4.html', {'form':form, 'submitted':submitted })
+
+def booking5(request):
+	submitted = False
+	form = Booking5Form()
+	if request.method == "POST":
+		form = Booking5Form(request.POST)
+		if form.is_valid():
+			form.save()
+			return HttpResponseRedirect('/booking5?submitted=True')
+
+	else:
+		form = Booking5Form()
+		if 'submitted' in request.GET:
+			submitted = True
+
+		return render(request, 'co_servings/booking5.html', {'form':form, 'submitted':submitted })

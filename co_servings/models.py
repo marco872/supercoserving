@@ -518,7 +518,7 @@ class Booking(models.Model):
 	 
 	project = models.CharField(max_length=200, null=True)
 	name = models.CharField(max_length=200, null=True)
-	building = models.CharField(max_length=200, null=True)
+	
 	duplex = models.CharField(max_length=200, null=True)
 	number = models.CharField(max_length=200, null=True)
 	starting = models.CharField(max_length=200, null=True)
@@ -530,5 +530,85 @@ class Booking(models.Model):
 
 	def __str__(self):
 		return self.name
+
+
+
+class Booking1(models.Model):
+
+	 
+	project = models.CharField(max_length=200, null=True)
+	name = models.CharField(max_length=200, null=True)
+	
+	duplex = models.CharField(max_length=200, null=True)
+	number = models.CharField(max_length=200, null=True)
+	starting = models.CharField(max_length=200, null=True)
+	email = models.CharField(max_length=200, null=True)
+	phone = models.CharField(max_length=200, null=True)
+
+
+	
+
+	def __str__(self):
+		return self.name
+
+
+
+class Booking2(models.Model):
+
+	 
+	project = models.CharField(max_length=200, null=True)
+	name = models.CharField(max_length=200, null=True)
+	
+	duplex = models.CharField(max_length=200, null=True)
+	number = models.CharField(max_length=200, null=True)
+	starting = models.CharField(max_length=200, null=True)
+	email = models.CharField(max_length=200, null=True)
+	phone = models.CharField(max_length=200, null=True)
+
+
+	
+
+	def __str__(self):
+		return self.name
+
+
+class Booking3(models.Model):
+
+	 
+	project = models.CharField(max_length=200, null=True)
+	name = models.CharField(max_length=200, null=True)
+	
+	duplex = models.CharField(max_length=200, null=True)
+	number = models.CharField(max_length=200, null=True)
+	starting = models.CharField(max_length=200, null=True)
+	email = models.CharField(max_length=200, null=True)
+	phone = models.CharField(max_length=200, null=True)
+
+
+	
+
+	def __str__(self):
+		return self.name
+
+
+class Booking4(models.Model):
+
+	 
+	project = models.CharField(max_length=200, null=True)
+	name = models.CharField(max_length=200, null=True)
+
+	duplex = models.CharField(max_length=200, null=True)
+	number = models.CharField(max_length=200, null=True)
+	starting = models.CharField(max_length=200, null=True)
+	email = models.CharField(max_length=200, null=True)
+	phone = models.CharField(max_length=200, null=True)
+
+
+	
+
+	def __str__(self):
+		return self.name
+
+
 
 

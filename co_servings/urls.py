@@ -66,7 +66,18 @@ urlpatterns = [
     path('design3/', views.design3, name="design3"),
     path('design4/', views.design4, name="design4"),
     path('design5/', views.design5, name="design5"),
-    path('booking/', views.booking, name="booking"),
+    path('booking/', views.booking1, name="booking"),
+    path('booking1/', views.booking, name="booking1"),
+    path('booking2/', views.booking2, name="booking2"),
+    path('booking3/', views.booking3, name="booking3"),
+    path('booking4/', views.booking4, name="booking4"),
 
 
-]
+
+
+]   
+
+
+
+
+
