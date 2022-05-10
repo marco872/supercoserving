@@ -213,60 +213,6 @@ h6 {
       
 
 
-      <div class="col"style="margin-left: 20px;">
-          <h5>Name:</h5>
-          <br>
-         
-          {% for i in venue %}
-        <tr>
-          <td>{{i.name}}</td>
-        </tr>
-        <br>
-        <br>
-        <hr>
-        {% endfor %}
-      </div>
-
-      
-
-      <div class="col">
-          <h5 style="color:black;">Duplex:</h5>
-          <br>
-         
-          {% for i in venue %} 
-
-        <tr>
-          <td>{{i.duplex}}</td>
-        </tr>
-        <br>
-        <br>
-        <hr>
-
-        {% endfor %}
-
-      </div>
-
-      
-
-      
-
-       <div class="col">
-             <h5>Number:</h5>
-             <br>
-         
-              {% for i in venue %}
-              <tr>
-                  <td>{{i.number}}</td>
-              </tr>
-        
-            <br>
-            <br>
-            <hr>
-        
-            {% endfor %}
-
-        </div>
-
          <div class="col">
              <h5>Starting:</h5>
              <br>
@@ -286,26 +232,60 @@ h6 {
               {% endfor %}
         
 
-            </div>
+  </div>
       
       
 
       </div>
-  <hr>
+ 
   </div>
 
 
-  <br />
-  <br />
+<div>
 
-
-   <br />
-   <br />
-   <br />
-
-
-
-
- <br> 
   <br>
+ <br>
+ <br>
+<div class="row" style="margin-top: -30px; margin-left: 430px;">
+  <div class="col">
+    <div class="col-ml">
+      <div class="card text-left text-black mb-3" id="total-pools">
+        <div class="card header">
+          <h5 class="card-title" style="font-size: x-large;">Booked</h5>
+        </div>
+        <div class="card-body">
+           <div class="col">
+                 <h5>Duplex number:</h5>
+                  <br>
+
+                  {% for i in venue %} 
+        
+                    <tr>
+            
+                    <td>{{i.duplex}}</td>
+                    <td>{{i.number}}</td>
+                    <td>{{i.name}}</td>
+                    </tr>
+          
+                    <br>
+                    {% endfor %}
+            
+
+                  
+
+        
+
+                </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+</div>
+ 
+
+
+
+
 {% endblock %}

@@ -316,32 +316,32 @@ def design1(request):
 
 
 def design2(request):
-	booking1s = Booking1.objects.all()
+	booking1 = Booking1.objects.all()
 
-	context = {'list': booking1s }
+	context = {'venue': booking1 }
 	return render(request, 'co_servings/design2.html',context)
 	
 	
 
 def design3(request):
-	booking2s = Booking2.objects.all()
+	booking2 = Booking2.objects.all()
 	
 
-	context = {'venue': booking2s }
+	context = {'venue': booking2 }
 	return render(request, 'co_servings/design3.html',context)	
 	
 
 def design4(request):
-	booking3s = Booking3.objects.all()
+	booking3 = Booking3.objects.all()
 
-	context = {'venue': booking3s }
+	context = {'venue': booking3 }
 	return render(request, 'co_servings/design4.html',context)
 	
 
 def design5(request):
-	booking4s = Booking4.objects.all()
+	booking4 = Booking4.objects.all()
 
-	context = {'venue': booking4s }
+	context = {'venue': booking4 }
 	return render(request, 'co_servings/design5.html',context)
 	
 
@@ -428,18 +428,3 @@ def booking4(request):
 
 		return render(request, 'co_servings/booking4.html', {'form':form, 'submitted':submitted })
 
-def booking5(request):
-	submitted = False
-	form = Booking5Form()
-	if request.method == "POST":
-		form = Booking5Form(request.POST)
-		if form.is_valid():
-			form.save()
-			return HttpResponseRedirect('/booking5?submitted=True')
-
-	else:
-		form = Booking5Form()
-		if 'submitted' in request.GET:
-			submitted = True
-
-		return render(request, 'co_servings/booking5.html', {'form':form, 'submitted':submitted })
