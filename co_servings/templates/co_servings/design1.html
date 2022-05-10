@@ -185,70 +185,22 @@ h6 {
 
   <hr>
 
-      <div class="row">
+    
 
 
 
         <div class="col">
 
-        
-          <h5 style="color:black;">Project:</h5>
-          <br>
-        
-          {% for i in venue %}
-          <tr>
-          <td>{{i.project}}</td>
-        </tr>
-        <br>
-        <br>
-        <hr>
-        {% endfor %}
-      </div>
+     
 
       
 
-
-      
-
-         <div class="col">
-             <h5>Starting:</h5>
-             <br>
-
-            {% for i in venue %} 
-        
-              <tr>
-            
-                <td>{{i.starting}}</td>
-              </tr>
-          
-              <br>
-            
-              <br>
-              <hr>
-          
-              {% endfor %}
-        
-
-            </div>
-      
-      
-
-      </div>
- 
-  </div>
-
-
-<div>
-
-  <br>
- <br>
- <br>
-<div class="row" style="margin-top: -30px; margin-left: 430px;">
+<div class="row" style="margin-top: 0px; margin-left: 250px;">
   <div class="col">
     <div class="col-ml">
       <div class="card text-left text-black mb-3" id="total-pools">
         <div class="card header">
-          <h5 class="card-title" style="font-size: x-large;">Booked</h5>
+          <h5 class="card-title" style="font-size: xx-large;">Booked</h5>
         </div>
         <div class="card-body">
            <div class="col">
@@ -258,10 +210,12 @@ h6 {
                   {% for i in venue %} 
         
                     <tr>
-            
+                    <td><strong style="color:grey">{{i.project}}</strong></td><br>
                     <td>{{i.duplex}}</td>
                     <td>{{i.number}}</td>
-                    <td>{{i.name}}</td>
+                    <td><em>{{i.name}}</em></td>
+                    <td><h6>starting:</h6>{{i.starting}}</td>
+                    <hr>
                     </tr>
           
                     <br>
@@ -280,6 +234,28 @@ h6 {
 
   
 </div>
+      
+
+         
+      
+
+      </div>
+ 
+  
+
+
+<div>
+
+  <br>
+ <br>
+ <br>
+
+ <br>
+
+
+
+
+
 
 
 
