@@ -1,20 +1,14 @@
 {% extends 'co_servings/main.html' %}
+
 {% load static %}
 
 
-{% block content %}
-<style type="text/css">
 
-   <style type="text/css">
+{% block content %}
+
+<style type="text/css">
 .button {
-  background-color: #04AA6D;
-  border: none;
-  color: white;
-  padding: 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
+
   margin: 4px 2px;
 }
 
@@ -29,151 +23,186 @@
 
 
 
-
-h5 {
-    color: black;
+h6 {
+    color:black;
   }
 
 
-	h1, h6 {
-		color: black;
-	}
+  h1 {
+    color: black;
+
+  }
  
-	h4, h5, td {
-		color: black;
-	}
+  h4, h5, td {
+    color: black;
+  }
+ 
 
 
-	
+ 
+
+
+  
 </style>
 
 
+<div class="container" style="margin-top: -40px">
+  <hr>
 
-<body class="bg-image"
-    style="background-image: url('/static/images/marco2.jpg');
-    background-repeat: no-repeat;
-    background-size:100%;
-    color:darkgrey;
-    height:550px;">
+      <div class="row">
 
+<div class="col" >
+          <h3 style="color:green;">fbm-2:</h3><h5 style="color:blue;"> "2 story building :"</h5> <h5>  4 duplexes</h5>
 
+          <img src="{% static 'images/building 5.PNG' %}"
+            style="
+            width:300px;
+            height:200px;
+            border: solid 3px #ccc"/>
 
-	
-
-
-
-
-
-<h6 style="margin-left: 0px; color:black">Investors' navigation bar</h6>
-
-{% load static %}
-
-
-
-
-
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav">
-
-       <a href="{% url 'trading' %}">
-                    
-                  <button class="button button4" style="color:black">Investors</button>    
-
-                </a> 
-
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-         Qualifications
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="{% url 'information2' %}">Membership</a>
-          <a class="dropdown-item" href="{% url 'investorsrules' %}">Investors Rules</a>
-        
-        </div>
-
-      </li>
-      
-
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      
-        Benefits
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-        <a class="dropdown-item" href="{% url 'tradingclarity' %}">Trading-clarity</a>
-        <a class="dropdown-item" href="{% url 'tokenprogram3' %}">Token program</a>
-        
-        </div>
-      </li>
-
-     
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-
-        Downloads
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="{% url 'venue' %}">Short Term Contracts</a>
-          <a class="dropdown-item" href="{% url 'liquidity' %}">Smart Contract</a>
+          </div>
           
+          <div>
+          <h6 style="color:brown; margin-left:-760px; margin-top: 50px;"><strong><u>"flexrooms " :</u></strong></h6>
+          <br>
+
+          <h6 style="color:black; margin-left:-760px;">1 flex A = € 60 per day</h6>
+          <h6 style="color:black; margin-left:-760px;">1 flex B = € 60 per day</h6>
+          <h6 style="color:black; margin-left:-760px;">1 flex C = € 60 per day</h6>
+          <h6 style="color:black; margin-left:-760px;">1 flex D = € 60 per day</h6>
+           
         </div>
-      </li> 
+
+<div class="container">
+
+ <div class="row">
 
 
+
+  <div class="col" >
+
+          <h5 style="color:blue; margin-top: 50px;"> "Entrance Level :"</h5> <h5>  4 flex units </h5>
+
+
+
+          <img src="{% static 'images/entrance.PNG' %}"
+            style="object-fit:contain;
+            width:200px;
+            height:300px;
+            border: solid 3px #ccc"/>
+
+
+        <br>
+        <br>
+
+      </div>
+
+
+
+</div>
+
+    
+
+  <div class="container">
+
+    <br>
+
+<br>
+      
+<br>  
+
+
+
+
+ <div class="container" style="margin-left: : 105px; margin-bottom: -60px;" >
+  
+          <a href="{% url 'booking' %}">
+                    
+                  <button class="button button4" style="background-color:brown; color:white; margin-left: 420px; padding: 10px; margin-top: 40px;font-size: large;"> Select your Apartment </button>   
+                </a> 
+          
+                
+</div> 
+
+<br>
+<br>
+      
+<br>  
+
+  <hr>
+
+    
+
+
+
+        <div class="col">
 
      
-      <li class="nav-item active">
-        <a class="nav-link" href="{% url 'tradingdesk' %}">6-Trading Desk</a>
-      </li>
 
-      <li class="nav-item active">
-        <a class="nav-link" href="{% url 'ourcommunity3' %}">Our Community</a>
-      </li>
+      
 
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-
-     Trading 
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="{% url 'report' %}">Report</a>
-          <a class="dropdown-item" href="{% url 'news' %}">News</a>
+<div class="row" style="margin-top: 0px; margin-left: 250px;">
+  <div class="col">
+    <div class="col-ml">
+      <div class="card text-left text-black mb-3" id="total-pools">
+        <div class="card header">
+          <h5 class="card-title" style="font-size: xx-large;">Booked</h5>
         </div>
-      </li>
+        <div class="card-body">
+           <div class="col">
+                  <h5>Duplex number:</h5>
+                  <br>
 
-     
+                  {% for i in venue %} 
+        
+                    <tr>
+                    <td><strong style="color:grey">{{i.project}}</strong></td><br>
+                    <td>{{i.duplex}}</td>
+                    <td>{{i.number}}</td>
+                    <td><em>{{i.name}}</em></td>
+                    <td><h6>starting:</h6>{{i.starting}}</td>
+                    <hr>
+                    </tr>
+          
+                    <br>
+                    {% endfor %}
+            
 
+                  
 
-      
-      {% if user.is_authenticated %}
-      <li class="nav-item active">
-        <a class="nav-link" href="{% url 'logout' %}">Logout</a>
-      </li>
-      {% else %}
-      <li class="nav-item active">
-        <a class="nav-link" href="{% url 'register_user' %}">Register</a>
-      </li>
+        
 
-       <li class="nav-item active">
-        <a class="nav-link" href="{% url 'login' %}">Login</a>
-      </li>
-      {% endif %}
-      
-    </ul>
-
+                </div>
+        </div>
+      </div>
+    </div>
   </div>
-</nav>
 
-<br>
-<br>
-<br>
-<br>
+  
+</div>
+      
 
-<h1>HERE ARE NEWS</h1>
+         
+      
+
+      </div>
+ 
+  
+
+
+<div>
+
+  <br>
+ <br>
+ <br>
+
+ <br>
+
+
+
+
+
+
 
 
 {% endblock %}
-
-</body>
