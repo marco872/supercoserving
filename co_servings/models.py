@@ -361,6 +361,36 @@ class News(models.Model):
 	def __str__(self):
 		return self.name
 
+class News1(models.Model):
+	name = models.CharField(max_length=200, blank=True, null=True)
+	
+	
+	def __str__(self):
+		return self.name
+
+class News2(models.Model):
+	name = models.CharField(max_length=200, blank=True, null=True)
+	
+	
+	def __str__(self):
+		return self.name
+
+
+class News3(models.Model):
+	name = models.CharField(max_length=200, blank=True, null=True)
+	
+	
+	def __str__(self):
+		return self.name
+
+
+class News4(models.Model):
+	name = models.CharField(max_length=200, blank=True, null=True)
+	
+	
+	def __str__(self):
+		return self.name
+
 class Collateral(models.Model):
 
 	state = models.CharField(max_length=200, blank=True, null=True)
@@ -613,3 +643,99 @@ class Booking4(models.Model):
 
 
 
+class Location1(models.Model):
+
+	 
+	project = models.CharField(max_length=200, null=True)
+	name = models.CharField(max_length=200, null=True)
+	
+	flex = models.CharField(max_length=200, null=True)
+	number = models.CharField(max_length=200, null=True)
+	check_in = models.CharField(max_length=200, null=True)
+	check_out = models.CharField(max_length=200, null=True)
+	email = models.CharField(max_length=200, null=True)
+	phone = models.CharField(max_length=200, null=True)
+
+
+	
+
+	def __str__(self):
+		return self.name
+
+
+class Location2(models.Model):
+
+	 
+	project = models.CharField(max_length=200, null=True)
+	name = models.CharField(max_length=200, null=True)
+	
+	flex = models.CharField(max_length=200, null=True)
+	number = models.CharField(max_length=200, null=True)
+	check_in = models.CharField(max_length=200, null=True)
+	check_out = models.CharField(max_length=200, null=True)
+	email = models.CharField(max_length=200, null=True)
+	phone = models.CharField(max_length=200, null=True)
+
+
+	
+
+	def __str__(self):
+		return self.name
+
+class Location3(models.Model):
+
+	 
+	project = models.CharField(max_length=200, null=True)
+	name = models.CharField(max_length=200, null=True)
+	
+	flex = models.CharField(max_length=200, null=True)
+	number = models.CharField(max_length=200, null=True)
+	check_in = models.CharField(max_length=200, null=True)
+	check_out = models.CharField(max_length=200, null=True)
+	email = models.CharField(max_length=200, null=True)
+	phone = models.CharField(max_length=200, null=True)
+
+
+	
+
+	def __str__(self):
+		return self.name
+
+class Location4(models.Model):
+
+	 
+	project = models.CharField(max_length=200, null=True)
+	name = models.CharField(max_length=200, null=True)
+	
+	flex = models.CharField(max_length=200, null=True)
+	number = models.CharField(max_length=200, null=True)
+	check_in = models.CharField(max_length=200, null=True)
+	check_out = models.CharField(max_length=200, null=True)
+	email = models.CharField(max_length=200, null=True)
+	phone = models.CharField(max_length=200, null=True)
+
+
+	
+
+	def __str__(self):
+		return self.name
+
+
+class Location5(models.Model):
+
+	 
+	project = models.CharField(max_length=200, null=True)
+	name = models.CharField(max_length=200, null=True)
+	
+	flex = models.CharField(max_length=200, null=True)
+	number = models.CharField(max_length=200, null=True)
+	check_in = models.CharField(max_length=200, null=True)
+	check_out = models.CharField(max_length=200, null=True)
+	email = models.CharField(max_length=200, null=True)
+	phone = models.CharField(max_length=200, null=True)
+
+
+	
+
+	def __str__(self):
+		return self.name

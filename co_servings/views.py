@@ -6,7 +6,7 @@ from django.http import HttpResponseRedirect
 
 from .models import *
 
-from .forms import VenueForm, LiquidityForm, CollateralForm, CommitForm, BookingForm, Booking1Form, Booking2Form, Booking3Form, Booking4Form
+from .forms import VenueForm, LiquidityForm, CollateralForm, CommitForm, BookingForm, Booking1Form, Booking2Form, Booking3Form, Booking4Form, Location1Form, Location2Form, Location3Form, Location4Form, Location5Form
 
 # Create your views here.
 
@@ -219,6 +219,7 @@ def report(request):
 	return render(request, 'co_servings/report.html')
 
 def news(request):
+
 	return render(request, 'co_servings/news.html')
 
 def owner(request):
@@ -427,4 +428,122 @@ def booking4(request):
 			submitted = True
 
 		return render(request, 'co_servings/booking4.html', {'form':form, 'submitted':submitted })
+
+def location1(request):
+	submitted = False
+	form = Location1Form()
+	if request.method == "POST":
+		form = Location1Form(request.POST)
+		if form.is_valid():
+			form.save()
+			return HttpResponseRedirect('/location1?submitted=True')
+
+	else:
+		form = Location1Form()
+		if 'submitted' in request.GET:
+			submitted = True
+
+		return render(request, 'co_servings/location1.html', {'form':form, 'submitted':submitted })
+
+
+def location2(request):
+	submitted = False
+	form = Location2Form()
+	if request.method == "POST":
+		form = Location2Form(request.POST)
+		if form.is_valid():
+			form.save()
+			return HttpResponseRedirect('/location2?submitted=True')
+
+	else:
+		form = Location2Form()
+		if 'submitted' in request.GET:
+			submitted = True
+
+		return render(request, 'co_servings/location2.html', {'form':form, 'submitted':submitted })
+
+
+
+def location3(request):
+	submitted = False
+	form = Location3Form()
+	if request.method == "POST":
+		form = Location3Form(request.POST)
+		if form.is_valid():
+			form.save()
+			return HttpResponseRedirect('/location3?submitted=True')
+
+	else:
+		form = Location3Form()
+		if 'submitted' in request.GET:
+			submitted = True
+
+		return render(request, 'co_servings/location3.html', {'form':form, 'submitted':submitted })
+
+
+def location4(request):
+	submitted = False
+	form = Location4Form()
+	if request.method == "POST":
+		form = Location4Form(request.POST)
+		if form.is_valid():
+			form.save()
+			return HttpResponseRedirect('/location4?submitted=True')
+
+	else:
+		form = Location4Form()
+		if 'submitted' in request.GET:
+			submitted = True
+
+		return render(request, 'co_servings/location4.html', {'form':form, 'submitted':submitted })
+
+
+def location5(request):
+	submitted = False
+	form = Location5Form()
+	if request.method == "POST":
+		form = Location5Form(request.POST)
+		if form.is_valid():
+			form.save()
+			return HttpResponseRedirect('/location5?submitted=True')
+
+	else:
+		form = Location5Form()
+		if 'submitted' in request.GET:
+			submitted = True
+
+		return render(request, 'co_servings/location5.html', {'form':form, 'submitted':submitted })
+
+
+def news(request):
+	location1s = Location1.objects.all()
+
+	context = {'venue': location1s }
+	return render(request, 'co_servings/news.html',context)
+
+def news1(request):
+	location2s = Location2.objects.all()
+
+	context = {'venue': location2s }
+	return render(request, 'co_servings/news1.html',context)
+
+def news2(request):
+	location3s = Location3.objects.all()
+
+	context = {'venue': location3s }
+	return render(request, 'co_servings/news2.html',context)
+
+def news3(request):
+	location4s = Location4.objects.all()
+
+	context = {'venue': location4s }
+	return render(request, 'co_servings/news3.html',context)
+
+def news4(request):
+	location5s = Location5.objects.all()
+
+	context = {'venue': location5s }
+	return render(request, 'co_servings/news4.html',context)
+
+
 

@@ -49,6 +49,10 @@ urlpatterns = [
     path('ourcommunity3/', views.ourcommunity3, name="ourcommunity3"),
     path('report/', views.report, name="report"),
     path('news/', views.news, name="news"),
+    path('news1/', views.news1, name="news1"),
+    path('news2/', views.news2, name="news2"),
+    path('news3/', views.news3, name="news3"),
+    path('news4/', views.news4, name="news4"),
     path('collateral/', views.collateral, name="collateral"),
     path('gov/', views.gov, name="gov"),
     path('fbm/', views.fbm, name="fbm"),
@@ -71,7 +75,11 @@ urlpatterns = [
     path('booking2/', views.booking2, name="booking2"),
     path('booking3/', views.booking3, name="booking3"),
     path('booking4/', views.booking4, name="booking4"),
-
+    path('location1/', views.location1, name="location1"),
+    path('location2/', views.location2, name="location2"),
+    path('location3/', views.location3, name="location3"),
+    path('location4/', views.location4, name="location4"),
+    path('location5/', views.location5, name="location5"),
 
 
 

@@ -1,6 +1,9 @@
 from django import forms
 from django.forms import ModelForm
-from .models import Venue, Liquidity, Collateral, Commit, Booking, Booking1, Booking2, Booking3, Booking4 
+from .models import Venue, Liquidity, Collateral, Commit, Booking, Booking1, Booking2, Booking3, Booking4, Location1, Location2, Location3, Location4, Location5
+
+
+
 
 
 class VenueForm(ModelForm):
@@ -241,5 +244,159 @@ class Booking4Form(ModelForm):
             'duplex': 'Duplex : example A, B, etc...',
             'number': 'Number : example 1, 2, etc...',
             'starting': 'Starting Rental dd/mm/yy',
+            'phone': 'my_phone',
+        }
+
+
+class Location1Form(ModelForm):
+	class Meta:
+		model = Location1
+		fields = ('project', 'name',  'flex', 'number', 'check_in', 'check_out', 'email', 'phone' )
+
+		widgets = {
+			'project': forms.TextInput(attrs={'class':'form-control'}),
+			'name': forms.TextInput(attrs={'class':'form-control'}),
+			
+			'flex': forms.TextInput(attrs={'class':'form-control'}),
+			'number': forms.TextInput(attrs={'class':'form-control'}),
+			'check_in': forms.TextInput(attrs={'class':'form-control'}),
+			'check_out': forms.TextInput(attrs={'class':'form-control'}),
+			'email': forms.TextInput(attrs={'class':'form-control'}),
+			'phone': forms.TextInput(attrs={'class':'form-control'}),
+
+		}
+
+		labels = {
+            'project': 'Project : example 1-milan/1, 2-berlin/1, etc..',
+            'email': 'my_email',
+          
+            'name': 'Name: example Joe Doe, etc...',
+            'flex': 'Flex : example A, B, etc...',
+            'number': 'Number : example 1, 2, etc...',
+            'check_in': 'Check_in Accomodation dd/mm/yy',
+            'check_out': 'Check_out Accomodation dd/mm/yy',
+            'phone': 'my_phone',
+        }
+
+class Location2Form(ModelForm):
+	class Meta:
+		model = Location2
+		fields = ('project', 'name',  'flex', 'number', 'check_in', 'check_out', 'email', 'phone' )
+
+		widgets = {
+			'project': forms.TextInput(attrs={'class':'form-control'}),
+			'name': forms.TextInput(attrs={'class':'form-control'}),
+			
+			'flex': forms.TextInput(attrs={'class':'form-control'}),
+			'number': forms.TextInput(attrs={'class':'form-control'}),
+			'check_in': forms.TextInput(attrs={'class':'form-control'}),
+			'check_out': forms.TextInput(attrs={'class':'form-control'}),
+			'email': forms.TextInput(attrs={'class':'form-control'}),
+			'phone': forms.TextInput(attrs={'class':'form-control'}),
+
+		}
+
+		labels = {
+            'project': 'Project : example 1-milan/1, 2-berlin/1, etc..',
+            'email': 'my_email',
+          
+            'name': 'Name: example Joe Doe, etc...',
+            'flex': 'Flex : example A, B, etc...',
+            'number': 'Number : example 1, 2, etc...',
+            'check_in': 'Check_in Accomodation dd/mm/yy',
+            'check_out': 'Check_out Accomodation dd/mm/yy',
+            'phone': 'my_phone',
+        }
+
+
+class Location3Form(ModelForm):
+	class Meta:
+		model = Location3
+		fields = ('project', 'name',  'flex', 'number', 'check_in', 'check_out', 'email', 'phone' )
+
+		widgets = {
+			'project': forms.TextInput(attrs={'class':'form-control'}),
+			'name': forms.TextInput(attrs={'class':'form-control'}),
+			
+			'flex': forms.TextInput(attrs={'class':'form-control'}),
+			'number': forms.TextInput(attrs={'class':'form-control'}),
+			'check_in': forms.TextInput(attrs={'class':'form-control'}),
+			'check_out': forms.TextInput(attrs={'class':'form-control'}),
+			'email': forms.TextInput(attrs={'class':'form-control'}),
+			'phone': forms.TextInput(attrs={'class':'form-control'}),
+
+		}
+
+		labels = {
+            'project': 'Project : example 1-milan/1, 2-berlin/1, etc..',
+            'email': 'my_email',
+          
+            'name': 'Name: example Joe Doe, etc...',
+            'flex': 'Flex : example A, B, etc...',
+            'number': 'Number : example 1, 2, etc...',
+            'check_in': 'Check_in Accomodation dd/mm/yy',
+            'check_out': 'Check_out Accomodation dd/mm/yy',
+            'phone': 'my_phone',
+        }
+
+
+class Location4Form(ModelForm):
+	class Meta:
+		model = Location4
+		fields = ('project', 'name',  'flex', 'number', 'check_in', 'check_out', 'email', 'phone' )
+
+		widgets = {
+			'project': forms.TextInput(attrs={'class':'form-control'}),
+			'name': forms.TextInput(attrs={'class':'form-control'}),
+			
+			'flex': forms.TextInput(attrs={'class':'form-control'}),
+			'number': forms.TextInput(attrs={'class':'form-control'}),
+			'check_in': forms.TextInput(attrs={'class':'form-control'}),
+			'check_out': forms.TextInput(attrs={'class':'form-control'}),
+			'email': forms.TextInput(attrs={'class':'form-control'}),
+			'phone': forms.TextInput(attrs={'class':'form-control'}),
+
+		}
+
+		labels = {
+            'project': 'Project : example 1-milan/1, 2-berlin/1, etc..',
+            'email': 'my_email',
+          
+            'name': 'Name: example Joe Doe, etc...',
+            'flex': 'Flex : example A, B, etc...',
+            'number': 'Number : example 1, 2, etc...',
+            'check_in': 'Check_in Accomodation dd/mm/yy',
+            'check_out': 'Check_out Accomodation dd/mm/yy',
+            'phone': 'my_phone',
+        }
+
+
+class Location5Form(ModelForm):
+	class Meta:
+		model = Location5
+		fields = ('project', 'name',  'flex', 'number', 'check_in', 'check_out', 'email', 'phone' )
+
+		widgets = {
+			'project': forms.TextInput(attrs={'class':'form-control'}),
+			'name': forms.TextInput(attrs={'class':'form-control'}),
+			
+			'flex': forms.TextInput(attrs={'class':'form-control'}),
+			'number': forms.TextInput(attrs={'class':'form-control'}),
+			'check_in': forms.TextInput(attrs={'class':'form-control'}),
+			'check_out': forms.TextInput(attrs={'class':'form-control'}),
+			'email': forms.TextInput(attrs={'class':'form-control'}),
+			'phone': forms.TextInput(attrs={'class':'form-control'}),
+
+		}
+
+		labels = {
+            'project': 'Project : example 1-milan/1, 2-berlin/1, etc..',
+            'email': 'my_email',
+          
+            'name': 'Name: example Joe Doe, etc...',
+            'flex': 'Flex : example A, B, etc...',
+            'number': 'Number : example 1, 2, etc...',
+            'check_in': 'Check_in Accomodation dd/mm/yy',
+            'check_out': 'Check_out Accomodation dd/mm/yy',
             'phone': 'my_phone',
         }
