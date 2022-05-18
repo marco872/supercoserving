@@ -26,7 +26,7 @@ class VenueForm(ModelForm):
 			}	
 		
 		labels = {
-            'owner': 'Owner : example Joe Doe, etc..',
+            'owner': 'Owner : example JODOE, etc..',
            
             'property_price': 'Property_Price : example € 2.500.000, etc...',
           
@@ -52,7 +52,7 @@ class LiquidityForm(ModelForm):
 		}	
 
 		labels = {
-            'topic': 'Type : example Private Investor, Private Fund, etc..',
+            'topic': 'Type : example 1/2/3/4- Private Investor, Private Fund, etc..',
             
             'name': 'Private Pool : example €/€',
             'price': 'Value: € 15.000.000',

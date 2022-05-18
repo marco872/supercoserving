@@ -91,9 +91,11 @@ def development(request):
 	venue = Venue.objects.all()
 	liquidity = Liquidity.objects.all()
 	development = Development.objects.all()
+	collaterals = Collateral.objects.all()
+	
 
 
-	context = {'list': projects, 'value': venue, 'topic': liquidity, 'agreement':development}
+	context = {'list': projects, 'value': venue, 'list': collaterals,  'topic':liquidity}
 	return render(request, 'co_servings/development.html',context )
 	
 	
