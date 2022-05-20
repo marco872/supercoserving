@@ -20,7 +20,12 @@ def home(request):
 	return render(request, 'co_servings/home.html')
 
 def fbm(request):
-	return render(request, 'co_servings/fbm.html')
+	venue = Venue.objects.all()
+
+	context = { 'value': venue}
+	return render(request, 'co_servings/fbm.html', context)
+
+	
 
 def how(request):
 	return render(request, 'co_servings/how.html')
