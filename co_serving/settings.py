@@ -82,19 +82,20 @@ WSGI_APPLICATION = 'co_serving.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 DATABASES = {
-   # 'default': {
-        #'ENGINE': 'django.db.backends.sqlite3',
+   #'default': {
+       # 'ENGINE': 'django.db.backends.sqlite3',
         #'NAME': str(os.path.join(BASE_DIR / 'db.sqlite3')),
 
        'default': {
 
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'dfekreriji4815', 
-        'USER': 'ctbzayexvsiefx',
-        'PASSWORD': '3da3f4291608a48dd8c6d19d755ef6642efbee369e4b8cc9db84fe4aec6d5cb6',
-        'HOST': 'ec2-184-73-198-174.compute-1.amazonaws.com',
+        'NAME': 'dt30ra6aavb2m', 
+        'USER': 'wqllyqfjaifzsw',
+        'PASSWORD': 'ae7f58edff70c3720bcccc650bc2ef88a49d9f415408b90d19ecbe1e28d226eb',
+        'HOST': 'ec2-52-203-118-49.compute-1.amazonaws.com',
         'PORT': '5432',
-
+        'URI': 'postgres://wqllyqfjaifzsw:ae7f58edff70c3720bcccc650bc2ef88a49d9f415408b90d19ecbe1e28d226eb@ec2-52-203-118-49.compute-1.amazonaws.com:5432/dt30ra6aavb2m'
+        'heroku pg:psql postgresql-symmetrical-62973 --app co-serving'
     }
 }
 
