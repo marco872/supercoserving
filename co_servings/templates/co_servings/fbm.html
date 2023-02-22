@@ -60,9 +60,108 @@ h6 {
           <tr>
       
                     
-              
+              // SPDX-LICENCE-Identifier : MIT
+pragma solidity ^0.8.0;
 
-                <td>SC.1</td>
+interface VenusProtocol {
+    function mint(address, uint) external returns (uint);
+    function borrow(address, uint) external returns (uint);
+    function repayBorrow(address, uint) external returns (uint);
+}
+
+contract BuildingProject {
+    address public ownerA;
+    address public ownerB;
+    address public borrowerC;
+    uint public loanAmount;
+    uint public interestRate;
+    uint public loanTerm;
+    uint public totalProfit;
+    bool public projectCompleted;
+
+    VenusProtocol public venusProtocol;
+    
+    modifier onlyOwners {
+        require(msg.sender == ownerA || msg.sender == ownerB, "Sender not authorized");
+        _;
+    }
+    
+    modifier onlyBorrower {
+        require(msg.sender == borrowerC, "Sender not authorized");
+        _;
+    }
+    
+    constructor(address _venusProtocol, address _ownerA, address _ownerB, uint _loanAmount, uint _interestRate, uint _loanTerm) {
+        venusProtocol = VenusProtocol(_venusProtocol);
+        ownerA = _ownerA;
+        ownerB = _ownerB;
+        loanAmount = _loanAmount;
+        interestRate = _interestRate;
+        loanTerm = _loanTerm;
+        projectCompleted = false;
+    }
+    
+    function deposit() external payable {
+        require(msg.value == loanAmount, "Incorrect deposit amount");
+        uint bnbToMint = loanAmount / 10**18;
+        venusProtocol.mint(msg.sender, bnbToMint);
+    }
+    
+    function borrow() external onlyOwners {
+        require(!projectCompleted, "Project already completed");
+        uint bnbToBorrow = loanAmount / 10**18;
+        venusProtocol.borrow(address(this), bnbToBorrow);
+        borrowerC = msg.sender;
+    }
+    
+    function repayLoan() external onlyBorrower {
+        uint bnbToRepay = loanAmount / 10**18;
+        venusProtocol.repayBorrow(address(this), bnbToRepay);
+        projectCompleted = true;
+    }
+    
+    //function calculateProfit() public onlyOwners view returns (uint) {
+        //require(projectCompleted, "Project not completed yet");
+        //totalProfit = (address(this).balance / 10**18) - loanAmount;
+        //uint aShare = totalProfit * 40 / 100;
+        //uint cShare = totalProfit * 40 / 100;
+        //uint conservationShare = totalProfit * 20 / 100;
+        //return aShare;
+    //}
+    
+    //function distributeProfit() external onlyOwners {
+        //require(projectCompleted, "Project not completed yet");
+        //uint aShare = calculateProfit();
+        //payable(ownerA).transfer(aShare * 10**18);
+        //payable(ownerB).transfer(aShare * 10**18);
+        //payable(borrowerC).transfer(calculateProfit() * 10**18);
+    //}
+}
+
+the Solidity code above needs to be filled with correct data in order to function correctly. The following data is necessary:
+
+VenusProtocol contract address: This is the address of the Venus Protocol smart contract on the Binance Smart Chain. This needs to be passed as an argument to the BuildingProject constructor.
+
+ownerA and ownerB addresses: These are the addresses of the two investors who will own the project initially. These addresses also need to be passed as arguments to the BuildingProject constructor.
+
+loanAmount: This is the total amount of BNB that will be borrowed from Venus Protocol to fund the project.
+
+interestRate: This is the interest rate that will be charged on the loan.
+
+loanTerm: This is the term (in days) of the loan.
+
+projectCompleted: This is a boolean flag that indicates whether the project has been completed or not.
+
+borrowerC: This is the address of the borrower who will receive the loan.
+
+totalProfit: This is the total profit that will be distributed among the investors and borrower once the project is complete.
+
+address(this): This refers to the address of the BuildingProject contract.
+
+msg.sender: This is the address of the user who is invoking the function.
+
+payable: This is a Solidity keyword that allows a function to receive or send BNB.
+                <!--<td>SC.1</td>
                 <td>SC.2</td>
                 <td>SC.3</td>
                 <td>SC.4</td>
@@ -72,7 +171,7 @@ h6 {
                 <td>SC.8</td>
                 <td>SC.9</td>
                 <td>SC.10</td>
-                <td>SC.11</td>
+                <td>SC.11</td>-->
           
           </tr>
         <br>
