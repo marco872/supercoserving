@@ -53,23 +53,22 @@ h6 {
         <div class="col">
 
         
-          <h5 style="color:black;">Smart Contracts:</h5>
-          <br>
-        
-          
-          <tr>
-      
-                    
-              // SPDX-LICENCE-Identifier : MIT
-pragma solidity ^0.8.0;
+          <h5 style="color:black;">Smart Contracts: this is the solidity code the co-serving uses to deploy on "Brownie platforms"</h5>
 
-interface VenusProtocol {
+          <br>
+          <tr>
+
+           <td> // SPDX-LICENCE-Identifier : MIT</td>
+
+<td>pragma solidity ^0.8.0;</td>
+
+<td>interface VenusProtocol {
     function mint(address, uint) external returns (uint);
     function borrow(address, uint) external returns (uint);
     function repayBorrow(address, uint) external returns (uint);
-}
+}</td>
 
-contract BuildingProject {
+<td>contract BuildingProject {
     address public ownerA;
     address public ownerB;
     address public borrowerC;
@@ -79,19 +78,19 @@ contract BuildingProject {
     uint public totalProfit;
     bool public projectCompleted;
 
-    VenusProtocol public venusProtocol;
+    VenusProtocol public venusProtocol;</td>
     
-    modifier onlyOwners {
+    <td>modifier onlyOwners {
         require(msg.sender == ownerA || msg.sender == ownerB, "Sender not authorized");
         _;
-    }
+    }</td>
     
-    modifier onlyBorrower {
+    <td>modifier onlyBorrower {
         require(msg.sender == borrowerC, "Sender not authorized");
         _;
-    }
+    }</td>
     
-    constructor(address _venusProtocol, address _ownerA, address _ownerB, uint _loanAmount, uint _interestRate, uint _loanTerm) {
+    <td>constructor(address _venusProtocol, address _ownerA, address _ownerB, uint _loanAmount, uint _interestRate, uint _loanTerm) {
         venusProtocol = VenusProtocol(_venusProtocol);
         ownerA = _ownerA;
         ownerB = _ownerB;
@@ -99,68 +98,82 @@ contract BuildingProject {
         interestRate = _interestRate;
         loanTerm = _loanTerm;
         projectCompleted = false;
-    }
+    }</td>
     
-    function deposit() external payable {
+    <td>function deposit() external payable {
         require(msg.value == loanAmount, "Incorrect deposit amount");
         uint bnbToMint = loanAmount / 10**18;
         venusProtocol.mint(msg.sender, bnbToMint);
-    }
+    }</td>
     
-    function borrow() external onlyOwners {
+    <td>function borrow() external onlyOwners {
         require(!projectCompleted, "Project already completed");
         uint bnbToBorrow = loanAmount / 10**18;
         venusProtocol.borrow(address(this), bnbToBorrow);
         borrowerC = msg.sender;
-    }
+    }</td>
     
-    function repayLoan() external onlyBorrower {
+    <td>function repayLoan() external onlyBorrower {
         uint bnbToRepay = loanAmount / 10**18;
         venusProtocol.repayBorrow(address(this), bnbToRepay);
         projectCompleted = true;
-    }
+    }</td>
     
-    //function calculateProfit() public onlyOwners view returns (uint) {
-        //require(projectCompleted, "Project not completed yet");
-        //totalProfit = (address(this).balance / 10**18) - loanAmount;
-        //uint aShare = totalProfit * 40 / 100;
-        //uint cShare = totalProfit * 40 / 100;
-        //uint conservationShare = totalProfit * 20 / 100;
-        //return aShare;
-    //}
+    <td>function calculateProfit() public onlyOwners view returns (uint) {
+        require(projectCompleted, "Project not completed yet");
+        totalProfit = (address(this).balance / 10**18) - loanAmount;
+        uint aShare = totalProfit * 40 / 100;
+        uint cShare = totalProfit * 40 / 100;
+        uint conservationShare = totalProfit * 20 / 100;
+        return aShare;
+   }</td>
     
-    //function distributeProfit() external onlyOwners {
-        //require(projectCompleted, "Project not completed yet");
-        //uint aShare = calculateProfit();
-        //payable(ownerA).transfer(aShare * 10**18);
-        //payable(ownerB).transfer(aShare * 10**18);
-        //payable(borrowerC).transfer(calculateProfit() * 10**18);
-    //}
+    <td>function distributeProfit() external onlyOwners {
+        require(projectCompleted, "Project not completed yet");
+        uint aShare = calculateProfit();
+        payable(ownerA).transfer(aShare * 10**18);
+        payable(ownerB).transfer(aShare * 10**18);
+        payable(borrowerC).transfer(calculateProfit() * 10**18);
+   }</td>
+    <td>function updateVenusProtocol(address _newVenusProtocol) external onlyOwners {
+    require(_newVenusProtocol != address(0), "Invalid address");
+    venusProtocol = VenusProtocol(_newVenusProtocol);
 }
+}</td>
 
-the Solidity code above needs to be filled with correct data in order to function correctly. The following data is necessary:
+          </tr>
 
-VenusProtocol contract address: This is the address of the Venus Protocol smart contract on the Binance Smart Chain. This needs to be passed as an argument to the BuildingProject constructor.
 
-ownerA and ownerB addresses: These are the addresses of the two investors who will own the project initially. These addresses also need to be passed as arguments to the BuildingProject constructor.
+        
+          
+          <tr>
+      
+                    
 
-loanAmount: This is the total amount of BNB that will be borrowed from Venus Protocol to fund the project.
 
-interestRate: This is the interest rate that will be charged on the loan.
+                <td>the Solidity code attached needs to be opened in Brownie (a Python-based development and testing framework for smart contracts targeting the Ethereum Virtual Machine)  filled with correct data in order to function correctly. The following data is necessary:</td>
 
-loanTerm: This is the term (in days) of the loan.
+                <td>VenusProtocol contract address:&nbsp&nbsp This is the address of the Venus Protocol smart contract on the Binance Smart Chain. This needs to be passed as an argument to the BuildingProject constructor.</td>
 
-projectCompleted: This is a boolean flag that indicates whether the project has been completed or not.
+                <td>ownerA and ownerB addresses:&nbsp&nbsp These are the addresses of the two investors who will own the project initially. These addresses also need to be passed as arguments to the BuildingProject constructor.</td>
 
-borrowerC: This is the address of the borrower who will receive the loan.
+                <td>loanAmount:&nbsp&nbsp This is the total amount of BNB that will be borrowed from Venus Protocol to fund the project.</td>
 
-totalProfit: This is the total profit that will be distributed among the investors and borrower once the project is complete.
+                <td>interestRate:&nbsp&nbsp This is the interest rate that will be charged on the loan.</td>
 
-address(this): This refers to the address of the BuildingProject contract.
+                <td>loanTerm:&nbsp&nbsp This is the term (in days) of the loan.</td>
 
-msg.sender: This is the address of the user who is invoking the function.
+                <td>projectCompleted:&nbsp&nbsp This is a boolean flag that indicates whether the project has been completed or not.</td>
 
-payable: This is a Solidity keyword that allows a function to receive or send BNB.
+                <td>borrowerC:&nbsp&nbsp This is the address of the borrower who will receive the loan.</td>
+
+                <td>totalProfit:&nbsp&nbsp This is the total profit that will be distributed among the investors and borrower once the project is complete.</td>
+                
+                <td>address(this):&nbsp&nbsp This refers to the address of the BuildingProject contract.</td>
+
+                <td>msg.sender:&nbsp&nbsp This is the address of the user who is invoking the function.</td>
+
+                <td>payable:&nbsp&nbsp This is a Solidity keyword that allows a function to receive or send BNB.</td>
                 <!--<td>SC.1</td>
                 <td>SC.2</td>
                 <td>SC.3</td>
