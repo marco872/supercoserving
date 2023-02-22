@@ -64,7 +64,7 @@ h5 {
 <div class="container">
      
 
-      <h6 style="color:blue;margin-left: 0px; margin-top: -80px;"> <u>Real Estate Development Stakeholders use the following  BNB Smart Contracts based on Monitary Policy</u></h6>
+      <h6 style="color:blue;margin-left: 0px; margin-top: -80px;"> <u>High level description of the functions in the smart contracts</u></h6>
 
         <br>
      
@@ -72,12 +72,25 @@ h5 {
         <br>
 
         <p style="margin-left: 30px; color: black ; margin-top: -30px;"> 
-        <h6><u>Important note:</u> </h6>
-        <p><u><strong> Smart Contracts are  authomatically executed </u></strong> when  stakeholders' obbligations  are  signed and registered.</p>
+
+        deposit(): Allows the investor to deposit the required loan amount to the smart contract. The deposited amount is then used to borrow funds from the Venus Protocol.</p>
+        <p style="margin-left: 30px; color: black ; margin-top: -30px;"> 
+
+        borrow(): Allows the owners to borrow funds from the Venus Protocol, using the deposited amount as collateral.</p>
+        <p style="margin-left: 30px; color: black ; margin-top: -30px;"> 
+        repayLoan(): Allows the borrower to repay the borrowed funds to the Venus Protocol.</p>
+        <p style="margin-left: 30px; color: black ; margin-top: -30px;"> 
+        calculateProfit(): Calculates the profit earned from the project once it is completed. The profit is then divided among the owners and the borrower.</p>
+        <p style="margin-left: 30px; color: black ; margin-top: -30px;"> 
+        distributeProfit(): Distributes the profit earned from the project among the owners and the borrower according to the specified percentage shares.</p>
+        <p style="margin-left: 30px; color: black ; margin-top: -30px;"> 
+        transferOwnership(): Transfers the ownership of the project to the specified address.</p>
+        <p style="margin-left: 30px; color: black ; margin-top: -30px;"> 
+        Modifiers onlyOwners and onlyBorrower: These modifiers ensure that only authorized owners and the borrower can execute specific functions, preventing unauthorized access to the smart contract.</p>
 
     <hr>
 
-    <h6> <strong>SC.1&nbsp&nbsp  </strong> Government: <em>exchange Fiat into FBM tokens for selected project<em></h6>
+    <!--<h6> <strong>SC.1&nbsp&nbsp  </strong> Government: <em>exchange Fiat into FBM tokens for selected project<em></h6>
 
     <h6> <strong>SC.2&nbsp&nbsp  </strong>  Investor: <em>create Liquidity Pool between FBM tokens and BNB coins.&nbsp Liquidity Pool to be used by P.O. to build selected project</em></h6>
 
@@ -102,7 +115,7 @@ h5 {
           <a href="{% url 'fbm' %}">
                     
                   <button class="button button4" style="background-color:darkgrey; color:white; margin-left: 150px; padding: 40px; margin-top: 40px;font-size: x-large;">  Smart Contracts </button>   
-                </a> 
+                --></a> 
           
                 
 </div> 
