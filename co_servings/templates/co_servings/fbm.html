@@ -53,7 +53,7 @@ h6 {
         <div class="col">
 
         
-          <h5 style="color:black;">Smart Contracts: this is the solidity code that co-serving uses to deploy on "Brownie platforms"</h5>
+          <h5 style="color:black;">Smart Contracts: this is the solidity code deployed by co-serving using "Brownie" (a Python-based development and testing framework for smart contracts targeting the Ethereum Virtual Machine) </h5>
 
           <br>
          
@@ -78,7 +78,7 @@ h6 {
     uint public totalProfit;
     bool public projectCompleted;
 
-    VenusProtocol public venusProtocol;</h6>
+    VenusProtocol public venusProtocol;}</h6>
     
     <h6>modifier onlyOwners {
         require(msg.sender == ownerA || msg.sender == ownerB, "Sender not authorized");
@@ -152,7 +152,7 @@ h6 {
                     
 
 
-                <h6>the Solidity code attached needs to be opened in Brownie (a Python-based development and testing framework for smart contracts targeting the Ethereum Virtual Machine)  filled with correct data in order to function correctly. The following data is necessary:</h6>
+                <h6>The above Solidity code  needs to be completed with the following data in order to function correctly:</h6>
 
                 <h6>VenusProtocol contract address:&nbsp&nbsp This is the address of the Venus Protocol smart contract on the Binance Smart Chain. This needs to be passed as an argument to the BuildingProject constructor.</h6>
 
