@@ -53,22 +53,22 @@ h6 {
         <div class="col">
 
         
-          <h5 style="color:black;">Smart Contracts: this is the solidity code the co-serving uses to deploy on "Brownie platforms"</h5>
+          <h5 style="color:black;">Smart Contracts: this is the solidity code that co-serving uses to deploy on "Brownie platforms"</h5>
 
           <br>
-          <tr>
+         
 
-           <td> // SPDX-LICENCE-Identifier : MIT</td>
+           <h6> // SPDX-LICENCE-Identifier : MIT</h6>
 
-<td>pragma solidity ^0.8.0;</td>
+<h6>pragma solidity ^0.8.0;</h6>
 
-<td>interface VenusProtocol {
+<h6>interface VenusProtocol {
     function mint(address, uint) external returns (uint);
     function borrow(address, uint) external returns (uint);
     function repayBorrow(address, uint) external returns (uint);
-}</td>
+}</h6>
 
-<td>contract BuildingProject {
+<h6>contract BuildingProject {
     address public ownerA;
     address public ownerB;
     address public borrowerC;
@@ -78,19 +78,19 @@ h6 {
     uint public totalProfit;
     bool public projectCompleted;
 
-    VenusProtocol public venusProtocol;</td>
+    VenusProtocol public venusProtocol;</h6>
     
-    <td>modifier onlyOwners {
+    <h6>modifier onlyOwners {
         require(msg.sender == ownerA || msg.sender == ownerB, "Sender not authorized");
         _;
-    }</td>
+    }</h6>
     
-    <td>modifier onlyBorrower {
+    <h6>modifier onlyBorrower {
         require(msg.sender == borrowerC, "Sender not authorized");
         _;
-    }</td>
+    }</h6>
     
-    <td>constructor(address _venusProtocol, address _ownerA, address _ownerB, uint _loanAmount, uint _interestRate, uint _loanTerm) {
+    <h6>constructor(address _venusProtocol, address _ownerA, address _ownerB, uint _loanAmount, uint _interestRate, uint _loanTerm) {
         venusProtocol = VenusProtocol(_venusProtocol);
         ownerA = _ownerA;
         ownerB = _ownerB;
@@ -98,82 +98,83 @@ h6 {
         interestRate = _interestRate;
         loanTerm = _loanTerm;
         projectCompleted = false;
-    }</td>
+    }</h6>
     
-    <td>function deposit() external payable {
+    <h6>function deposit() external payable {
         require(msg.value == loanAmount, "Incorrect deposit amount");
         uint bnbToMint = loanAmount / 10**18;
         venusProtocol.mint(msg.sender, bnbToMint);
-    }</td>
+    }</h6>
     
-    <td>function borrow() external onlyOwners {
+    <h6>function borrow() external onlyOwners {
         require(!projectCompleted, "Project already completed");
         uint bnbToBorrow = loanAmount / 10**18;
         venusProtocol.borrow(address(this), bnbToBorrow);
         borrowerC = msg.sender;
-    }</td>
+    }</h6>
     
-    <td>function repayLoan() external onlyBorrower {
+    <h6>function repayLoan() external onlyBorrower {
         uint bnbToRepay = loanAmount / 10**18;
         venusProtocol.repayBorrow(address(this), bnbToRepay);
         projectCompleted = true;
-    }</td>
+    }</h6>
     
-    <td>function calculateProfit() public onlyOwners view returns (uint) {
+    <h6>function calculateProfit() public onlyOwners view returns (uint) {
         require(projectCompleted, "Project not completed yet");
         totalProfit = (address(this).balance / 10**18) - loanAmount;
         uint aShare = totalProfit * 40 / 100;
         uint cShare = totalProfit * 40 / 100;
         uint conservationShare = totalProfit * 20 / 100;
         return aShare;
-   }</td>
+   }</h6>
     
-    <td>function distributeProfit() external onlyOwners {
+    <h6>function distributeProfit() external onlyOwners {
         require(projectCompleted, "Project not completed yet");
         uint aShare = calculateProfit();
         payable(ownerA).transfer(aShare * 10**18);
         payable(ownerB).transfer(aShare * 10**18);
         payable(borrowerC).transfer(calculateProfit() * 10**18);
-   }</td>
-    <td>function updateVenusProtocol(address _newVenusProtocol) external onlyOwners {
+   }</h6>
+    <h6>function updateVenusProtocol(address _newVenusProtocol) external onlyOwners {
     require(_newVenusProtocol != address(0), "Invalid address");
     venusProtocol = VenusProtocol(_newVenusProtocol);
 }
-}</td>
+}</h6>
 
-          </tr>
+         
 
 
         
           
-          <tr>
-      
+          <br>
+          <hr>
+          <br>
                     
 
 
-                <td>the Solidity code attached needs to be opened in Brownie (a Python-based development and testing framework for smart contracts targeting the Ethereum Virtual Machine)  filled with correct data in order to function correctly. The following data is necessary:</td>
+                <h6>the Solidity code attached needs to be opened in Brownie (a Python-based development and testing framework for smart contracts targeting the Ethereum Virtual Machine)  filled with correct data in order to function correctly. The following data is necessary:</h6>
 
-                <td>VenusProtocol contract address:&nbsp&nbsp This is the address of the Venus Protocol smart contract on the Binance Smart Chain. This needs to be passed as an argument to the BuildingProject constructor.</td>
+                <h6>VenusProtocol contract address:&nbsp&nbsp This is the address of the Venus Protocol smart contract on the Binance Smart Chain. This needs to be passed as an argument to the BuildingProject constructor.</h6>
 
-                <td>ownerA and ownerB addresses:&nbsp&nbsp These are the addresses of the two investors who will own the project initially. These addresses also need to be passed as arguments to the BuildingProject constructor.</td>
+                <h6>ownerA and ownerB addresses:&nbsp&nbsp These are the addresses of the two investors who will own the project initially. These addresses also need to be passed as arguments to the BuildingProject constructor.</h6>
 
-                <td>loanAmount:&nbsp&nbsp This is the total amount of BNB that will be borrowed from Venus Protocol to fund the project.</td>
+                <h6>loanAmount:&nbsp&nbsp This is the total amount of BNB that will be borrowed from Venus Protocol to fund the project.</h6>
 
-                <td>interestRate:&nbsp&nbsp This is the interest rate that will be charged on the loan.</td>
+                <h6>interestRate:&nbsp&nbsp This is the interest rate that will be charged on the loan.</h6>
 
-                <td>loanTerm:&nbsp&nbsp This is the term (in days) of the loan.</td>
+                <h6>loanTerm:&nbsp&nbsp This is the term (in days) of the loan.</h6>
 
-                <td>projectCompleted:&nbsp&nbsp This is a boolean flag that indicates whether the project has been completed or not.</td>
+                <h6>projectCompleted:&nbsp&nbsp This is a boolean flag that indicates whether the project has been completed or not.</h6>
 
-                <td>borrowerC:&nbsp&nbsp This is the address of the borrower who will receive the loan.</td>
+                <h6>borrowerC:&nbsp&nbsp This is the address of the borrower who will receive the loan.</h6>
 
-                <td>totalProfit:&nbsp&nbsp This is the total profit that will be distributed among the investors and borrower once the project is complete.</td>
+                <h6>totalProfit:&nbsp&nbsp This is the total profit that will be distributed among the investors and borrower once the project is complete.</h6>
                 
-                <td>address(this):&nbsp&nbsp This refers to the address of the BuildingProject contract.</td>
+                <h6>address(this):&nbsp&nbsp This refers to the address of the BuildingProject contract.</h6>
 
-                <td>msg.sender:&nbsp&nbsp This is the address of the user who is invoking the function.</td>
+                <h6>msg.sender:&nbsp&nbsp This is the address of the user who is invoking the function.</h6>
 
-                <td>payable:&nbsp&nbsp This is a Solidity keyword that allows a function to receive or send BNB.</td>
+                <h6>payable:&nbsp&nbsp This is a Solidity keyword that allows a function to receive or send BNB.</h6>
                 <!--<td>SC.1</td>
                 <td>SC.2</td>
                 <td>SC.3</td>
@@ -185,8 +186,7 @@ h6 {
                 <td>SC.9</td>
                 <td>SC.10</td>
                 <td>SC.11</td>-->
-          
-          </tr>
+        
         <br>
         <br>
         <hr>
