@@ -159,15 +159,7 @@ ul {
         
 
 
-         <strong> DBOF </strong>
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="{% url 'pro' %}"><u style="color:darkblue;"> BNB Smart Contracts</u></a>
-          <a class="dropdown-item" href="{% url 'payment2' %}"><u style="color:darkblue;"> Transfers & Payments </u></a>
-          <a class="dropdown-item" href="{% url 'ourcommunity1' %}"><u style="color:darkblue;"> Co-Serving Transactions Verification </u></a>
-
-        </div>
-      </li>
+         
 
 
       <!--<li class="nav-item active">
@@ -190,6 +182,15 @@ ul {
         <a class="nav-link" href="{% url 'login' %}">Login</a>
       </li>
       {% endif %}
+      <strong> Activities </strong>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="{% url 'pro' %}"><u style="color:darkblue;"> BNB Smart Contracts</u></a>
+          <a class="dropdown-item" href="{% url 'payment2' %}"><u style="color:darkblue;"> Transfer to Wallets </u></a>
+          <a class="dropdown-item" href="{% url 'ourcommunity1' %}"><u style="color:darkblue;"> Co-Serving Transactions Verification </u></a>
+
+        </div>
+      </li>
 
      <li class="nav-item active">
         <a class="nav-link" href="{% url 'impressum' %}">Impressum</a>
