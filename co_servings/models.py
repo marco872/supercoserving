@@ -1,6 +1,6 @@
 
 from django.db import models
-
+from django.utils import timezone
 
 
 
@@ -94,30 +94,17 @@ class Development(models.Model):
 	
 class Venue(models.Model):
 
-	CATEGORY = (
-		('Guestroom', 'Guestroom'),
-		('Display area', 'Display area'),
-		('Working station', 'Working station'),
-		('Office', 'Office'),
-		('Noursing room', 'Nursing room'),
-		('Food corner', 'Food corner'),
-		)
-	owner = models.CharField(max_length=200, blank=True, null=True)
-	property_price = models.CharField(max_length=200, blank=True, null=True)
-	location = models.CharField(max_length=200, blank=True, null=True)
-	name = models.CharField(max_length=200,blank=True, null=True)
-	category = models.CharField(max_length=200, null=True, choices=CATEGORY)
-	building = models.CharField(max_length=200, blank=True, null=True) #building cost+design+documentation and approval
-	total_project_price = models.CharField(max_length=200, blank=True, null=True) #project price+building price
-	temp =  models.CharField(max_length=200, blank=True, null=True)
-	temp_cost = models.CharField(max_length=200, blank=True, null=True)
-	apts = models.CharField(max_length=200, blank=True, null=True)
-	date_created = models.DateTimeField(auto_now_add=True, blank=True, null=True)
+	
+	Investor_A = models.CharField(max_length=50, default='DEFAULT VALUE', blank=True, null=True)
+	Investor_B = models.CharField(max_length=50, default='DEFAULT VALUE', blank=True, null=True)
+	Borrower_C = models.CharField(max_length=50, default='DEFAULT VALUE', blank=True, null=True)
+	Project_D = models.CharField(max_length=50, default='DEFAULT VALUE', blank=True, null=True)
 
+	request_form = models.FileField(upload_to='request_forms/')
 
 	
 	def __str__(self):
-		return self.location
+		return f"{self.venue} - {self.request_form.name}"
 
 
 class Liquidity(models.Model):

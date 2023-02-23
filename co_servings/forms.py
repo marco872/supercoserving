@@ -9,31 +9,29 @@ from .models import Venue, Liquidity, Collateral, Commit, Booking, Booking1, Boo
 class VenueForm(ModelForm):
 	class Meta:
 		model = Venue
-		fields = ('owner', 'property_price', 'location',  'category', 'building', 'total_project_price', 'temp')
+		fields = ('Investor_A', 'Investor_B', 'Borrower_C',  'Project_D')
 
 		widgets = {
-			'owner': forms.TextInput(attrs={'class':'form-control'}),
-			'property_price': forms.TextInput(attrs={'class':'form-control'}),
+			'Investor_A': forms.TextInput(attrs={'class':'form-control'}),
+			'Investor_B': forms.TextInput(attrs={'class':'form-control'}),
 			
 			
-			'location': forms.TextInput(attrs={'class':'form-control'}),
+			'Borrower_C': forms.TextInput(attrs={'class':'form-control'}),
 			
-			'building': forms.TextInput(attrs={'class':'form-control'}),
+			'Project_D': forms.TextInput(attrs={'class':'form-control'}),
 			
-			'total_project_price': forms.TextInput(attrs={'class':'form-control'}),
-			'temp': forms.TextInput(attrs={'class':'form-control'}),
+			
 			
 			}	
 		
 		labels = {
-            'owner': 'Owner : example JODOE, etc..',
+            'Investor_A': 'Investor_A : example JODOE, etc..',
            
-            'property_price': 'Property_Price : example € 2.500.000, etc...',
+            'Investor_B': 'Investor_B : example  JODOE etc...',
           
-            'location': 'Location : example 1.1-milan/1, 2-berlin/1, etc...',
-            'building': 'Building : example fbm-2, fbm-3, etc... from Design-Build Catalogue in main menu',
-            'total_project_price': 'Total_Project_coast: example € 7.500.000, etc...',
-            'temp': 'Temp: example  fom-1, fom-2, etc... from Design-Build Catalogue in main menu',
+            'Borrower_C': 'Borrower_C : example  JODOE etc...',
+            'Project_D': 'Project_D : example fbm-2, fbm-3, etc... from Design-Build Catalogue in main menu',
+           
            
             }
 
