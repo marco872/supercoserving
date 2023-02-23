@@ -29,7 +29,7 @@ class VenueForm(ModelForm):
            
             'Investor_B': 'Investor_B : example  JODOE/BNB amount/personal wallet',
           
-            'Borrower_C': 'Borrower_C : example  JODOE7BNB amount/personal wallet',
+            'Borrower_C': 'Borrower_C : example  JODOE/BNB amount/personal wallet',
             'Project_D': 'Project_D : example fbm-2, fbm-3, etc... from Design-Build Catalogue in main menu/location/',
            
            
