@@ -95,16 +95,16 @@ class Development(models.Model):
 class Venue(models.Model):
 
 	
-	Investor_A = models.CharField(max_length=50, default='DEFAULT VALUE', blank=True, null=True)
-	Investor_B = models.CharField(max_length=50, default='DEFAULT VALUE', blank=True, null=True)
-	Borrower_C = models.CharField(max_length=50, default='DEFAULT VALUE', blank=True, null=True)
-	Project_D = models.CharField(max_length=50, default='DEFAULT VALUE', blank=True, null=True)
+	Investor_A = models.CharField(max_length=50, blank=True, null=True)
+	Investor_B = models.CharField(max_length=50, blank=True, null=True)
+	Borrower_C = models.CharField(max_length=50, blank=True, null=True)
+	Project_D = models.CharField(max_length=50, blank=True, null=True)
 
 	request_form = models.FileField(upload_to='request_forms/')
 
 	
 	def __str__(self):
-		return f"{self.venue} - {self.request_form.name}"
+		return self.Project_D 
 
 
 class Liquidity(models.Model):
