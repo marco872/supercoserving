@@ -25,12 +25,12 @@ class VenueForm(ModelForm):
 			}	
 		
 		labels = {
-            'Investor_A': 'Investor_A : example JODOE, etc..',
+            'Investor_A': 'Investor_A : example JODOE/BNB amount/personal wallet',
            
-            'Investor_B': 'Investor_B : example  JODOE etc...',
+            'Investor_B': 'Investor_B : example  JODOE/BNB amount/personal wallet',
           
-            'Borrower_C': 'Borrower_C : example  JODOE etc...',
-            'Project_D': 'Project_D : example fbm-2, fbm-3, etc... from Design-Build Catalogue in main menu',
+            'Borrower_C': 'Borrower_C : example  JODOE7BNB amount/personal wallet',
+            'Project_D': 'Project_D : example fbm-2, fbm-3, etc... from Design-Build Catalogue in main menu/location/',
            
            
             }
