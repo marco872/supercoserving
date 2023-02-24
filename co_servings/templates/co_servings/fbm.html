@@ -152,7 +152,7 @@ h6 {
                     
 
 
-                <h6>The above Solidity code  needs to be completed with the following data in order to function correctly:</h6>
+                <h6><strong>The above Solidity code  needs to be completed with the following data in order to function correctly:</strong></h6>
 
                 <h6>VenusProtocol contract address:&nbsp&nbsp This is the address of the Venus Protocol smart contract on the Binance Smart Chain. This needs to be passed as an argument to the BuildingProject constructor.</h6>
 
@@ -175,6 +175,52 @@ h6 {
                 <h6>msg.sender:&nbsp&nbsp This is the address of the user who is invoking the function.</h6>
 
                 <h6>payable:&nbsp&nbsp This is a Solidity keyword that allows a function to receive or send BNB.</h6>
+
+                <h6><strong>The following Solidity code  restricts  borrowerC from withdrawing funds from the Venus Protocol's borrow section until they have met certain conditions:</strong></h6>
+
+                <h6> // SPDX-LICENCE-Identifier : MIT</h6>
+
+                <h6>pragma solidity ^0.8.0;</h6>
+
+                <h6>import "@openzeppelin/contracts/token/ERC20/ERC20.sol";</h6>
+
+                <h6>contract VenusProtocolBorrow {
+                address investorA;
+                address borrowerC;
+                address land;
+                address projectD;
+                bool hasPurchasedLand;
+                bool hasApprovalToBuild;
+
+                constructor(address _investorA, address _borrowerC, address _land, address _projectD) {
+                investorA = _investorA;
+                borrowerC = _borrowerC;
+                land = _land;
+                projectD = _projectD;
+                hasPurchasedLand = false;
+                hasApprovalToBuild = false;
+                }</h6>
+
+                <h6>function purchaseLand() external {
+                // Code to handle purchase of land
+                hasPurchasedLand = true;
+                }</h6>
+
+                <h6> function getApprovalToBuild() external {
+                // Code to handle getting approval to build
+                hasApprovalToBuild = true;
+                }</h6>
+
+                <h6>function withdrawFunds(uint256 _amount) external {
+                require(msg.sender == borrowerC, "Only borrower C can withdraw funds");
+                require(hasPurchasedLand && hasApprovalToBuild, "Borrower C cannot withdraw funds until land is purchased and approval to build is obtained");
+                require(ERC20(0x123...).balanceOf(address(this)) >= _amount, "Insufficient funds");
+                // Transfer the funds to the borrower's address
+                ERC20(0x123...).transfer(borrowerC, _amount);
+                }
+                }</h6>
+
+
                 <!--<td>SC.1</td>
                 <td>SC.2</td>
                 <td>SC.3</td>
