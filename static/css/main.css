@@ -29,7 +29,7 @@
 
 
 
-@media screen and (max-width: 300px) {
+@media screen and (max-width: 150px) {
   div {
     font-size: x-small;
     padding: 0;
