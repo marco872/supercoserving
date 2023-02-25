@@ -9,6 +9,17 @@ class TransactionForm(forms.ModelForm):
         model = Transaction
         fields = ['date', 'description', 'amount']
 
+
+        widgets = {
+			'data': forms.TextInput(attrs={'class':'form-control'}),
+			'description': forms.TextInput(attrs={'class':'form-control'}),
+			
+			
+			'amount': forms.TextInput(attrs={'class':'form-control'}),
+			}
+
+		
+
 class VenueForm(ModelForm):
 	class Meta:
 		model = Venue
