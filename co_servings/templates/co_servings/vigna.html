@@ -55,49 +55,39 @@ h6 {
 
 
 
-<br>
+{% if user.is_authenticated %}
+      <li class="nav-item active">
+        <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a
+          class="nav-link dropdown-toggle"
+          href="#"
+          id="navbarDropdown"
+          role="button"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+        >
+          <strong> Activities </strong>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="{% url 'pro' %}"><u style="color:darkblue;"> BNB Smart Contracts</u></a>
+          <a class="dropdown-item" href="{% url 'payment2' %}"><u style="color:darkblue;"> Transfer to Wallets </u></a>
+          <a class="dropdown-item" href="{% url 'venue' %}"><u style="color:darkblue;"> Stakeholders Data </u></a>
 
-<div class="container" style="background-color: #ffd54f ; margin-top: -70px; " >
+        </div>
+      </li>
 
-<h2 style="color:#795548; margin-top: 0px;"><strong>Connecting Stackholders with Smart Contracts</strong> </h3>
-		
-<br>
-<h3 style="color:#795548;margin-left: 100px; margin-top: 0px;">co-serving stakeholders interaction  </h3>
-		
-	
+      {% else %}
+      <li class="nav-item active">
+        <a class="nav-link" href="{% url 'register_user' %}">Register</a>
+      </li>
 
-
- <img src="{% static 'images/action.jpg' %}"
-            style="
-            width:1000px;
-            height:600px;
-            border: solid 20px #ffd54f;
-            margin-left: 0px;"/>
-  	
-</div>
-
-
-
-
-<br>
-
-<div class="container" style="background-color: #ffd54f ; margin-top: -70px; " >
-
-
-		
-	
-
-
- <img src="{% static 'images/multichain.jpg' %}"
-            style="
-            width:1000px;
-            height:600px;
-            border: solid 20px #ffd54f;
-            margin-left: 0px;"/>
-  	
-</div>
-
-<h3 style="color:#795548;margin-left: 100px; margin-top: 0px;">co-serving smart contrancts money transfer system </h3>
-
+      <li class="nav-item active">
+        <a class="nav-link" href="{% url 'login' %}">Login</a>
+      </li>
+      {% endif %}
+      
 {% endblock %}
 </body>
