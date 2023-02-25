@@ -18,7 +18,7 @@ class TransactionForm(forms.ModelForm):
 			'amount': forms.TextInput(attrs={'class':'form-control'}),
 			}
 
-		
+	
 
 class VenueForm(ModelForm):
 	class Meta:
