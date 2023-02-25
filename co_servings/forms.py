@@ -1,10 +1,13 @@
 from django import forms
 from django.forms import ModelForm
-from .models import Venue, Liquidity, Collateral, Commit, Booking, Booking1, Booking2, Booking3, Booking4, Location1, Location2, Location3, Location4, Location5
+from .models import Venue, Liquidity, Collateral, Commit, Booking, Booking1, Booking2, Booking3, Booking4, Location1, Location2, Location3, Location4, Location5, Transaction
+from .models import Transaction
 
 
-
-
+class TransactionForm(forms.ModelForm):
+    class Meta:
+        model = Transaction
+        fields = ['date', 'description', 'amount']
 
 class VenueForm(ModelForm):
 	class Meta:

@@ -80,7 +80,7 @@ urlpatterns = [
     path('location3/', views.location3, name="location3"),
     path('location4/', views.location4, name="location4"),
     path('location5/', views.location5, name="location5"),
-
+    path('ledger_view/', views.ledger_view,name="ledger_view"),
 
 
 ]   

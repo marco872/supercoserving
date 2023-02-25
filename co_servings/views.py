@@ -6,13 +6,20 @@ from django.http import HttpResponseRedirect
 
 from .models import *
 
-from .forms import VenueForm, LiquidityForm, CollateralForm, CommitForm, BookingForm, Booking1Form, Booking2Form, Booking3Form, Booking4Form, Location1Form, Location2Form, Location3Form, Location4Form, Location5Form
-
+from .forms import VenueForm, LiquidityForm, CollateralForm, CommitForm, BookingForm, Booking1Form, Booking2Form, Booking3Form, Booking4Form, Location1Form, Location2Form, Location3Form, Location4Form, Location5Form, Transaction
+from .forms import TransactionForm
 # Create your views here.
 
 
 
-
+def ledger_view(request):
+    form = TransactionForm()
+    if request.method == 'POST':
+        form = TransactionForm(request.POST)
+        if form.is_valid():
+            form.save()
+            form = TransactionForm()
+    return render(request, 'ledger.html', {'form': form})
 
 
 

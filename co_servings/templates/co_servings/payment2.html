@@ -53,6 +53,13 @@ h5 {
 
 {% load static %}
 
+<h1>Ledger</h1>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Save</button>
+</form>
+
 <h4> Transfer to Wallets:<h4>
 
 
