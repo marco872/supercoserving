@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 # Register your models here.
-from .models import Webinvestor, Project, Liquidity_Pool, Investment, Development, Venue, Liquidity, Building, Plan, Token, Guest, Information1, Information2, Hostingrules, Vaccineprotocol1, Vaccineprotocol2, Rentreduction, Tokenprogram1, Tokenprogram2, Rentopportunity, Ourcommunity1, Ourcommunity2, Development1, Overview1, Overview2, Guestrules, Costtrasparency, Guestopportunity, Reservation, Payment1, Payment2, Trading, Investorsrules, Tradingclarity, Tokenprogram3, Tradingdesk, Ourcommunity3, Report, News, News1, News2, News3, News4, Collateral, Gov, Fbm, Owner, Gin, Pro, Ten, Sub, Impressum, Vigna, Stand, Apts, Commit, Design1, Design2, Design3, Design4, Design5, Booking, Booking1, Booking2, Booking3, Booking4, Location1, Location2, Location3, Location4, Location5
+from .models import Webinvestor, Project, Liquidity_Pool, Investment, Development, Venue, Liquidity, Building, Plan, Token, Guest, Information1, Information2, Hostingrules, Vaccineprotocol1, Vaccineprotocol2, Rentreduction, Tokenprogram1, Tokenprogram2, Rentopportunity, Ourcommunity1, Ourcommunity2, Development1, Overview1, Overview2, Guestrules, Costtrasparency, Guestopportunity, Reservation, Payment1, Payment2, Trading, Investorsrules, Tradingclarity, Tokenprogram3, Tradingdesk, Ourcommunity3, Report, News, News1, News2, News3, News4, Collateral, Gov, Fbm, Owner, Gin, Pro, Ten, Sub, Impressum, Vigna, Stand, Apts, Commit, Design1, Design2, Design3, Design4, Design5, Booking, Booking1, Booking2, Booking3, Booking4, Location1, Location2, Location3, Location4, Location5, Transaction
 
 
 admin.site.register(Webinvestor)
@@ -75,3 +75,4 @@ admin.site.register(Location2)
 admin.site.register(Location3)
 admin.site.register(Location4)
 admin.site.register(Location5)
+admin.site.register(Transaction)
