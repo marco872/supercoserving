@@ -27,10 +27,13 @@
 
 
 @media screen and (max-width: 500px) {
-  img {
-    max-width: 100%;
-    height: auto;
+  body {
+    font-size: 16px; /* adjust font size for smaller screens */
+    width: 100%; /* make the page width 100% of the viewport */
+    padding: 0; /* remove any padding from the body element */
   }
+  
+  /* any other styles you want to apply for smaller screens */
 }
 
 body{
