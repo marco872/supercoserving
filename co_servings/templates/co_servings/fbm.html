@@ -58,17 +58,17 @@ h6 {
           <br>
          
 
-           <h6> // SPDX-LICENCE-Identifier : MIT</h6>
+           <h6 style="color:white;"> // SPDX-LICENCE-Identifier : MIT</h6>
 
-<h6>pragma solidity ^0.8.0;</h6>
+<h6 style="color:white;">pragma solidity ^0.8.0;</h6>
 
-<h6>interface VenusProtocol {
+<h6 style="color:white;">interface VenusProtocol {
     function mint(address, uint) external returns (uint);
     function borrow(address, uint) external returns (uint);
     function repayBorrow(address, uint) external returns (uint);
 }</h6>
 
-<h6>contract BuildingProject {
+<h6 style="color:white;">contract BuildingProject {
     address public ownerA;
     address public ownerB;
     address public borrowerC;
@@ -80,17 +80,17 @@ h6 {
 
     VenusProtocol public venusProtocol;}</h6>
     
-    <h6>modifier onlyOwners {
+    <h6 style="color:white;">modifier onlyOwners {
         require(msg.sender == ownerA || msg.sender == ownerB, "Sender not authorized");
         _;
     }</h6>
     
-    <h6>modifier onlyBorrower {
+    <h6 style="color:white;">modifier onlyBorrower {
         require(msg.sender == borrowerC, "Sender not authorized");
         _;
     }</h6>
     
-    <h6>constructor(address _venusProtocol, address _ownerA, address _ownerB, uint _loanAmount, uint _interestRate, uint _loanTerm) {
+    <h6 style="color:white;">constructor(address _venusProtocol, address _ownerA, address _ownerB, uint _loanAmount, uint _interestRate, uint _loanTerm) {
         venusProtocol = VenusProtocol(_venusProtocol);
         ownerA = _ownerA;
         ownerB = _ownerB;
@@ -100,26 +100,26 @@ h6 {
         projectCompleted = false;
     }</h6>
     
-    <h6>function deposit() external payable {
+    <h6 style="color:white;">function deposit() external payable {
         require(msg.value == loanAmount, "Incorrect deposit amount");
         uint bnbToMint = loanAmount / 10**18;
         venusProtocol.mint(msg.sender, bnbToMint);
     }</h6>
     
-    <h6>function borrow() external onlyOwners {
+    <h6 style="color:white;">function borrow() external onlyOwners {
         require(!projectCompleted, "Project already completed");
         uint bnbToBorrow = loanAmount / 10**18;
         venusProtocol.borrow(address(this), bnbToBorrow);
         borrowerC = msg.sender;
     }</h6>
     
-    <h6>function repayLoan() external onlyBorrower {
+    <h6 style="color:white;">function repayLoan() external onlyBorrower {
         uint bnbToRepay = loanAmount / 10**18;
         venusProtocol.repayBorrow(address(this), bnbToRepay);
         projectCompleted = true;
     }</h6>
     
-    <h6>function calculateProfit() public onlyOwners view returns (uint) {
+    <h6 style="color:white;">function calculateProfit() public onlyOwners view returns (uint) {
         require(projectCompleted, "Project not completed yet");
         totalProfit = (address(this).balance / 10**18) - loanAmount;
         uint aShare = totalProfit * 40 / 100;
@@ -128,7 +128,7 @@ h6 {
         return aShare;
    }</h6>
     
-    <h6>function distributeProfit() external onlyOwners {
+    <h6 style="color:white;">function distributeProfit() external onlyOwners {
         require(projectCompleted, "Project not completed yet");
         uint aShare = calculateProfit();
         payable(ownerA).transfer(aShare * 10**18);
@@ -155,27 +155,27 @@ h6 {
                 <h5 style="color:brown;"><strong>The above Solidity code  needs to be completed with the following data in order to function correctly:</strong></h5>
                 <br>
 
-                <h6>VenusProtocol contract address:&nbsp&nbsp This is the address of the Venus Protocol smart contract on the Binance Smart Chain. This needs to be passed as an argument to the BuildingProject constructor.</h6>
+                <h6 style="color:white;">VenusProtocol contract address:&nbsp&nbsp This is the address of the Venus Protocol smart contract on the Binance Smart Chain. This needs to be passed as an argument to the BuildingProject constructor.</h6>
 
-                <h6>ownerA and ownerB addresses:&nbsp&nbsp These are the addresses of the two investors who will own the project initially. These addresses also need to be passed as arguments to the BuildingProject constructor.</h6>
+                <h6 style="color:white;">ownerA and ownerB addresses:&nbsp&nbsp These are the addresses of the two investors who will own the project initially. These addresses also need to be passed as arguments to the BuildingProject constructor.</h6>
 
-                <h6>loanAmount:&nbsp&nbsp This is the total amount of BNB that will be borrowed from Venus Protocol to fund the project.</h6>
+                <h6 style="color:white;">loanAmount:&nbsp&nbsp This is the total amount of BNB that will be borrowed from Venus Protocol to fund the project.</h6>
 
-                <h6>interestRate:&nbsp&nbsp This is the interest rate that will be charged on the loan.</h6>
+                <h6 style="color:white;">interestRate:&nbsp&nbsp This is the interest rate that will be charged on the loan.</h6>
 
-                <h6>loanTerm:&nbsp&nbsp This is the term (in days) of the loan.</h6>
+                <h6 style="color:white;">loanTerm:&nbsp&nbsp This is the term (in days) of the loan.</h6>
 
-                <h6>projectCompleted:&nbsp&nbsp This is a boolean flag that indicates whether the project has been completed or not.</h6>
+                <h6 style="color:white;">projectCompleted:&nbsp&nbsp This is a boolean flag that indicates whether the project has been completed or not.</h6>
 
-                <h6>borrowerC:&nbsp&nbsp This is the address of the borrower who will receive the loan.</h6>
+                <h6 style="color:white;">borrowerC:&nbsp&nbsp This is the address of the borrower who will receive the loan.</h6>
 
-                <h6>totalProfit:&nbsp&nbsp This is the total profit that will be distributed among the investors and borrower once the project is complete.</h6>
+                <h6 style="color:white;">totalProfit:&nbsp&nbsp This is the total profit that will be distributed among the investors and borrower once the project is complete.</h6>
                 
-                <h6>address(this):&nbsp&nbsp This refers to the address of the BuildingProject contract.</h6>
+                <h6 style="color:white;">address(this):&nbsp&nbsp This refers to the address of the BuildingProject contract.</h6>
 
-                <h6>msg.sender:&nbsp&nbsp This is the address of the user who is invoking the function.</h6>
+                <h6 style="color:white;">msg.sender:&nbsp&nbsp This is the address of the user who is invoking the function.</h6>
 
-                <h6>payable:&nbsp&nbsp This is a Solidity keyword that allows a function to receive or send BNB.</h6>
+                <h6 style="color:white;">payable:&nbsp&nbsp This is a Solidity keyword that allows a function to receive or send BNB.</h6>
                 <br>
                 <hr>
                 <br>
@@ -184,13 +184,13 @@ h6 {
                 certain conditions:</strong></h5>
                 <br>
 
-                <h6> // SPDX-LICENCE-Identifier : MIT</h6>
+                <h6 style="color:white;"> // SPDX-LICENCE-Identifier : MIT</h6>
 
-                <h6>pragma solidity ^0.8.0;</h6>
+                <h6 style="color:white;">pragma solidity ^0.8.0;</h6>
 
-                <h6>import "@openzeppelin/contracts/token/ERC20/ERC20.sol";</h6>
+                <h6 style="color:white;">import "@openzeppelin/contracts/token/ERC20/ERC20.sol";</h6>
 
-                <h6>contract VenusProtocolBorrow {
+                <h6 style="color:white;">contract VenusProtocolBorrow {
                 address investorA;
                 address borrowerC;
                 address land;
@@ -207,17 +207,17 @@ h6 {
                 hasApprovalToBuild = false;
                 }</h6>
 
-                <h6>function purchaseLand() external {
+                <h6 style="color:white;">function purchaseLand() external {
                 // Code to handle purchase of land
                 hasPurchasedLand = true;
                 }</h6>
 
-                <h6> function getApprovalToBuild() external {
+                <h6 style="color:white;"> function getApprovalToBuild() external {
                 // Code to handle getting approval to build
                 hasApprovalToBuild = true;
                 }</h6>
 
-                <h6>function withdrawFunds(uint256 _amount) external {
+                <h6 style="color:white;">function withdrawFunds(uint256 _amount) external {
                 require(msg.sender == borrowerC, "Only borrower C can withdraw funds");
                 require(hasPurchasedLand && hasApprovalToBuild, "Borrower C cannot withdraw funds until land is purchased and approval to build is obtained");
                 require(ERC20(0x123...).balanceOf(address(this)) >= _amount, "Insufficient funds");
