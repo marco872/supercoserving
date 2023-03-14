@@ -135,7 +135,7 @@ h6 {
         payable(ownerB).transfer(aShare * 10**18);
         payable(borrowerC).transfer(calculateProfit() * 10**18);
    }</h6>
-    <h6>function updateVenusProtocol(address _newVenusProtocol) external onlyOwners {
+    <h6 style="color:white;">function updateVenusProtocol(address _newVenusProtocol) external onlyOwners {
     require(_newVenusProtocol != address(0), "Invalid address");
     venusProtocol = VenusProtocol(_newVenusProtocol);
 }
