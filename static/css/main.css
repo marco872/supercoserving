@@ -26,7 +26,7 @@
 
 
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 1000px) {
   body {
     font-size: 16px; /* adjust font size for smaller screens */
     width: 100%; /* make the page width 100% of the viewport */
