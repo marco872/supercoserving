@@ -6,7 +6,27 @@
 
 {% block content %}
 <body style="background-color: #0E0E2C; ">
+<style>
+.stacked-buttons {
+  display: block;
+  text-align: center;
+  width: 150px;
+  height: 50px;
+  line-height: 50px;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  margin: 10px auto;
+}
 
+.stacked-buttons:first-child {
+  background-color:#FF8800;
+  color:white;
+}
+
+
+</style>
 <img src="{% static 'images/tokenpre.jpg' %}"
             style=";
             width:1000px;
