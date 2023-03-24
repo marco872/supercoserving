@@ -60,7 +60,7 @@ ul {
       </li>
 
      
-      <li class="nav-item dropdown">
+      <!--<li class="nav-item dropdown">
         <a
         class="nav-link dropdown-toggle"
         href="#"
@@ -77,9 +77,19 @@ ul {
         <a class="dropdown-item" href="{% url 'stand' %}">Temporary Units</a>
         </div>
         
+      </li>-->
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <em style="color: brown;">Catalogue</em>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="{% url 'buildings' %}">Building Types</a>
+          <a class="dropdown-item" href="{% url 'stand' %}">Temporary Units</a>
+
+        </div>
+
       </li>
-
-
    
 
 
