@@ -103,7 +103,7 @@ ul {
         <a class="nav-link" href="{% url 'logout' %}" style="color: white;">Logout</a>
       </li>
 
-      <li class="nav-item dropdown">
+      <!--<li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle"
           href="#"
           id="navbarDropdown"
@@ -114,13 +114,16 @@ ul {
         >
           <strong style="color: white;"> Activities </strong>
         </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">-->
           
-          
-          <a class="dropdown-item" href="{% url 'venue' %}"><u style="color:darkblue;"> Stakeholders Data </u></a>
-          <a class="dropdown-item" href="{% url 'payment2' %}"><u style="color:darkblue;"> Transfer to Wallets </u></a>
-        </div>
-      </li>
+        <li class="nav-item active">  
+          <a class="dropdown-item" href="{% url 'venue' %}" style="color:white;"> Activities</a>
+        </li>
+        <li class="nav-item active"> 
+          <a class="dropdown-item" href="{% url 'payment2' %}" style="color:orange;"> Transfers</a>
+        </li>
+      </div>
+     
 
       {% else %}
       <li class="nav-item active">
