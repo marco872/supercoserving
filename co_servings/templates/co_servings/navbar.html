@@ -52,17 +52,15 @@ ul {
 
 
   </button>
-
- <ul class="navbar-nav" id="navbarNav"> 
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+  <ul class="navbar-nav mr-auto"> 
 
       <li class="nav-item active">
         <a class="nav-link" href="{% url 'development1' %}" style="color: white;"><strong>How it Works</strong></a>
-
-
       </li>
 
-     <li class="nav-item active">
-        <li class="nav-item dropdown">
+     
+      <li class="nav-item dropdown">
         <a
         class="nav-link dropdown-toggle"
         href="#"
@@ -78,7 +76,7 @@ ul {
         <a class="dropdown-item" href="{% url 'buildings' %}">Building Types</a>
         <a class="dropdown-item" href="{% url 'stand' %}">Temporary Units</a>
         </div>
-        </li>
+        
       </li>
 
 
