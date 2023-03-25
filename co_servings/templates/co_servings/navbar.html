@@ -24,10 +24,10 @@ ul {
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav ml-auto">
       <li class="nav-item">
-        <a class="nav-link" href="{% url 'development1' %}">How it Works</a>
+        <a class="nav-link" href="{% url 'development1' %}"style="color: white;">How it Works</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="{% url 'buildings' %}" style="color: brown;">Projects</a>
+        <a class="nav-link" href="{% url 'buildings' %}"style="color: brown;">Projects</a>
       </li>
       {% if user.is_authenticated %}
         <li class="nav-item dropdown">
@@ -41,14 +41,14 @@ ul {
         </li>
       {% else %}
         <li class="nav-item">
-          <a class="nav-link" href="{% url 'register_user' %}">Register</a>
+          <a class="nav-link" href="{% url 'register_user' %}"style="color: white;">Register</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{% url 'login' %}">Login</a>
+          <a class="nav-link" href="{% url 'login' %}"style="color: white;">Login</a>
         </li>
       {% endif %}
       <li class="nav-item">
-        <a class="nav-link" href="{% url 'news1' %}">Contact</a>
+        <a class="nav-link" href="{% url 'news1' %}"style="color: white;">Contact</a>
       </li>
     </ul>
   </div>
