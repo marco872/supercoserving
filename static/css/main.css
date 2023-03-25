@@ -47,3 +47,9 @@ background: #0E0E2C;
 
 }
 
+.message-container {
+    position: fixed;
+    top: 50px;
+    left: 50%;
+    transform: translateY(30%);
+}
