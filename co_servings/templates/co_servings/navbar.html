@@ -35,13 +35,13 @@ ul {
       </li>
       {% if user.is_authenticated %}
         <li class="nav-item dropdown">
-          <!--<a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ user.username }}</a>
-          <div class="dropdown-menu" aria-labelledby="userDropdown">-->
+          <!--<a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ user.username }}</a>-->
+          <div class="dropdown-menu" aria-labelledby="userDropdown">
             <a class="dropdown-item" href="{% url 'venue' %}" style="color:orange;">Activities</a>
             <a class="dropdown-item" href="{% url 'payment2' %}" style="color:orange; margin-right: 30px;">Transfers</a>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="{% url 'logout' %}" style="color: white; margin-right: 60px">Logout</a>
-          <!--</div>-->
+         </div>
         </li>
       {% else %}
         <li class="nav-item">
