@@ -13,7 +13,49 @@ ul {
 
 </style>
 
-<nav class="navbar navbar-expand-sm navbar-light bg-#0E0E2C ">
+<nav class="navbar navbar-expand-md navbar-light bg-#0E0E2C">
+  <a href="{% url 'home' %}" class="navbar-brand">
+    <img src="{% static 'images/green.png' %}" style="max-width: 80px;" alt="Green Image">
+    Co-Serving
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'development1' %}">How it Works</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'buildings' %}" style="color: brown;">Projects</a>
+      </li>
+      {% if user.is_authenticated %}
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ user.username }}</a>
+          <div class="dropdown-menu" aria-labelledby="userDropdown">
+            <a class="dropdown-item" href="{% url 'venue' %}" style="color:orange;">Activities</a>
+            <a class="dropdown-item" href="{% url 'payment2' %}" style="color:orange;">Transfers</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="{% url 'logout' %}" style="color: white;">Logout</a>
+          </div>
+        </li>
+      {% else %}
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'register_user' %}">Register</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'login' %}">Login</a>
+        </li>
+      {% endif %}
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'news1' %}">Contact</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
+<!--<nav class="navbar navbar-expand-sm navbar-light bg-#0E0E2C ">
   <a href="{% url 'home' %}">
     
     <button
@@ -106,4 +148,4 @@ ul {
   </div>
 
   
-</nav>
+</nav>-->
