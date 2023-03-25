@@ -47,3 +47,10 @@ background: #0E0E2C;
 
 }
 
+.navbar-toggler-icon {
+  color: orange;
+}
+
+.navbar-left {
+  float: left;
+}
