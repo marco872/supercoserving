@@ -1,11 +1,6 @@
 {% extends 'co_servings/main.html' %}
-
 {% load static %}
-
-
-
 {% block content %}
-
 <style type="text/css">
 .button {
 
@@ -45,117 +40,153 @@ h6 {
   
 </style>
 
+<body style="background-color: #0E0E2C; ">
 
 
+  <h1 style="color:red; margin-top: 150px;">Building Types </h1>
 
-<br>
+  <hr>
 
+  <h2 style="color:green;">Flex Building Model </h2>
 
-<div class="container">
+  <hr>
 
-	<div class="col">
+ <br>
 
-				
+          <h3 style="color:green;">fbm-2</h3><h5 style="color:blue;"> "2-story building :"</h5> <h5>  4 duplexes/ cons.cost € 700.000 </h5>
 
-				<h5 style="color:black; margin-left: 0px; margin-top: -50px;"><strong>Step-C :</strong>  DBOF CONTRACTS to execute  S-ACTIONS  are provided by BNB Co-Serving support team:</h5> 
-	  			
-	  			<hr>
-	  		
-			</div>
- 
-	<div class="container">
-	
-
-	  	<div class="row">
+          <img src="{% static 'images/building 5.PNG' %}"
+            style="object-fit:contain;
+            width:400px;
+            height:300px;
+            "/>
 
 
-	  		<div class="col">
-
-				<h5 style="color:blue;">  GOVERNMENTS:</h5>
-				<hr>
-				<h4>  <u style="color:darkblue;">  DBOF contracts</u> Public Pool collateraizes  Private Pool 
-	  			 </h4> </em>
-				
-
-				
-			</div>
-
-	  		<div class="col">
-
-				<h5 style="color:blue;">INVESTORS:</h5>
-				<hr>
-				<h4>  <u style="color:darkblue;">  DBOF contracts </u>  Provide  capital to Private Pool
-	  			
-	  			</h4>  
-				
-				
-			</div>
-
-			
-
-			<div class="col">
-
-				<h5 style="color:blue;"> PROPERTY OWNERS:</h5>
-				<hr>
-				<h4>  <u style="color:darkblue;"> DBOF contracts</u>  Borrow construction capital from P.P. Pool   </h4>
-			
-			</div>
-
-			<div class="col">
-
-				<h5 style="color:blue;">TENANTS/GUESTS:</h5>
-				<hr>
-				<h4> <u style="color:darkblue;"> DBOF contracts</u>  Rent apartments  financed by P.P. Pool and sublet flex rooms to Guests. </h4>
-
-			
-				
-			</div>
-			
-	
-			<br>
-
-			
-			
-
-		
-
-	
-			
-
-
-		</div>
-</div>
-
-<br>
-<br>
-
-<a href="{% url 'development1' %}">
+                
+                  <a href="{% url 'plan' %}">
                     
-                  <button class="button button4" style="background-color:#795548; color:white; margin-left: 435px; padding-right: 10px;  margin-bottom: 30px;"> Step-A Uploads</button> 
+                    <button class="button button4">Plans</button>    
 
-<br>
+                  </a> 
 
-<a href="{% url 'white' %}">
+                  
                     
-                  <button class="button button4" style="background-color:#795548; color:white; margin-left: 430px; padding-right: 10px;  margin-bottom: 30px;"> Step-B S-Actions</button> 
+               
+             <br>
+
+          <br>
+
+          <hr>
+          <br>
+
+          <h3 style="color:green;">fbm-3</h3><h5 style="color:blue;"> "4-story building :"</h5> <h5>  8 duplexes/ cons.cost € 1.000.000 </h5>
+
+          <img src="{% static 'images/building 4.PNG' %}"
+            style="object-fit:contain;
+            width:400px;
+            height:300px;
+           "/>
 
 
 
-
-<br>
-
- 
-
-	  	
-
-	  			
-	  				<a href="{% url 'payment1' %}">
+                    <a href="{% url 'plan' %}">
                     
-                  <button class="button button4" style="background-color:#795548; color:white; margin-left: 435px; padding-right: 10px;  margin-bottom: 30px;"> Step-D: Commit </button>    
+                      <button class="button button4">Plans</button>    
+
+                    </a> 
+
+                  
+              
+
+          <br>
+          <br>
+         
+
+    <hr>
+          
+
+          <br>
+          <br>
+          <h3 style="color:green;">fbm-6</h3><h5 style="color:blue;"> "6-story building :"</h5> <h5>  12 duplexes/ cons.cost € 2.000.000 </h5>
+
+
+
+          <img src="{% static 'images/building 3.PNG' %}"
+            style="object-fit:contain;
+            width:400px;
+            height:300px;
+           "/>
+
+
+
+                    
+                <a href="{% url 'plan' %}">
+                    
+                  <button class="button button4">Plans</button>    
 
                 </a> 
 
-	  	
+                
+                
+          <br>
+          <br>
+
+         
+
+  
+     <hr>
+          <br>
+
+          <h3 style="color:green;">fbm-10</h3><h5 style="color:blue;"> " fbm-3+fbm-6= 10-story development :"</h5> <h5>  20 duplexes/ cons.cost € 3.000.000 </h5>
+
+          <img src="{% static 'images/building 6.PNG' %}"
+            style="object-fit:contain;
+            width:400px;
+            height:300px;
+            "/>
+
+               
 
 
+                    <a href="{% url 'plan' %}">
+                    
+                      <button class="button button4">Plans</button>    
+
+                    </a> 
+
+                  
+                   
+               
+
+          <br>
+          <br>
+
+      <hr>
+          <br>
+
+          <h3 style="color:green;">fbm-16</h3><h5 style="color:blue;"> "fbm-3+fbm-6+fbm-6= 16-story development :"</h5> <h5>  32 duplexes/ cons.cost € 5.000.000 </h5>
+
+          <img src="{% static 'images/building 7.PNG' %}"
+            style="object-fit:contain;
+            width:400px;
+            height:300px;
+           "/>
+
+                
+                    <a href="{% url 'plan' %}">
+                    
+                      <button class="button button4">Plans</button>    
+
+                    </a> 
+
+                  
+                   
+               
+
+          <br>
+          <br> 
+          
+  
+         
 {% endblock %}
+</body>
