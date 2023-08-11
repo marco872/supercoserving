@@ -73,11 +73,14 @@ h4, h5, td {
   </div>
 
 </div>
+<br>
+<br>
+  <div style="margin: 20px 0; display: flex; flex-direction: column; align-items: center;">
 {% else %}
   <h6>Sorry! You Must Be Logged In To View This Page...</h6>
   <a href="{% url 'login' %}">Login Here</a>
 <!-- Non-authenticated content here -->
 {% endif %}
-
+ </div>
 </body>
 {% endblock %}
