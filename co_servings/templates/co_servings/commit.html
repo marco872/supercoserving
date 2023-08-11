@@ -40,13 +40,24 @@ h6 {
   
 </style>
 
+<div class="container" style="background-color: #0E0E2C; max-width: 320px; ">
+
 {% if user.is_authenticated %}
 
-  <h1>Add Commit To Agreements</h1>
-  <br/><br/>
-  {% if submitted %}
+ <a href="{% url 'gin' %}">
+  <button class="button button4 stacked-buttons">Crowdfunding (FundCr)</button>
+</a>
 
-      Your  Committed to this agrement Succefully!!!
+<a href="{% url 'pro' %}">
+  <button class="button button4 stacked-buttons">Collateral</button>
+</a>
+
+<a href="{% url 'commit' %}">
+  <button class="button button4 stacked-buttons">Borrowing</button>
+</a>
+ <br>
+ <br>
+  
 
   {% else %}
 
@@ -67,7 +78,7 @@ h6 {
 <h1>Sorry! You Must Be Logged In To View This Page...</h1>
 <a href="{% url 'login' %}">Login Here</a>
 
-  
+</div> 
 {% endif %}
 
 {% endblock %}
