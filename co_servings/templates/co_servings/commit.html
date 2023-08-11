@@ -19,8 +19,6 @@
   cursor: pointer;
 }
 
-}
-
 .button1 {border-radius: 2px;}
 .button2 {border-radius: 4px;}
 .button3 {border-radius: 8px;}
@@ -39,6 +37,7 @@ h4, h5, td {
     color: white;
 }
 /* Rest of your CSS styles here */
+/* ... other CSS styles ... */
 </style>
 
 <body style="background-color: #0E0E2C; ">
@@ -46,21 +45,16 @@ h4, h5, td {
 {% if user.is_authenticated %}
 <div class="container" style="background-color: #0E0E2C; max-width: 320px; ">
   <div style="margin-left: 0px">
-<br>
-<br>
-  <h1>Welcome, {{ user.username }}!</h1>
-  <!-- Navbar content here -->
-
+    <br><br>
+    <h1>Welcome, {{ user.username }}!</h1>
+    <!-- Navbar content here -->
   </div>
-  <br>
-  <br>
 
   <div style="margin: 20px 0; display: flex; flex-direction: column; align-items: center;">
 
     <a href="{% url 'gin' %}">
       <button class="button button4 stacked-buttons">Crowdfunding (FundCr)</button>
     </a>
-
     <br>
     <a href="{% url 'pro' %}">
       <button class="button button4 stacked-buttons">Collateral</button>
@@ -71,16 +65,17 @@ h4, h5, td {
     </a>
 
   </div>
-
 </div>
-<br>
-<br>
-  <div style="margin: 20px 0; display: flex; flex-direction: column; align-items: center;">
+
 {% else %}
-  <h6>Sorry! You Must Be Logged In To View This Page...</h6>
-  <a href="{% url 'login' %}">Login Here</a>
-<!-- Non-authenticated content here -->
+<div class="container" style="background-color: #0E0E2C; max-width: 320px; ">
+  <div style="margin: 20px 0; display: flex; flex-direction: column; align-items: center;">
+    <h6>Sorry! You Must Be Logged In To View This Page...</h6>
+    <a href="{% url 'login' %}">Login Here</a>
+    <!-- Non-authenticated content here -->
+  </div>
+</div>
 {% endif %}
- </div>
+
 </body>
 {% endblock %}
