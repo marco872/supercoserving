@@ -43,6 +43,9 @@ h6 {
 <body style="background-color: #0E0E2C; ">
 
 <div class="container" style="background-color: #0E0E2C; max-width: 320px; ">
+  <div style="display: flex; margin-left: 0px">
+  
+  <div style="flex: 1;">
 
 {% if user.is_authenticated %}
   <a href="{% url 'gin' %}">
@@ -73,6 +76,9 @@ h6 {
 {% endif %}
 
 </div>
+</div>
+</div>
+
 
 {% endblock %}
 </body>
