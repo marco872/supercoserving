@@ -69,8 +69,11 @@ h6 {
 	  	<input type="submit" value="Submit" class="btn btn-secondary">
 
 	</form>
+{% endif %}
 
-{% if user.is_authenticated %}
+<br><br>
+
+  {% if user.is_authenticated %}
 
    {% if submitted %}
 
