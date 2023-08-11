@@ -6,7 +6,6 @@
 {% block content %}
 <style type="text/css">
 .button {
-
   margin: 4px 2px;
 }
 
@@ -16,70 +15,51 @@
 .button4 {border-radius: 12px;}
 .button5 {border-radius: 50%;}
 
-
-}
-
-
-
 h6 {
     color:white;
-  }
+}
 
-
-  h1 {
+h1 {
     color: white;
+}
 
-  }
- 
-  h4, h5, td {
+h4, h5, td {
     color: white;
-  }
- 
-
-
-/* Your CSS styles here */
+}
+/* Rest of your CSS styles here */
 </style>
 
 <body style="background-color: #0E0E2C; ">
   
 {% if user.is_authenticated %}
 <div class="container" style="background-color: #0E0E2C; max-width: 320px; ">
-  <div style="display: flex; margin-left: 0px">
-  
-  <div style="flex: 1;">
+  <div style="margin-left: 0px">
 
+  <h1>Welcome, {{ user.username }}!</h1>
+  <!-- Navbar content here -->
 
-  <a href="{% url 'gin' %}">
-    <button class="button button4 stacked-buttons">Crowdfunding (FundCr)</button>
-  </a>
-  <a href="{% url 'pro' %}">
-    <button class="button button4 stacked-buttons">Collateral</button>
-  </a>
-  <a href="{% url 'commit' %}">
-    <button class="button button4 stacked-buttons">Borrowing</button>
-  </a>
-  <br><br>
+  </div>
 
-  <!--{% if submitted %}
-    Your Selection was Submitted Successfully!!!
-    <br><br>
-  {% else %}
-    <form action=" " method="POST">
-      {% csrf_token %}
-      {{ form.as_p }}
-      <input type="submit" value="Submit" class="btn btn-secondary">
-    </form>
-  {% endif %}-->
+  <div style="margin: 20px 0; display: flex; flex-direction: column; align-items: center;">
 
+    <a href="{% url 'gin' %}">
+      <button class="button button4 stacked-buttons">Crowdfunding (FundCr)</button>
+    </a>
+    <a href="{% url 'pro' %}">
+      <button class="button button4 stacked-buttons">Collateral</button>
+    </a>
+    <a href="{% url 'commit' %}">
+      <button class="button button4 stacked-buttons">Borrowing</button>
+    </a>
+
+  </div>
+
+</div>
 {% else %}
   <h6>Sorry! You Must Be Logged In To View This Page...</h6>
   <a href="{% url 'login' %}">Login Here</a>
+<!-- Non-authenticated content here -->
 {% endif %}
 
-</div>
-</div>
-</div>
-
-
-{% endblock %}
 </body>
+{% endblock %}
