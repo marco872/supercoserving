@@ -41,13 +41,14 @@ h6 {
 </style>
 
 <body style="background-color: #0E0E2C; ">
-
+  
+{% if user.is_authenticated %}
 <div class="container" style="background-color: #0E0E2C; max-width: 320px; ">
   <div style="display: flex; margin-left: 0px">
   
   <div style="flex: 1;">
 
-{% if user.is_authenticated %}
+
   <a href="{% url 'gin' %}">
     <button class="button button4 stacked-buttons">Crowdfunding (FundCr)</button>
   </a>
