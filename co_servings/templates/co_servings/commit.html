@@ -20,17 +20,17 @@
 
 
 h6 {
-    color:black;
+    color:white;
   }
 
 
   h1 {
-    color: black;
+    color: white;
 
   }
  
   h4, h5, td {
-    color: black;
+    color: white;
   }
  
 
@@ -64,7 +64,7 @@ h6 {
   {% endif %}
 
 {% else %}
-  <h1>Sorry! You Must Be Logged In To View This Page...</h1>
+  <h6>Sorry! You Must Be Logged In To View This Page...</h6>
   <a href="{% url 'login' %}">Login Here</a>
 {% endif %}
 
