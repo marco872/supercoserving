@@ -1,3 +1,4 @@
+
 {% extends 'co_servings/main.html' %}
 
 {% block content %}
@@ -34,62 +35,39 @@ h6 {
  
 
 
- 
-
-
-  
+/* Your CSS styles here */
 </style>
 
 <div class="container" style="background-color: #0E0E2C; max-width: 320px; ">
 
 {% if user.is_authenticated %}
-
   <a href="{% url 'gin' %}">
     <button class="button button4 stacked-buttons">Crowdfunding (FundCr)</button>
   </a>
-
   <a href="{% url 'pro' %}">
     <button class="button button4 stacked-buttons">Collateral</button>
   </a>
-
   <a href="{% url 'commit' %}">
     <button class="button button4 stacked-buttons">Borrowing</button>
   </a>
- <br>
- <br>
-  
+  <br><br>
+
+  {% if submitted %}
+    Your Selection was Submitted Successfully!!!
+    <br><br>
+  {% else %}
+    <form action=" " method="POST">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <input type="submit" value="Submit" class="btn btn-secondary">
+    </form>
+  {% endif %}
 
 {% else %}
-
-	<form action=" " method="POST">
-	  	{% csrf_token %}
-
-	  	{{ form.as_p }}
-
-	  	<input type="submit" value="Submit" class="btn btn-secondary">
-
-	</form>
-{% endif %}
-
-<br><br>
-
-  {% if user.is_authenticated %}
-
-   {% if submitted %}
-
-      Your Selection was Submitted Succefully!!!
-
-<br/><br/>
-
-{% else %}
-<h1>Sorry! You Must Be Logged In To View This Page...</h1>
-<a href="{% url 'login' %}">Login Here</a>
-
-
+  <h1>Sorry! You Must Be Logged In To View This Page...</h1>
+  <a href="{% url 'login' %}">Login Here</a>
 {% endif %}
 
 </div>
 
 {% endblock %}
-
- 
