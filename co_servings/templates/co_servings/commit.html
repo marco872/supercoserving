@@ -44,22 +44,22 @@ h6 {
 
 {% if user.is_authenticated %}
 
- <a href="{% url 'gin' %}">
-  <button class="button button4 stacked-buttons">Crowdfunding (FundCr)</button>
-</a>
+  <a href="{% url 'gin' %}">
+    <button class="button button4 stacked-buttons">Crowdfunding (FundCr)</button>
+  </a>
 
-<a href="{% url 'pro' %}">
-  <button class="button button4 stacked-buttons">Collateral</button>
-</a>
+  <a href="{% url 'pro' %}">
+    <button class="button button4 stacked-buttons">Collateral</button>
+  </a>
 
-<a href="{% url 'commit' %}">
-  <button class="button button4 stacked-buttons">Borrowing</button>
-</a>
+  <a href="{% url 'commit' %}">
+    <button class="button button4 stacked-buttons">Borrowing</button>
+  </a>
  <br>
  <br>
   
 
-  {% else %}
+{% else %}
 
 	<form action=" " method="POST">
 	  	{% csrf_token %}
@@ -70,7 +70,11 @@ h6 {
 
 	</form>
 
-   {% endif %}
+{% if user.is_authenticated %}
+
+   {% if submitted %}
+
+      Your Selection was Submitted Succefully!!!
 
 <br/><br/>
 
@@ -81,6 +85,8 @@ h6 {
 
 {% endif %}
 
+</div>
+
 {% endblock %}
 
-</div> 
+ 
