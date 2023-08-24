@@ -46,199 +46,47 @@ h6 {
 </style>
 <body style="background-color: #0E0E2C; ">
 <div class="container" style="background-color: #0E0E2C; margin-top: 90px;  max-width: 320px; " > 
-<!--<div class="container">
-  <hr>
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
 
-      <div class="row">
+contract Crowdfunding {
+    mapping(address => uint256) public balances;
 
-        <div class="col">
+    function deposit(uint256 amount, uint256 projectId) external payable {
+        // Implement your logic here, considering fiat transactions
+        // Update balances and emit events
+    }
 
-        
-          <h5 style="color:brown;">Smart Contracts: this is the solidity code prepared by A.I and deployed by co-serving  </h5>
+    // Other functions...
+}
 
-          <br>-->
-         
+contract CollateralInvestment {
+    mapping(address => uint256) public collateralAmounts;
 
-<h6 style="color:white;"> // SPDX-LICENCE-Identifier : MIT</h6>
+    function createCollateral(uint256 amount, uint256 projectId) external {
+        // Implement your logic here, considering fiat transactions
+        // Update collateralAmounts and emit events
+    }
 
-<h6 style="color:white;">pragma solidity ^0.8.0;</h6>
+    // Other functions...
+}
 
-<h6 style="color:white;">interface VenusProtocol {
-    function mint(address, uint) external returns (uint);
-    function borrow(address, uint) external returns (uint);
-    function repayBorrow(address, uint) external returns (uint);
-}</h6>
+contract LiquidityPool {
+    mapping(uint256 => uint256) public availableFunds;
 
-<h6 style="color:white;">contract BuildingProject {
-    address public ownerA;
-    address public ownerB;
-    address public borrowerC;
-    uint public loanAmount;
-    uint public interestRate;
-    uint public loanTerm;
-    uint public totalProfit;
-    bool public projectCompleted;
+    function borrow(uint256 amount, uint256 projectId) external {
+        // Implement your logic here, considering fiat transactions
+        // Update availableFunds and emit events
+    }
 
-    VenusProtocol public venusProtocol;}</h6>
-    
-    <h6 style="color:white;">modifier onlyOwners {
-        require(msg.sender == ownerA || msg.sender == ownerB, "Sender not authorized");
-        _;
-    }</h6>
-    
-    <h6 style="color:white;">modifier onlyBorrower {
-        require(msg.sender == borrowerC, "Sender not authorized");
-        _;
-    }</h6>
-    
-    <h6 style="color:white;">constructor(address _venusProtocol, address _ownerA, address _ownerB, uint _loanAmount, uint _interestRate, uint _loanTerm) {
-        venusProtocol = VenusProtocol(_venusProtocol);
-        ownerA = _ownerA;
-        ownerB = _ownerB;
-        loanAmount = _loanAmount;
-        interestRate = _interestRate;
-        loanTerm = _loanTerm;
-        projectCompleted = false;
-    }</h6>
-    
-    <h6 style="color:white;">function deposit() external payable {
-        require(msg.value == loanAmount, "Incorrect deposit amount");
-        uint bnbToMint = loanAmount / 10**18;
-        venusProtocol.mint(msg.sender, bnbToMint);
-    }</h6>
-    
-    <h6 style="color:white;">function borrow() external onlyOwners {
-        require(!projectCompleted, "Project already completed");
-        uint bnbToBorrow = loanAmount / 10**18;
-        venusProtocol.borrow(address(this), bnbToBorrow);
-        borrowerC = msg.sender;
-    }</h6>
-    
-    <h6 style="color:white;">function repayLoan() external onlyBorrower {
-        uint bnbToRepay = loanAmount / 10**18;
-        venusProtocol.repayBorrow(address(this), bnbToRepay);
-        projectCompleted = true;
-    }</h6>
-    
-    <h6 style="color:white;">function calculateProfit() public onlyOwners view returns (uint) {
-        require(projectCompleted, "Project not completed yet");
-        totalProfit = (address(this).balance / 10**18) - loanAmount;
-        uint aShare = totalProfit * 40 / 100;
-        uint cShare = totalProfit * 40 / 100;
-        uint conservationShare = totalProfit * 20 / 100;
-        return aShare;
-   }</h6>
-    
-    <h6 style="color:white;">function distributeProfit() external onlyOwners {
-        require(projectCompleted, "Project not completed yet");
-        uint aShare = calculateProfit();
-        payable(ownerA).transfer(aShare * 10**18);
-        payable(ownerB).transfer(aShare * 10**18);
-        payable(borrowerC).transfer(calculateProfit() * 10**18);
-   }</h6>
-    <h6 style="color:white;">function updateVenusProtocol(address _newVenusProtocol) external onlyOwners {
-    require(_newVenusProtocol != address(0), "Invalid address");
-    venusProtocol = VenusProtocol(_newVenusProtocol);
-   }</h6>
+    function repay(uint256 amount, uint256 projectId) external {
+        // Implement your logic here, considering fiat transactions
+        // Update availableFunds and emit events
+    }
 
-         
+    // Other functions...
+}
 
-
-        
-          
-          <br>
-          <hr>
-          <br>
-                    
-
-
-                <h5 style="color:brown;"><strong>The above Solidity code  needs to be completed with the following data in order to function correctly:</strong></h5>
-                <br>
-
-                <h6 style="color:white;">VenusProtocol contract address:&nbsp&nbsp This is the address of the Venus Protocol smart contract on the Binance Smart Chain. This needs to be passed as an argument to the BuildingProject constructor.</h6>
-
-                <h6 style="color:white;">ownerA and ownerB addresses:&nbsp&nbsp These are the addresses of the two investors who will own the project initially. These addresses also need to be passed as arguments to the BuildingProject constructor.</h6>
-
-                <h6 style="color:white;">loanAmount:&nbsp&nbsp This is the total amount of BNB that will be borrowed from Venus Protocol to fund the project.</h6>
-
-                <h6 style="color:white;">interestRate:&nbsp&nbsp This is the interest rate that will be charged on the loan.</h6>
-
-                <h6 style="color:white;">loanTerm:&nbsp&nbsp This is the term (in days) of the loan.</h6>
-
-                <h6 style="color:white;">projectCompleted:&nbsp&nbsp This is a boolean flag that indicates whether the project has been completed or not.</h6>
-
-                <h6 style="color:white;">borrowerC:&nbsp&nbsp This is the address of the borrower who will receive the loan.</h6>
-
-                <h6 style="color:white;">totalProfit:&nbsp&nbsp This is the total profit that will be distributed among the investors and borrower once the project is complete.</h6>
-                
-                <h6 style="color:white;">address(this):&nbsp&nbsp This refers to the address of the BuildingProject contract.</h6>
-
-                <h6 style="color:white;">msg.sender:&nbsp&nbsp This is the address of the user who is invoking the function.</h6>
-
-                <h6 style="color:white;">payable:&nbsp&nbsp This is a Solidity keyword that allows a function to receive or send BNB.</h6>
-                <br>
-                <hr>
-                <br>
-
-                <h5 style="color:brown;"><strong>The following Solidity code  restricts  borrowerC from withdrawing funds from the Venus Protocol's borrow section until they have met 
-                certain conditions:</strong></h5>
-                <br>
-
-                <h6 style="color:white;"> // SPDX-LICENCE-Identifier : MIT</h6>
-
-                <h6 style="color:white;">pragma solidity ^0.8.0;</h6>
-
-                <h6 style="color:white;">import "@openzeppelin/contracts/token/ERC20/ERC20.sol";</h6>
-
-                <h6 style="color:white;">contract VenusProtocolBorrow {
-                address investorA;
-                address borrowerC;
-                address land;
-                address projectD;
-                bool hasPurchasedLand;
-                bool hasApprovalToBuild;
-
-                constructor(address _investorA, address _borrowerC, address _land, address _projectD) {
-                investorA = _investorA;
-                borrowerC = _borrowerC;
-                land = _land;
-                projectD = _projectD;
-                hasPurchasedLand = false;
-                hasApprovalToBuild = false;
-                }</h6>
-
-                <h6 style="color:white;">function purchaseLand() external {
-                // Code to handle purchase of land
-                hasPurchasedLand = true;
-                }</h6>
-
-                <h6 style="color:white;"> function getApprovalToBuild() external {
-                // Code to handle getting approval to build
-                hasApprovalToBuild = true;
-                }</h6>
-
-                <h6 style="color:white;">function withdrawFunds(uint256 _amount) external {
-                require(msg.sender == borrowerC, "Only borrower C can withdraw funds");
-                require(hasPurchasedLand && hasApprovalToBuild, "Borrower C cannot withdraw funds until land is purchased and approval to build is obtained");
-                require(ERC20(0x123...).balanceOf(address(this)) >= _amount, "Insufficient funds");
-                // Transfer the funds to the borrower's address
-                ERC20(0x123...).transfer(borrowerC, _amount);
-                }
-                }</h6>
-
-
-                <!--<td>SC.1</td>
-                <td>SC.2</td>
-                <td>SC.3</td>
-                <td>SC.4</td>
-                <td>SC.5</td>
-                <td>SC.6</td>
-                <td>SC.7</td>
-                <td>SC.8</td>
-                <td>SC.9</td>
-                <td>SC.10</td>
-                <td>SC.11</td>-->
-        
         <br>
         <br>
         <hr>
