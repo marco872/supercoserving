@@ -175,7 +175,7 @@ class Booking1Form(ModelForm):
 
 class Booking2Form(ModelForm):
 	class Meta:
-		model = Booking1
+		model = Booking2
 		fields = ('crowdfund', 'name',  'amount', 'starting', 'email', 'phone' )
 
 		widgets = {
@@ -204,7 +204,7 @@ class Booking2Form(ModelForm):
 
 class Booking3Form(ModelForm):
 	class Meta:
-		model = Booking1
+		model = Booking3
 		fields = ('crowdfund', 'name',  'amount', 'starting', 'email', 'phone' )
 
 		widgets = {
@@ -232,7 +232,7 @@ class Booking3Form(ModelForm):
 
 class Booking4Form(ModelForm):
 	class Meta:
-		model = Booking1
+		model = Booking4
 		fields = ('crowdfund', 'name',  'amount', 'starting', 'email', 'phone' )
 
 		widgets = {
