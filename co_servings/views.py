@@ -378,7 +378,7 @@ def booking(request):
 		return render(request, 'co_servings/booking.html', {'form':form, 'submitted':submitted })
 
 from django.db.models import Sum
-from .models import Booking1
+from .models import Booking1, Booking2, Booking3, Booking4
 
 def booking1(request):
     submitted = False
