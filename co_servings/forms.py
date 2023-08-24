@@ -175,15 +175,15 @@ class Booking1Form(ModelForm):
 
 class Booking2Form(ModelForm):
 	class Meta:
-		model = Booking2
-		fields = ('project', 'name',  'duplex', 'number', 'starting', 'email', 'phone' )
+		model = Booking1
+		fields = ('crowdfund', 'name',  'amount', 'starting', 'email', 'phone' )
 
 		widgets = {
-			'project': forms.TextInput(attrs={'class':'form-control'}),
+			'crowdfund': forms.TextInput(attrs={'class':'form-control'}),
 			'name': forms.TextInput(attrs={'class':'form-control'}),
 			
-			'duplex': forms.TextInput(attrs={'class':'form-control'}),
-			'number': forms.TextInput(attrs={'class':'form-control'}),
+			'amount': forms.TextInput(attrs={'class':'form-control'}),
+			
 			'starting': forms.TextInput(attrs={'class':'form-control'}),
 			'email': forms.TextInput(attrs={'class':'form-control'}),
 			'phone': forms.TextInput(attrs={'class':'form-control'}),
@@ -191,28 +191,28 @@ class Booking2Form(ModelForm):
 		}
 
 		labels = {
-            'project': 'Project : example 1-milan/1, 2-berlin/1, etc..',
+            'crowdfund': 'fund_number',
             'email': 'my_email',
+          
+            'name': 'my_name',
+            'amount': 'my_investment',
             
-            'name': 'Name: example Joe Doe, etc...',
-            'duplex': 'Duplex : example A, B, etc...',
-            'number': 'Number : example 1, 2, etc...',
-            'starting': 'Starting Rental dd/mm/yy',
+            'starting': 'starting investment dd/mm/yy',
             'phone': 'my_phone',
         }
 
 
 class Booking3Form(ModelForm):
 	class Meta:
-		model = Booking3
-		fields = ('project', 'name',  'duplex', 'number', 'starting', 'email', 'phone' )
+		model = Booking1
+		fields = ('crowdfund', 'name',  'amount', 'starting', 'email', 'phone' )
 
 		widgets = {
-			'project': forms.TextInput(attrs={'class':'form-control'}),
+			'crowdfund': forms.TextInput(attrs={'class':'form-control'}),
 			'name': forms.TextInput(attrs={'class':'form-control'}),
 			
-			'duplex': forms.TextInput(attrs={'class':'form-control'}),
-			'number': forms.TextInput(attrs={'class':'form-control'}),
+			'amount': forms.TextInput(attrs={'class':'form-control'}),
+			
 			'starting': forms.TextInput(attrs={'class':'form-control'}),
 			'email': forms.TextInput(attrs={'class':'form-control'}),
 			'phone': forms.TextInput(attrs={'class':'form-control'}),
@@ -220,28 +220,27 @@ class Booking3Form(ModelForm):
 		}
 
 		labels = {
-            'project': 'Project : example 1-milan/1, 2-berlin/1, etc..',
+            'crowdfund': 'fund_number',
             'email': 'my_email',
+          
+            'name': 'my_name',
+            'amount': 'my_investment',
             
-            'name': 'Name: example Joe Doe, etc...',
-            'duplex': 'Duplex : example A, B, etc...',
-            'number': 'Number : example 1, 2, etc...',
-            'starting': 'Starting Rental dd/mm/yy',
+            'starting': 'starting investment dd/mm/yy',
             'phone': 'my_phone',
         }
-
 
 class Booking4Form(ModelForm):
 	class Meta:
-		model = Booking4
-		fields = ('project', 'name',  'duplex', 'number', 'starting', 'email', 'phone' )
+		model = Booking1
+		fields = ('crowdfund', 'name',  'amount', 'starting', 'email', 'phone' )
 
 		widgets = {
-			'project': forms.TextInput(attrs={'class':'form-control'}),
+			'crowdfund': forms.TextInput(attrs={'class':'form-control'}),
 			'name': forms.TextInput(attrs={'class':'form-control'}),
-		
-			'duplex': forms.TextInput(attrs={'class':'form-control'}),
-			'number': forms.TextInput(attrs={'class':'form-control'}),
+			
+			'amount': forms.TextInput(attrs={'class':'form-control'}),
+			
 			'starting': forms.TextInput(attrs={'class':'form-control'}),
 			'email': forms.TextInput(attrs={'class':'form-control'}),
 			'phone': forms.TextInput(attrs={'class':'form-control'}),
@@ -249,15 +248,16 @@ class Booking4Form(ModelForm):
 		}
 
 		labels = {
-            'project': 'Project : example 1-milan/1, 2-berlin/1, etc..',
+            'crowdfund': 'fund_number',
             'email': 'my_email',
           
-            'name': 'Name: example Joe Doe, etc...',
-            'duplex': 'Duplex : example A, B, etc...',
-            'number': 'Number : example 1, 2, etc...',
-            'starting': 'Starting Rental dd/mm/yy',
+            'name': 'my_name',
+            'amount': 'my_investment',
+            
+            'starting': 'starting investment dd/mm/yy',
             'phone': 'my_phone',
         }
+
 
 
 class Location1Form(ModelForm):

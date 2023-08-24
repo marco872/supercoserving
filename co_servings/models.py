@@ -573,15 +573,12 @@ class Booking1(models.Model):
 		return self.name
 
 
-
 class Booking2(models.Model):
 
 	 
-	project = models.CharField(max_length=200, null=True)
+	crowdfund = models.CharField(max_length=200, null=True)
 	name = models.CharField(max_length=200, null=True)
-	
-	duplex = models.CharField(max_length=200, null=True)
-	number = models.CharField(max_length=200, null=True)
+	amount = models.DecimalField(max_digits=10, decimal_places=2, null=True)
 	starting = models.CharField(max_length=200, null=True)
 	email = models.CharField(max_length=200, null=True)
 	phone = models.CharField(max_length=200, null=True)
@@ -593,14 +590,13 @@ class Booking2(models.Model):
 		return self.name
 
 
+
 class Booking3(models.Model):
 
 	 
-	project = models.CharField(max_length=200, null=True)
+	crowdfund = models.CharField(max_length=200, null=True)
 	name = models.CharField(max_length=200, null=True)
-	
-	duplex = models.CharField(max_length=200, null=True)
-	number = models.CharField(max_length=200, null=True)
+	amount = models.DecimalField(max_digits=10, decimal_places=2, null=True)
 	starting = models.CharField(max_length=200, null=True)
 	email = models.CharField(max_length=200, null=True)
 	phone = models.CharField(max_length=200, null=True)
@@ -615,11 +611,9 @@ class Booking3(models.Model):
 class Booking4(models.Model):
 
 	 
-	project = models.CharField(max_length=200, null=True)
+	crowdfund = models.CharField(max_length=200, null=True)
 	name = models.CharField(max_length=200, null=True)
-
-	duplex = models.CharField(max_length=200, null=True)
-	number = models.CharField(max_length=200, null=True)
+	amount = models.DecimalField(max_digits=10, decimal_places=2, null=True)
 	starting = models.CharField(max_length=200, null=True)
 	email = models.CharField(max_length=200, null=True)
 	phone = models.CharField(max_length=200, null=True)
@@ -629,8 +623,6 @@ class Booking4(models.Model):
 
 	def __str__(self):
 		return self.name
-
-
 
 
 class Location1(models.Model):

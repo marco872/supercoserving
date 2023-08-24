@@ -19,17 +19,17 @@
 
 
 h6 {
-    color:black;
+    color:white;
   }
 
 
   h1 {
-    color: black;
+    color: white;
 
   }
  
-  h4, h5, td {
-    color: black;
+  h5, td {
+    color: white;
   }
  
 
@@ -39,11 +39,29 @@ h6 {
 
   
 </style>
-
+<body style="background-color: #0E0E2C; ">
+<div class="container" style="background-color: #0E0E2C; margin-top: -30px;  max-width: 320px; " >  
+<div>
+<h4 style="margin-left: 0px; margin-top: 80px; color: lightgreen"><strong>Crowdfunding:</strong> </h4>
+</div>
 
 {% if user.is_authenticated %}
 
-  <h1>Select your Apartment</h1>
+<!-- Your existing HTML code here -->
+
+<div>
+    <h4 style="margin-left: 0px; margin-top: 80px; color: lightgreen"><strong>Crowdfunding:</strong> </h4>
+</div>
+
+<!-- Add this part to display the total amount -->
+<div>
+    <h5>Total Amount Invested: ${{ total_amount|default:0 }}</h5>
+</div>
+
+<!-- Your existing HTML code continues -->
+
+
+  <h1>Fund n°2</h1>
   <br/><br/>
   {% if submitted %}
 
@@ -51,7 +69,7 @@ h6 {
 
   {% else %}
 
-  <form action=" " method="POST">
+  <form action=" " style= "color:white" method="POST">
       {% csrf_token %}
 
       {{ form.as_p }}
@@ -68,9 +86,7 @@ h6 {
 <h1>Sorry! You Must Be Logged In To View This Page...</h1>
 <a href="{% url 'login' %}">Login Here</a>
 
-  
-
-  
+</div>  
 {% endif %}
-
+</body>
 {% endblock %}
