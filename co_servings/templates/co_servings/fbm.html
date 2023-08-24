@@ -46,21 +46,21 @@ h6 {
 </style>
 <body style="background-color: #0E0E2C; ">
 <div class="container" style="background-color: #0E0E2C; margin-top: 90px;  max-width: 320px; " > 
-// SPDX-License-Identifier: MIT
-pragma solidity ^0.8.0;
+<h4>// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;</h4>
 
-contract Crowdfunding {
-    mapping(address => uint256) public balances;
+<h4>contract Crowdfunding {
+    mapping(address => uint256) public balances;</h4>
 
-    function deposit(uint256 amount, uint256 projectId) external payable {
+    <h4>function deposit(uint256 amount, uint256 projectId) external payable {
         // Implement your logic here, considering fiat transactions
         // Update balances and emit events
     }
 
     // Other functions...
-}
+}</h4>
 
-contract CollateralInvestment {
+<h4>contract CollateralInvestment {
     mapping(address => uint256) public collateralAmounts;
 
     function createCollateral(uint256 amount, uint256 projectId) external {
@@ -69,9 +69,9 @@ contract CollateralInvestment {
     }
 
     // Other functions...
-}
+}</h4>
 
-contract LiquidityPool {
+<h4>contract LiquidityPool {
     mapping(uint256 => uint256) public availableFunds;
 
     function borrow(uint256 amount, uint256 projectId) external {
@@ -85,7 +85,7 @@ contract LiquidityPool {
     }
 
     // Other functions...
-}
+}</h4>
 
         <br>
         <br>
