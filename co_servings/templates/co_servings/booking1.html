@@ -47,6 +47,20 @@ h6 {
 
 {% if user.is_authenticated %}
 
+<!-- Your existing HTML code here -->
+
+<div>
+    <h4 style="margin-left: 0px; margin-top: 80px; color: lightgreen"><strong>Crowdfunding:</strong> </h4>
+</div>
+
+<!-- Add this part to display the total amount -->
+<div>
+    <h5>Total Amount Invested: ${{ total_amount|default:0 }}</h5>
+</div>
+
+<!-- Your existing HTML code continues -->
+
+
   <h1>Fund n°1</h1>
   <br/><br/>
   {% if submitted %}

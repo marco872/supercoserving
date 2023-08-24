@@ -377,6 +377,9 @@ def booking(request):
 
 		return render(request, 'co_servings/booking.html', {'form':form, 'submitted':submitted })
 
+from django.db.models import Sum
+from .models import Booking1
+
 def booking1(request):
     submitted = False
     form = Booking1Form()
@@ -392,7 +395,28 @@ def booking1(request):
         if 'submitted' in request.GET:
             submitted = True
 
-    return render(request, 'co_servings/booking1.html', {'form': form, 'submitted': submitted})
+        total_amount = Booking1.objects.aggregate(Sum('amount'))['amount__sum']
+    
+    return render(request, 'co_servings/booking1.html', {'form': form, 'submitted': submitted, 'total_amount': total_amount})
+
+
+
+#def booking1(request):
+    #submitted = False
+    #form = Booking1Form()
+
+    #if request.method == "POST":
+        #form = Booking1Form(request.POST)
+        #if form.is_valid():
+            #form.save()
+            #return HttpResponseRedirect('/booking1?submitted=True')
+
+    #else:
+        #form = Booking1Form()
+        #if 'submitted' in request.GET:
+            #submitted = True
+
+    #return render(request, 'co_servings/booking1.html', {'form': form, 'submitted': submitted})
 
 
 
