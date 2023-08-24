@@ -377,22 +377,25 @@ def booking(request):
 
 		return render(request, 'co_servings/booking.html', {'form':form, 'submitted':submitted })
 
-
 def booking1(request):
-	submitted = False
-	form = Booking1Form()
-	if request.method == "POST":
-		form = Booking1Form(request.POST)
-		if form.is_valid():
-			form.save()
-			return HttpResponseRedirect('/booking1?submitted=True')
+    submitted = False
+    form = Booking1Form()
 
-	else:
-		form = Booking1Form()
-		if 'submitted' in request.GET:
-			submitted = True
+    if request.method == "POST":
+        form = Booking1Form(request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect('/booking1?submitted=True')
 
-		return render(request, 'co_servings/booking1.html', {'form':form, 'submitted':submitted })
+    else:
+        form = Booking1Form()
+        if 'submitted' in request.GET:
+            submitted = True
+
+    return render(request, 'co_servings/booking1.html', {'form': form, 'submitted': submitted})
+
+
+
 
 def booking2(request):
 	submitted = False
