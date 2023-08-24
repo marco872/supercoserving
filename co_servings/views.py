@@ -401,60 +401,60 @@ def booking1(request):
 
 def booking2(request):
     submitted = False
-    form = Booking1Form()
+    form = Booking2Form()
 
     if request.method == "POST":
-        form = Booking1Form(request.POST)
+        form = Booking2Form(request.POST)
         if form.is_valid():
             form.save()
-            return HttpResponseRedirect('/booking1?submitted=True')
+            return HttpResponseRedirect('/booking2?submitted=True')
 
     else:
-        form = Booking1Form()
+        form = Booking2Form()
         if 'submitted' in request.GET:
             submitted = True
 
-        total_amount = Booking1.objects.aggregate(Sum('amount'))['amount__sum']
+        total_amount = Booking2.objects.aggregate(Sum('amount'))['amount__sum']
     
-    return render(request, 'co_servings/booking1.html', {'form': form, 'submitted': submitted, 'total_amount': total_amount})
+    return render(request, 'co_servings/booking2.html', {'form': form, 'submitted': submitted, 'total_amount': total_amount})
 
 def booking3(request):
     submitted = False
-    form = Booking1Form()
+    form = Booking3Form()
 
     if request.method == "POST":
-        form = Booking1Form(request.POST)
+        form = Booking3Form(request.POST)
         if form.is_valid():
             form.save()
-            return HttpResponseRedirect('/booking1?submitted=True')
+            return HttpResponseRedirect('/booking3?submitted=True')
 
     else:
-        form = Booking1Form()
+        form = Booking3Form()
         if 'submitted' in request.GET:
             submitted = True
 
-        total_amount = Booking1.objects.aggregate(Sum('amount'))['amount__sum']
+        total_amount = Booking3.objects.aggregate(Sum('amount'))['amount__sum']
     
-    return render(request, 'co_servings/booking1.html', {'form': form, 'submitted': submitted, 'total_amount': total_amount})
+    return render(request, 'co_servings/booking3.html', {'form': form, 'submitted': submitted, 'total_amount': total_amount})
 
 def booking4(request):
     submitted = False
-    form = Booking1Form()
+    form = Booking4Form()
 
     if request.method == "POST":
-        form = Booking1Form(request.POST)
+        form = Booking4Form(request.POST)
         if form.is_valid():
             form.save()
-            return HttpResponseRedirect('/booking1?submitted=True')
+            return HttpResponseRedirect('/booking4?submitted=True')
 
     else:
-        form = Booking1Form()
+        form = Booking4Form()
         if 'submitted' in request.GET:
             submitted = True
 
-        total_amount = Booking1.objects.aggregate(Sum('amount'))['amount__sum']
+        total_amount = Booking4.objects.aggregate(Sum('amount'))['amount__sum']
     
-    return render(request, 'co_servings/booking1.html', {'form': form, 'submitted': submitted, 'total_amount': total_amount})
+    return render(request, 'co_servings/booking4.html', {'form': form, 'submitted': submitted, 'total_amount': total_amount})
 
 
 
