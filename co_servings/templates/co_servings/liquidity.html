@@ -65,7 +65,13 @@ h6 {
       <input type="submit" value="Submit" class="btn btn-secondary">
 
   </form>
-  
+
+<h6>Associated Booking Items:</h6>
+<ul>
+  {% for booking in bookings %}
+    <li>{{ booking.name }}</li>
+  {% endfor %}
+</ul>
 
    {% endif %}
 

@@ -348,10 +348,7 @@ def design5(request):
 	
 
 
-from django.shortcuts import render, redirect
-from django.db.models import Sum
-from .models import Booking, Booking1, Booking2, Booking3, Booking4, Liquidity
-from .forms import Booking1Form, Booking2Form, Booking3Form, Booking4Form, LiquidityForm  # Import your forms
+
 def add_liquidity(request):
     submitted = False
     form = LiquidityForm()
@@ -370,6 +367,10 @@ def add_liquidity(request):
 
     return render(request, 'co_servings/add_liquidity.html', {'form': form, 'submitted': submitted})
 
+# views.py
+
+
+
 def liquidity(request):
     submitted = False
     form = LiquidityForm()
@@ -377,12 +378,12 @@ def liquidity(request):
     if request.method == "POST":
         form = LiquidityForm(request.POST)
         if form.is_valid():
-            liquidity = form.save(commit=False)  # Save the form instance without committing to the database
-            # Associate the booking field with a valid Booking instance
-            liquidity.booking = SomeBookingInstance
-            liquidity.save()  # Save the liquidity instance with the associated booking
+            liquidity = form.save(commit=False)
+            # Here, associate the liquidity instance with a valid booking instance
+            booking_id = request.POST.get('booking')  # Get the selected booking ID from the form
+            liquidity.booking = Booking.objects.get(pk=booking_id)  # Get the booking instance
+            liquidity.save()
 
-            # Perform calculations related to liquidity pool here
             return redirect('/liquidity?submitted=True')
 
     else:
@@ -390,7 +391,10 @@ def liquidity(request):
         if 'submitted' in request.GET:
             submitted = True
 
-    return render(request, 'co_servings/liquidity.html', {'form': form, 'submitted': submitted})
+    # Retrieve all booking instances to pass to the template
+    bookings = Booking.objects.all()
+
+    return render(request, 'co_servings/liquidity.html', {'form': form, 'submitted': submitted, 'bookings': bookings})
 
 def booking(request, booking_type):
 

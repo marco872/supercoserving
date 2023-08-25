@@ -520,7 +520,7 @@ class Design5(models.Model):
 	
 	def __str__(self):
 		return self.name
-		
+
 
 class Booking(models.Model):
     name = models.CharField(max_length=200, blank=True, null=True)
@@ -529,14 +529,16 @@ class Booking(models.Model):
         return self.name
 
 
+
+
 class Liquidity(models.Model):
     name = models.CharField(max_length=200, blank=True, null=True)
-    booking = models.ForeignKey(Booking, on_delete=models.CASCADE, default=None)  # Provide an appropriate default value
-
-    percent = models.DecimalField(max_digits=5, decimal_places=2)  # Percentage associated with this liquidity
+    booking = models.ForeignKey('Booking', on_delete=models.CASCADE)  # Remove default=None
+    percent = models.DecimalField(max_digits=5, decimal_places=2)
 
     def __str__(self):
         return self.name
+
 
 
 
