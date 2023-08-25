@@ -42,7 +42,14 @@ h6 {
 </style>
 
 {% if user.is_authenticated %}  
-
+<div class="container" style="background-color: #0E0E2C; max-width: 320px; ">
+  <div style="margin-left: 0px">
+    <br><br>
+    <h4> Private Liquidity Pool</h4>
+    <br>
+    <h6>Welcome, {{ user.username }}!</h6>
+    <!-- Navbar content here -->
+  </div>
   <h1> Private Liquidity Pool</h1>
   <br/><br/>
    {% if submitted %}
@@ -67,6 +74,6 @@ h6 {
 {% else %}
 <h1>Sorry! You Must Be Logged In To View This Page...</h1>
 <a href="{% url 'login' %}">Login Here</a>
-
+</div>
 {% endif %}
 {% endblock %}
