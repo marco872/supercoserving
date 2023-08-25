@@ -352,6 +352,45 @@ from django.shortcuts import render, redirect
 from django.db.models import Sum
 from .models import Booking, Booking1, Booking2, Booking3, Booking4, Liquidity
 from .forms import Booking1Form, Booking2Form, Booking3Form, Booking4Form, LiquidityForm  # Import your forms
+def add_liquidity(request):
+    submitted = False
+    form = LiquidityForm()
+
+    if request.method == "POST":
+        form = LiquidityForm(request.POST)
+        if form.is_valid():
+            liquidity = form.save()
+            # Perform calculations related to liquidity pool here
+            return redirect('/add_liquidity?submitted=True')
+
+    else:
+        form = LiquidityForm()
+        if 'submitted' in request.GET:
+            submitted = True
+
+    return render(request, 'co_servings/add_liquidity.html', {'form': form, 'submitted': submitted})
+
+def liquidity(request):
+    submitted = False
+    form = LiquidityForm()
+
+    if request.method == "POST":
+        form = LiquidityForm(request.POST)
+        if form.is_valid():
+            liquidity = form.save(commit=False)  # Save the form instance without committing to the database
+            # Associate the booking field with a valid Booking instance
+            liquidity.booking = SomeBookingInstance
+            liquidity.save()  # Save the liquidity instance with the associated booking
+
+            # Perform calculations related to liquidity pool here
+            return redirect('/liquidity?submitted=True')
+
+    else:
+        form = LiquidityForm()
+        if 'submitted' in request.GET:
+            submitted = True
+
+    return render(request, 'co_servings/liquidity.html', {'form': form, 'submitted': submitted})
 
 def booking(request, booking_type):
 
@@ -387,41 +426,7 @@ def booking(request, booking_type):
 
     return render(request, f'co_servings/{booking_type}.html', {'form': booking_form, 'submitted': submitted, 'total_amount': total_amount})
 
-def add_liquidity(request):
-    submitted = False
-    form = LiquidityForm()
 
-    if request.method == "POST":
-        form = LiquidityForm(request.POST)
-        if form.is_valid():
-            liquidity = form.save()
-            # Perform calculations related to liquidity pool here
-            return redirect('/add_liquidity?submitted=True')
-
-    else:
-        form = LiquidityForm()
-        if 'submitted' in request.GET:
-            submitted = True
-
-    return render(request, 'co_servings/add_liquidity.html', {'form': form, 'submitted': submitted})
-
-def liquidity(request):
-    submitted = False
-    form = LiquidityForm()
-
-    if request.method == "POST":
-        form = LiquidityForm(request.POST)
-        if form.is_valid():
-            liquidity = form.save()
-            # Perform calculations related to liquidity pool here
-            return redirect('/liquidity?submitted=True')
-
-    else:
-        form = LiquidityForm()
-        if 'submitted' in request.GET:
-            submitted = True
-
-    return render(request, 'co_servings/liquidity.html', {'form': form, 'submitted': submitted})
 
 
 
