@@ -379,11 +379,9 @@ def liquidity(request):
         form = LiquidityForm(request.POST)
         if form.is_valid():
             liquidity = form.save(commit=False)
-            # Here, associate the liquidity instance with a valid booking instance
-            booking_id = request.POST.get('booking')  # Get the selected booking ID from the form
-            liquidity.booking = Booking.objects.get(pk=booking_id)  # Get the booking instance
-            liquidity.save()
-
+            # Associate the booking field with a valid Booking instance
+            liquidity.booking = booking1_instance = Booking1.objects.create()  # Replace with the actual booking instance
+            liquidity.save()  # Save the liquidity instance with the associated booking
             return redirect('/liquidity?submitted=True')
 
     else:
@@ -391,10 +389,10 @@ def liquidity(request):
         if 'submitted' in request.GET:
             submitted = True
 
-    # Retrieve all booking instances to pass to the template
-    bookings = Booking.objects.all()
-
-    return render(request, 'co_servings/liquidity.html', {'form': form, 'submitted': submitted, 'bookings': bookings})
+    # Get associated booking items and pass them to the template
+    associated_bookings = Booking.objects.filter(liquidity__isnull=False)
+    
+    return render(request, 'co_servings/liquidity.html', {'form': form, 'submitted': submitted, 'bookings': associated_bookings})
 
 def booking(request, booking_type):
 
