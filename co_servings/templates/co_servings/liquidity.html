@@ -65,6 +65,12 @@ h6 {
       <input type="submit" value="Submit" class="btn btn-secondary">
 
   </form>
+  <h4>Associated Booking Items:</h4>
+    <ul>
+      {% for booking_item in form.instance.booking_set.all %}
+        <li>{{ booking_item.name }}</li>
+      {% endfor %}
+    </ul>
 
    {% endif %}
 
