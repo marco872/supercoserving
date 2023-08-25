@@ -112,21 +112,7 @@ class Venue(models.Model):
 		return self.Project_D 
 
 
-class Liquidity(models.Model):
 
-	STATUS = (
-		('Starting', 'Starting'),
-		('Filling_up', 'Filling_up'),
-		('Completed', 'Completed'),
-		)
-	topic = models.CharField(max_length=200, blank=True, null=True)
-	name = models.CharField(max_length=200,  blank=True, null=True)
-	price = models.CharField(max_length=200,  blank=True, null=True)
-	status = models.CharField(max_length=200,  null=True, choices=STATUS)
-	smart_contracts = models.TextField( blank=True, null=True)
-	
-	def __str__(self):
-		return self.name
 
 class Building(models.Model):
 	name = models.CharField(max_length=200, blank=True, null=True)
@@ -536,23 +522,20 @@ class Design5(models.Model):
 		return self.name
 
 class Booking(models.Model):
+    name = models.CharField(max_length=200, blank=True, null=True)
+
+    def __str__(self):
+        return self.name
 
 
-	 
-	project = models.CharField(max_length=200, null=True)
-	name = models.CharField(max_length=200, null=True)
-	
-	duplex = models.CharField(max_length=200, null=True)
-	number = models.CharField(max_length=200, null=True)
-	starting = models.CharField(max_length=200, null=True)
-	email = models.CharField(max_length=200, null=True)
-	phone = models.CharField(max_length=200, null=True)
+class Liquidity(models.Model):
+    name = models.CharField(max_length=200, blank=True, null=True)
+    booking = models.ForeignKey(Booking, on_delete=models.CASCADE, default=None)  # Provide an appropriate default value
 
+    percent = models.DecimalField(max_digits=5, decimal_places=2)  # Percentage associated with this liquidity
 
-	
-
-	def __str__(self):
-		return self.name
+    def __str__(self):
+        return self.name
 
 
 

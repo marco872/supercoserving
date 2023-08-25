@@ -77,21 +77,8 @@ def projects(request):
 	context = {'list': projects, 'value': venue}
 	return render(request, 'co_servings/projects.html',context )
 
-def liquidity(request):
-	submitted = False
-	form = LiquidityForm()
-	if request.method == "POST":
-		form = LiquidityForm(request.POST)
-		if form.is_valid():
-			form.save()
-			return HttpResponseRedirect('/liquidity?submitted=True')
 
-	else:
-		form = LiquidityForm()
-		if 'submitted' in request.GET:
-			submitted = True
 
-		return render(request, 'co_servings/liquidity.html', {'form':form, 'submitted':submitted })
 
 
 
@@ -361,24 +348,84 @@ def design5(request):
 	
 
 
-def booking(request):
-	submitted = False
-	form = BookingForm()
-	if request.method == "POST":
-		form = BookingForm(request.POST)
-		if form.is_valid():
-			form.save()
-			return HttpResponseRedirect('/booking?submitted=True')
-
-	else:
-		form = BookingForm()
-		if 'submitted' in request.GET:
-			submitted = True
-
-		return render(request, 'co_servings/booking.html', {'form':form, 'submitted':submitted })
-
+from django.shortcuts import render, redirect
 from django.db.models import Sum
-from .models import Booking1, Booking2, Booking3, Booking4
+from .models import Booking, Booking1, Booking2, Booking3, Booking4, Liquidity
+from .forms import Booking1Form, Booking2Form, Booking3Form, Booking4Form, LiquidityForm  # Import your forms
+
+def booking(request, booking_type):
+
+    submitted = False
+    booking_form = None
+    total_amount = 0
+
+    if booking_type == "booking1":
+        booking_form = Booking1Form()
+        booking_model = Booking1
+    elif booking_type == "booking2":
+        booking_form = Booking2Form()
+        booking_model = Booking2
+    elif booking_type == "booking3":
+        booking_form = Booking3Form()
+        booking_model = Booking3
+    elif booking_type == "booking4":
+        booking_form = Booking4Form()
+        booking_model = Booking4
+
+    if request.method == "POST":
+        booking_form = booking_model(request.POST)
+        if booking_form.is_valid():
+            booking_form.save()
+            return redirect(f'/{booking_type}?submitted=True')
+
+    else:
+        booking_form = booking_model()
+        if 'submitted' in request.GET:
+            submitted = True
+
+        total_amount = booking_model.objects.aggregate(Sum('amount'))['amount__sum']
+
+    return render(request, f'co_servings/{booking_type}.html', {'form': booking_form, 'submitted': submitted, 'total_amount': total_amount})
+
+def add_liquidity(request):
+    submitted = False
+    form = LiquidityForm()
+
+    if request.method == "POST":
+        form = LiquidityForm(request.POST)
+        if form.is_valid():
+            liquidity = form.save()
+            # Perform calculations related to liquidity pool here
+            return redirect('/add_liquidity?submitted=True')
+
+    else:
+        form = LiquidityForm()
+        if 'submitted' in request.GET:
+            submitted = True
+
+    return render(request, 'co_servings/add_liquidity.html', {'form': form, 'submitted': submitted})
+
+def liquidity(request):
+    submitted = False
+    form = LiquidityForm()
+
+    if request.method == "POST":
+        form = LiquidityForm(request.POST)
+        if form.is_valid():
+            liquidity = form.save()
+            # Perform calculations related to liquidity pool here
+            return redirect('/liquidity?submitted=True')
+
+    else:
+        form = LiquidityForm()
+        if 'submitted' in request.GET:
+            submitted = True
+
+    return render(request, 'co_servings/liquidity.html', {'form': form, 'submitted': submitted})
+
+
+
+
 
 def booking1(request):
     submitted = False

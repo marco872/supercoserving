@@ -81,6 +81,12 @@ urlpatterns = [
     path('location4/', views.location4, name="location4"),
     path('location5/', views.location5, name="location5"),
     path('ledger_view/', views.ledger_view,name="ledger_view"),
+    path('booking1/', views.booking, {'booking_type': 'booking1'}, name='booking1'),
+    path('booking2/', views.booking, {'booking_type': 'booking2'}, name='booking2'),
+    path('booking3/', views.booking, {'booking_type': 'booking3'}, name='booking3'),
+    path('booking4/', views.booking, {'booking_type': 'booking4'}, name='booking4'),
+    path('add_liquidity/', views.add_liquidity, name='add_liquidity'),
+    path('liquidity/', views.liquidity, name='liquidity'),
 
 
 ]   

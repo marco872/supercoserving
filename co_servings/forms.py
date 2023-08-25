@@ -1,6 +1,6 @@
 from django import forms
 from django.forms import ModelForm
-from .models import Venue, Liquidity, Collateral, Commit, Booking, Booking1, Booking2, Booking3, Booking4, Location1, Location2, Location3, Location4, Location5, Transaction
+from .models import Venue, Liquidity, Collateral, Commit, Booking, Booking, Booking1, Booking2, Booking3, Booking4, Location1, Location2, Location3, Location4, Location5, Transaction
 from .models import Transaction
 
 
@@ -49,26 +49,12 @@ class VenueForm(ModelForm):
            
             }
 
-class LiquidityForm(ModelForm):
-	class Meta:
-		model = Liquidity
-		fields = ('topic', 'name', 'price', 'status')
 
-		widgets = {
-			'topic': forms.TextInput(attrs={'class':'form-control'}),
-			'name': forms.TextInput(attrs={'class':'form-control'}),
-			'price': forms.TextInput(attrs={'class':'form-control'}),
-			
-			
-			
-		}	
 
-		labels = {
-            'topic': 'Type : example 1/2/3/4- Private Investor, Private Fund, etc..',
-            
-            'name': 'Private Pool : example €/€',
-            'price': 'Value: € 15.000.000',
-          }
+class LiquidityForm(forms.ModelForm):
+    class Meta:
+        model = Liquidity
+        fields = ['name', 'booking', 'percent']  # Add other fields if needed
 
 class CollateralForm(ModelForm):
 	class Meta:
@@ -118,32 +104,18 @@ class CommitForm(ModelForm):
 		 
 
 class BookingForm(ModelForm):
-	class Meta:
-		model = Booking
-		fields = ('project', 'name',  'duplex', 'number', 'starting', 'email', 'phone' )
+    class Meta:
+        model = Booking
+        fields = ('name',)  # Add a comma after 'name' to make it a tuple
 
-		widgets = {
-			'project': forms.TextInput(attrs={'class':'form-control'}),
-			'name': forms.TextInput(attrs={'class':'form-control'}),
-			
-			'duplex': forms.TextInput(attrs={'class':'form-control'}),
-			'number': forms.TextInput(attrs={'class':'form-control'}),
-			'starting': forms.TextInput(attrs={'class':'form-control'}),
-			'email': forms.TextInput(attrs={'class':'form-control'}),
-			'phone': forms.TextInput(attrs={'class':'form-control'}),
-
-		}
-
-		labels = {
-            'project': 'Project : example 1-milan/1, 2-berlin/1, etc..',
-            'email': 'my_email',
-           
-            'name': 'Name: example Joe Doe, etc...',
-            'duplex': 'Duplex : example A, B, etc...',
-            'number': 'Number : example 1, 2, etc...',
-            'starting': 'Starting Rental dd/mm/yy',
-            'phone': 'my_phone',
+        widgets = {
+            'name': forms.TextInput(attrs={'class': 'form-control'}),
         }
+
+        labels = {
+            'name': 'my_name',
+        }
+
 
 class Booking1Form(ModelForm):
 	class Meta:
