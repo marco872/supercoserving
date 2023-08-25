@@ -20,17 +20,17 @@
 
 
 h6 {
-    color:black;
+    color:white;
   }
 
 
   h1 {
-    color: black;
+    color: white;
 
   }
  
   h4, h5, td {
-    color: black;
+    color: white;
   }
  
 
@@ -40,9 +40,10 @@ h6 {
 
   
 </style>
-
+<body style="background-color: #0E0E2C; ">
+<div class="container" style="background-color: #0E0E2C; max-width: 320px; "> 
 {% if user.is_authenticated %}  
-<div class="container" style="background-color: #0E0E2C; max-width: 320px; ">
+
   <div style="margin-left: 0px">
     <br><br>
     <h4> Private Liquidity Pool</h4>
@@ -50,7 +51,6 @@ h6 {
     <h6>Welcome, {{ user.username }}!</h6>
     <!-- Navbar content here -->
   </div>
-  <h1> Private Liquidity Pool</h1>
   <br/><br/>
    {% if submitted %}
 
@@ -58,7 +58,7 @@ h6 {
 
   {% else %}
 
-  <form action="" method="POST">
+  <form action="" style="color: white" method="POST">
       {% csrf_token %}
 
       {{ form.as_p }}
@@ -76,4 +76,5 @@ h6 {
 <a href="{% url 'login' %}">Login Here</a>
 </div>
 {% endif %}
+</body>
 {% endblock %}
