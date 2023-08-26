@@ -50,21 +50,29 @@ class VenueForm(ModelForm):
             }
 
 
+
+
+from .models import Liquidity, Booking1, Booking2, Booking3, Booking4
 from django.db.models import Sum
-from .models import Booking1, Booking2, Booking3, Booking4
 
 class LiquidityForm(forms.ModelForm):
     class Meta:
         model = Liquidity
         fields = '__all__'
 
+    # Add the collateral_amount field to the form
+    collateral_amount = forms.DecimalField(max_digits=5, decimal_places=2)
+
     def save(self, commit=True):
         instance = super(LiquidityForm, self).save(commit=False)
-        
+
+        # Set the collateral_amount value from the form data
+        instance.collateral_amount = self.cleaned_data['collateral_amount']
+
         if commit:
             # Save the instance if commit is True
             instance.save()
-            
+
             # Your additional logic to calculate total amounts
             total_amount_booking1 = Booking1.objects.aggregate(Sum('amount'))['amount__sum']
             total_amount_booking2 = Booking2.objects.aggregate(Sum('amount'))['amount__sum']
