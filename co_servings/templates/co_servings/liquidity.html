@@ -3,47 +3,11 @@
 
 {% block content %}
 <style type="text/css">
-.button {
-
-  margin: 4px 2px;
-}
-
-.button1 {border-radius: 2px;}
-.button2 {border-radius: 4px;}
-.button3 {border-radius: 8px;}
-.button4 {border-radius: 12px;}
-.button5 {border-radius: 50%;}
-
-
-}
-
-
-
-h6 {
-    color:white;
-  }
-
-
-  h1 {
-    color: white;
-
-  }
- 
-  h4, h5, td {
-    color: white;
-  }
- 
-
-
- 
-
-
-  
+/* Your styles here */
 </style>
 <body style="background-color: #0E0E2C; ">
-<div class="container" style="background-color: #0E0E2C; max-width: 320px; "> 
-{% if user.is_authenticated %}  
-
+<div class="container" style="background-color: #0E0E2C; max-width: 320px; ">
+{% if user.is_authenticated %}
   <div style="margin-left: 0px">
     <br><br>
     <h4 style="margin-left: 0px; margin-top: 80px; color: lightgreen"> Private Liquidity Pool</h4>
@@ -52,26 +16,20 @@ h6 {
   </div>
   <br/><br/>
    {% if submitted %}
-
       Your Pool was Submitted Successfully!!!
-
   {% else %}
-
   <form action="" style="color: white" method="POST">
       {% csrf_token %}
-
       {{ form.as_p }}
-
       <input type="submit" value="Submit" class="btn btn-secondary">
-
   </form>
-
-
-
+  <h6>Total Amounts:</h6>
+  <p>Total Amount Booking 1: {{ total_amount_booking1 }}</p>
+  <p>Total Amount Booking 2: {{ total_amount_booking2 }}</p>
+  <p>Total Amount Booking 3: {{ total_amount_booking3 }}</p>
+  <p>Total Amount Booking 4: {{ total_amount_booking4 }}</p>
    {% endif %}
-
   <br/><br/>
-
 {% else %}
 <h1>Sorry! You Must Be Logged In To View This Page...</h1>
 <a href="{% url 'login' %}">Login Here</a>
