@@ -155,119 +155,109 @@ class BookingForm(ModelForm):
         }
 
 
-class Booking1Form(ModelForm):
-	class Meta:
-		model = Booking1
-		fields = ('crowdfund', 'name',  'amount', 'starting', 'email', 'phone' )
 
-		widgets = {
-			'crowdfund': forms.TextInput(attrs={'class':'form-control'}),
-			'name': forms.TextInput(attrs={'class':'form-control'}),
-			
-			'amount': forms.TextInput(attrs={'class':'form-control'}),
-			
-			'starting': forms.TextInput(attrs={'class':'form-control'}),
-			'email': forms.TextInput(attrs={'class':'form-control'}),
-			'phone': forms.TextInput(attrs={'class':'form-control'}),
 
-		}
+class Booking1Form(forms.ModelForm):
+    class Meta:
+        model = Booking1
+        fields = ('user', 'crowdfund', 'name', 'amount', 'starting', 'email', 'phone')
 
-		labels = {
+        widgets = {
+            'user': forms.HiddenInput(),
+            'crowdfund': forms.TextInput(attrs={'class': 'form-control'}),
+            'name': forms.TextInput(attrs={'class': 'form-control'}),
+            'amount': forms.TextInput(attrs={'class': 'form-control'}),
+            'starting': forms.TextInput(attrs={'class': 'form-control'}),
+            'email': forms.TextInput(attrs={'class': 'form-control'}),
+            'phone': forms.TextInput(attrs={'class': 'form-control'}),
+        }
+
+        labels = {
             'crowdfund': 'fund_number',
             'email': 'my_email',
-          
             'name': 'my_name',
             'amount': 'my_investment',
-            
             'starting': 'starting investment dd/mm/yy',
             'phone': 'my_phone',
         }
 
-class Booking2Form(ModelForm):
-	class Meta:
-		model = Booking2
-		fields = ('crowdfund', 'name',  'amount', 'starting', 'email', 'phone' )
+class Booking2Form(forms.ModelForm):
+    class Meta:
+        model = Booking2
+        fields = ('user', 'crowdfund', 'name', 'amount', 'starting', 'email', 'phone')
 
-		widgets = {
-			'crowdfund': forms.TextInput(attrs={'class':'form-control'}),
-			'name': forms.TextInput(attrs={'class':'form-control'}),
-			
-			'amount': forms.TextInput(attrs={'class':'form-control'}),
-			
-			'starting': forms.TextInput(attrs={'class':'form-control'}),
-			'email': forms.TextInput(attrs={'class':'form-control'}),
-			'phone': forms.TextInput(attrs={'class':'form-control'}),
+        widgets = {
+            'user': forms.HiddenInput(),
+            'crowdfund': forms.TextInput(attrs={'class': 'form-control'}),
+            'name': forms.TextInput(attrs={'class': 'form-control'}),
+            'amount': forms.TextInput(attrs={'class': 'form-control'}),
+            'starting': forms.TextInput(attrs={'class': 'form-control'}),
+            'email': forms.TextInput(attrs={'class': 'form-control'}),
+            'phone': forms.TextInput(attrs={'class': 'form-control'}),
+        }
 
-		}
-
-		labels = {
+        labels = {
             'crowdfund': 'fund_number',
             'email': 'my_email',
-          
             'name': 'my_name',
             'amount': 'my_investment',
-            
             'starting': 'starting investment dd/mm/yy',
             'phone': 'my_phone',
         }
 
+# Similar changes for Booking3Form and Booking4Form
+from django import forms
+from .models import Booking1, Booking2, Booking3, Booking4
 
-class Booking3Form(ModelForm):
-	class Meta:
-		model = Booking3
-		fields = ('crowdfund', 'name',  'amount', 'starting', 'email', 'phone' )
+class Booking3Form(forms.ModelForm):
+    class Meta:
+        model = Booking3
+        fields = ('user', 'crowdfund', 'name', 'amount', 'starting', 'email', 'phone')
 
-		widgets = {
-			'crowdfund': forms.TextInput(attrs={'class':'form-control'}),
-			'name': forms.TextInput(attrs={'class':'form-control'}),
-			
-			'amount': forms.TextInput(attrs={'class':'form-control'}),
-			
-			'starting': forms.TextInput(attrs={'class':'form-control'}),
-			'email': forms.TextInput(attrs={'class':'form-control'}),
-			'phone': forms.TextInput(attrs={'class':'form-control'}),
+        widgets = {
+            'user': forms.HiddenInput(),
+            'crowdfund': forms.TextInput(attrs={'class': 'form-control'}),
+            'name': forms.TextInput(attrs={'class': 'form-control'}),
+            'amount': forms.TextInput(attrs={'class': 'form-control'}),
+            'starting': forms.TextInput(attrs={'class': 'form-control'}),
+            'email': forms.TextInput(attrs={'class': 'form-control'}),
+            'phone': forms.TextInput(attrs={'class': 'form-control'}),
+        }
 
-		}
-
-		labels = {
+        labels = {
             'crowdfund': 'fund_number',
             'email': 'my_email',
-          
             'name': 'my_name',
             'amount': 'my_investment',
-            
             'starting': 'starting investment dd/mm/yy',
             'phone': 'my_phone',
         }
 
-class Booking4Form(ModelForm):
-	class Meta:
-		model = Booking4
-		fields = ('crowdfund', 'name',  'amount', 'starting', 'email', 'phone' )
+class Booking4Form(forms.ModelForm):
+    class Meta:
+        model = Booking4
+        fields = ('user', 'crowdfund', 'name', 'amount', 'starting', 'email', 'phone')
 
-		widgets = {
-			'crowdfund': forms.TextInput(attrs={'class':'form-control'}),
-			'name': forms.TextInput(attrs={'class':'form-control'}),
-			
-			'amount': forms.TextInput(attrs={'class':'form-control'}),
-			
-			'starting': forms.TextInput(attrs={'class':'form-control'}),
-			'email': forms.TextInput(attrs={'class':'form-control'}),
-			'phone': forms.TextInput(attrs={'class':'form-control'}),
+        widgets = {
+            'user': forms.HiddenInput(),
+            'crowdfund': forms.TextInput(attrs={'class': 'form-control'}),
+            'name': forms.TextInput(attrs={'class': 'form-control'}),
+            'amount': forms.TextInput(attrs={'class': 'form-control'}),
+            'starting': forms.TextInput(attrs={'class': 'form-control'}),
+            'email': forms.TextInput(attrs={'class': 'form-control'}),
+            'phone': forms.TextInput(attrs={'class': 'form-control'}),
+        }
 
-		}
-
-		labels = {
+        labels = {
             'crowdfund': 'fund_number',
             'email': 'my_email',
-          
             'name': 'my_name',
             'amount': 'my_investment',
-            
             'starting': 'starting investment dd/mm/yy',
             'phone': 'my_phone',
         }
 
+# Similar changes for Booking3Form and Booking4Form
 
 
 class Location1Form(ModelForm):

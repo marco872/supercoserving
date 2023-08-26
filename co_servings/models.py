@@ -554,73 +554,67 @@ class Liquidity(models.Model):
 
 
 
+from django.contrib.auth.models import User
+
 class Booking1(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE, default=1)  
+    crowdfund = models.CharField(max_length=200, null=True)
+    name = models.CharField(max_length=200, null=True)
+    amount = models.DecimalField(max_digits=10, decimal_places=2, null=True)
+    starting = models.CharField(max_length=200, null=True)
+    email = models.CharField(max_length=200, null=True)
+    phone = models.CharField(max_length=200, null=True)
 
-	 
-	crowdfund = models.CharField(max_length=200, null=True)
-	name = models.CharField(max_length=200, null=True)
-	amount = models.DecimalField(max_digits=10, decimal_places=2, null=True)
-	starting = models.CharField(max_length=200, null=True)
-	email = models.CharField(max_length=200, null=True)
-	phone = models.CharField(max_length=200, null=True)
+    def __str__(self):
+        return self.name
 
-
-	
-
-	def __str__(self):
-		return self.name
+# Similar changes for Booking2, Booking3, and Booking4 models
 
 
 class Booking2(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE, default=1)
+    crowdfund = models.CharField(max_length=200, null=True)
+    name = models.CharField(max_length=200, null=True)
+    amount = models.DecimalField(max_digits=10, decimal_places=2, null=True)
+    starting = models.CharField(max_length=200, null=True)
+    email = models.CharField(max_length=200, null=True)
+    phone = models.CharField(max_length=200, null=True)
 
-	 
-	crowdfund = models.CharField(max_length=200, null=True)
-	name = models.CharField(max_length=200, null=True)
-	amount = models.DecimalField(max_digits=10, decimal_places=2, null=True)
-	starting = models.CharField(max_length=200, null=True)
-	email = models.CharField(max_length=200, null=True)
-	phone = models.CharField(max_length=200, null=True)
+    def __str__(self):
+        return self.name
 
-
-	
-
-	def __str__(self):
-		return self.name
-
+# Similar changes for Booking2, Booking3, and Booking4 models
 
 
 class Booking3(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE, default=1)
+    crowdfund = models.CharField(max_length=200, null=True)
+    name = models.CharField(max_length=200, null=True)
+    amount = models.DecimalField(max_digits=10, decimal_places=2, null=True)
+    starting = models.CharField(max_length=200, null=True)
+    email = models.CharField(max_length=200, null=True)
+    phone = models.CharField(max_length=200, null=True)
 
-	 
-	crowdfund = models.CharField(max_length=200, null=True)
-	name = models.CharField(max_length=200, null=True)
-	amount = models.DecimalField(max_digits=10, decimal_places=2, null=True)
-	starting = models.CharField(max_length=200, null=True)
-	email = models.CharField(max_length=200, null=True)
-	phone = models.CharField(max_length=200, null=True)
+    def __str__(self):
+        return self.name
 
+# Similar changes for Booking2, Booking3, and Booking4 models
 
-	
-
-	def __str__(self):
-		return self.name
 
 
 class Booking4(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE, default=1)
+    crowdfund = models.CharField(max_length=200, null=True)
+    name = models.CharField(max_length=200, null=True)
+    amount = models.DecimalField(max_digits=10, decimal_places=2, null=True)
+    starting = models.CharField(max_length=200, null=True)
+    email = models.CharField(max_length=200, null=True)
+    phone = models.CharField(max_length=200, null=True)
 
-	 
-	crowdfund = models.CharField(max_length=200, null=True)
-	name = models.CharField(max_length=200, null=True)
-	amount = models.DecimalField(max_digits=10, decimal_places=2, null=True)
-	starting = models.CharField(max_length=200, null=True)
-	email = models.CharField(max_length=200, null=True)
-	phone = models.CharField(max_length=200, null=True)
+    def __str__(self):
+        return self.name
 
-
-	
-
-	def __str__(self):
-		return self.name
+# Similar changes for Booking2, Booking3, and Booking4 models
 
 
 class Location1(models.Model):
