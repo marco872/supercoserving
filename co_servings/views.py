@@ -395,7 +395,7 @@ def liquidity(request):
 
   
 
-    return render(request, 'co_servings/liquidity.html', {'form': form, 'submitted': submitted, 'bookings': bookings})
+    return render(request, 'co_servings/liquidity.html', {'form': form, 'submitted': submitted})
 
 def booking(request, booking_type):
 
