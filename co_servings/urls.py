@@ -87,6 +87,7 @@ urlpatterns = [
     path('booking4/', views.booking, {'booking_type': 'booking4'}, name='booking4'),
     path('add_liquidity/', views.add_liquidity, name='add_liquidity'),
     path('liquidity/', views.liquidity, name='liquidity'),
+    path('dashboard/', views.dashboard, name='dashboard'),
 
 
 ]   

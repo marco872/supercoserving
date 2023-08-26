@@ -1,0 +1,24 @@
+{% extends 'co_servings/main.html' %}
+
+{% block content %}
+<body style="background-color: #0E0E2C; ">
+<div class="container" style="background-color: #0E0E2C; margin-top: -30px;  max-width: 320px; " >  
+
+<h2>Welcome to Your Dashboard, {{ user.username }}</h2>
+
+<h3>Your Bookings:</h3>
+<ul>
+    {% for booking in user_bookings %}
+        <li>{{ booking.name }}</li>
+    {% endfor %}
+</ul>
+
+<h3>Your Liquidity Submissions:</h3>
+<ul>
+    {% for liquidity in user_liquidity_submissions %}
+        <li>{{ liquidity.name }}</li>
+    {% endfor %}
+</ul>
+</div>
+</body>
+{% endblock %}
