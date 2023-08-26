@@ -697,8 +697,10 @@ def dashboard(request):
     user = request.user
 
     # Query data related to user's activity
-    user_bookings = Booking.objects.filter(user=request.user)
-    user_liquidity_submissions = Liquidity.objects.filter(user=request.user)
+    user_bookings = Booking.objects.filter(user__username=request.user.username)
+
+    user_liquidity_submissions = Liquidity.objects.filter(user__username=request.user.username)
+
 
     context = {
         'user_bookings': user_bookings,
