@@ -533,8 +533,8 @@ class Booking(models.Model):
 
 class Liquidity(models.Model):
     name = models.CharField(max_length=200, blank=True, null=True)
-    booking = models.ForeignKey('Booking', on_delete=models.CASCADE)  # Remove default=None
-    percent = models.DecimalField(max_digits=5, decimal_places=2)
+    #booking = models.ForeignKey(Booking, on_delete=models.CASCADE)  # Remove default=None
+    #percent = models.DecimalField(max_digits=5, decimal_places=2)
 
     def __str__(self):
         return self.name

@@ -54,7 +54,7 @@ class VenueForm(ModelForm):
 class LiquidityForm(forms.ModelForm):
     class Meta:
         model = Liquidity
-        fields = ['name', 'booking', 'percent']  # Add other fields if needed
+        fields = ['name',]  # Add other fields if needed
 
 class CollateralForm(ModelForm):
 	class Meta:

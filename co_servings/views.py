@@ -348,7 +348,10 @@ def design5(request):
 	
 
 
-
+from django.shortcuts import render, redirect
+from django.db.models import Sum
+from .models import Booking, Booking1, Booking2, Booking3, Booking4, Liquidity
+from .forms import Booking1Form, Booking2Form, Booking3Form, Booking4Form, LiquidityForm  # Import your forms
 def add_liquidity(request):
     submitted = False
     form = LiquidityForm()
@@ -379,9 +382,10 @@ def liquidity(request):
         form = LiquidityForm(request.POST)
         if form.is_valid():
             liquidity = form.save(commit=False)
-            # Associate the booking field with a valid Booking instance
-            liquidity.booking = booking1_instance = Booking1.objects.create()  # Replace with the actual booking instance
-            liquidity.save()  # Save the liquidity instance with the associated booking
+            # Here, associate the liquidity instance with a valid booking instance
+           
+            liquidity.save()
+
             return redirect('/liquidity?submitted=True')
 
     else:
@@ -389,10 +393,9 @@ def liquidity(request):
         if 'submitted' in request.GET:
             submitted = True
 
-    # Get associated booking items and pass them to the template
-    associated_bookings = Booking.objects.filter(liquidity__isnull=False)
-    
-    return render(request, 'co_servings/liquidity.html', {'form': form, 'submitted': submitted, 'bookings': associated_bookings})
+  
+
+    return render(request, 'co_servings/liquidity.html', {'form': form, 'submitted': submitted, 'bookings': bookings})
 
 def booking(request, booking_type):
 
