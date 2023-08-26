@@ -532,12 +532,22 @@ class Booking(models.Model):
 
 
 class Liquidity(models.Model):
+
+    BOOKING = (
+        ('Booking1', 'Booking1'),
+        ('Booking2', 'Booking2'),
+        ('Booking3', 'Booking3'),
+        ('Booking4', 'Booking4'),
+    )
+
     name = models.CharField(max_length=200, blank=True, null=True)
     #booking = models.ForeignKey(Booking, on_delete=models.CASCADE)  # Remove default=None
     #percent = models.DecimalField(max_digits=5, decimal_places=2)
+    booking = models.CharField(max_length=200, null=True, choices=BOOKING)
 
     def __str__(self):
         return self.name
+
 
 
 
