@@ -539,7 +539,8 @@ class Liquidity(models.Model):
         ('Booking3', 'Booking3'),
         ('Booking4', 'Booking4'),
     )
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+
+    user = models.ForeignKey(User, on_delete=models.CASCADE, default=1)
     name = models.CharField(max_length=200, blank=True, null=True)
     booking = models.CharField(max_length=200, null=True, choices=BOOKING)
     collateral_amount = models.DecimalField(max_digits=5, decimal_places=2)
