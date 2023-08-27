@@ -58,6 +58,7 @@ from django.db.models import Sum
 class LiquidityForm(forms.ModelForm):
     class Meta:
         model = Liquidity
+        exclude = ['user'] 
         fields = '__all__'
 
     # Add the collateral_amount field to the form

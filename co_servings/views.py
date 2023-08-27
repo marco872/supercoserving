@@ -383,6 +383,7 @@ def liquidity(request):
         if form.is_valid():
             liquidity = form.save(commit=False)
             # Here, associate the liquidity instance with a valid booking instance
+            liquidity.user = request.user
             liquidity.save()
 
             return redirect('/liquidity?submitted=True')
