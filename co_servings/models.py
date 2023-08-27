@@ -529,6 +529,7 @@ class Booking(models.Model):
         return self.name
 
 
+from django.contrib.auth.models import User
 
 class Liquidity(models.Model):
 
@@ -538,10 +539,8 @@ class Liquidity(models.Model):
         ('Booking3', 'Booking3'),
         ('Booking4', 'Booking4'),
     )
-
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     name = models.CharField(max_length=200, blank=True, null=True)
-    #booking = models.ForeignKey(Booking, on_delete=models.CASCADE)  # Remove default=None
-    #percent = models.DecimalField(max_digits=5, decimal_places=2)
     booking = models.CharField(max_length=200, null=True, choices=BOOKING)
     collateral_amount = models.DecimalField(max_digits=5, decimal_places=2)
     
@@ -554,7 +553,8 @@ class Liquidity(models.Model):
 
 
 
-from django.contrib.auth.models import User
+
+
 
 class Booking1(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, default=1)  
