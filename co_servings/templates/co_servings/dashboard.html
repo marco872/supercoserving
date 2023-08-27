@@ -1,39 +1,81 @@
 {% extends 'co_servings/main.html' %}
 
 {% block content %}
+<style type="text/css">
+.button {
+
+  margin: 4px 2px;
+}
+
+.button1 {border-radius: 2px;}
+.button2 {border-radius: 4px;}
+.button3 {border-radius: 8px;}
+.button4 {border-radius: 12px;}
+.button5 {border-radius: 50%;}
+
+
+}
+
+
+
+h6 {
+    color:white;
+  }
+
+
+  h1 {
+    color: white;
+
+  }
+ 
+  h5, td {
+    color: white;
+  }
+ 
+
+
+ 
+
+
+  
+</style>
 <body style="background-color: #0E0E2C; ">
 <div class="container" style="background-color: #0E0E2C; margin-top: -30px;  max-width: 320px; " >  
+{% if user.is_authenticated %}
 
-<h2>Welcome to Your Dashboard, {{ user.username }}</h2>
+<!-- Your existing HTML code here -->
 
-<h3>Your Bookings 1:</h3>
+<div>
+    <h4 style="margin-left: 0px; margin-top: 80px; color: lightgreen"> Welcome to Your Dashboard, {{ user.username }}</h4>
+</div>
+<h5>Your Bookings 1:</h5>
 <ul>
     {% for booking in user_bookings1 %}
         <li>{{ booking.name }}</li>
     {% endfor %}
 </ul>
 
-<h3>Your Bookings 2:</h3>
+<h5>Your Bookings 2:</h5>
 <ul>
     {% for booking in user_bookings2 %}
         <li>{{ booking.name }}</li>
     {% endfor %}
 </ul>
 
-<h3>Your Bookings 3:</h3>
+<h5>Your Bookings 3:</h5>
 <ul>
     {% for booking in user_bookings3 %}
         <li>{{ booking.name }}</li>
     {% endfor %}
 </ul>
 
-<h3>Your Bookings 4:</h3>
+<h5>Your Bookings 4:</h5>
 <ul>
     {% for booking in user_bookings4 %}
         <li>{{ booking.name }}</li>
     {% endfor %}
 </ul>
-<h3>Your Liquidity Submissions:</h3>
+<h5>Your Liquidity Submissions:</h5>
 <ul>
     {% for liquidity in user_liquidity_submissions %}
         <li>{{ liquidity.name }}</li>
