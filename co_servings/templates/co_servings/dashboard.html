@@ -35,31 +35,31 @@ h5, td {
     <h4 style="margin-left: 0px; margin-top: 80px; color: lightgreen"> Welcome to Your Dashboard, {{ user.username }}</h4>
 </div>
 
-<h5 style="color: lightgreen">Your Bookings 1:</h5>
-<ul style="color: lightgreen">
+<h5>Your Bookings 1:</h5>
+<ul>
     {% for booking in user_bookings1 %}
-        <li style="color: lightgreen">{{ booking1.amount }}</li>
+        <li>{{ bookings1.amount }}</li>
     {% endfor %}
 </ul>
 
 <h5>Your Bookings 2:</h5>
 <ul>
     {% for booking in user_bookings2 %}
-        <li style="color: lightgreen">{{ booking2.amount }}</li>
+        <li style="color: lightgreen">{{ bookings2.amount }}</li>
     {% endfor %}
 </ul>
 
 <h5>Your Bookings 3:</h5>
 <ul>
     {% for booking in user_bookings3 %}
-        <li style="color: lightgreen">{{ booking3.amount }}</li>
+        <li style="color: lightgreen">{{ bookings3.amount }}</li>
     {% endfor %}
 </ul>
 
 <h5>Your Bookings 4:</h5>
 <ul>
     {% for booking in user_bookings4 %}
-        <li style="color: lightgreen">{{ booking4.amount }}</li>
+        <li style="color: lightgreen">{{ bookings4.amount }}</li>
     {% endfor %}
 </ul>
 <h5>Your Liquidity Submissions:</h5>
