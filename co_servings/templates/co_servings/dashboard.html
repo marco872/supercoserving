@@ -35,8 +35,8 @@ h5, td {
     <h4 style="margin-left: 0px; margin-top: 80px; color: lightgreen"> Welcome to Your Dashboard, {{ user.username }}</h4>
 </div>
 
-<h5>Your Bookings 1:</h5>
-<ul>
+<h5 style="color: lightgreen">Your Bookings 1:</h5>
+<ul style="color: lightgreen">
     {% for booking in user_bookings1 %}
         <li style="color: lightgreen">{{ booking1.amount }}</li>
     {% endfor %}
