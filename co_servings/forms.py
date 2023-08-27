@@ -161,6 +161,7 @@ class BookingForm(ModelForm):
 class Booking1Form(forms.ModelForm):
     class Meta:
         model = Booking1
+        exclude = ['user'] 
         fields = ('user', 'crowdfund', 'name', 'amount', 'starting', 'email', 'phone')
 
         widgets = {
@@ -185,6 +186,7 @@ class Booking1Form(forms.ModelForm):
 class Booking2Form(forms.ModelForm):
     class Meta:
         model = Booking2
+        exclude = ['user'] 
         fields = ('user', 'crowdfund', 'name', 'amount', 'starting', 'email', 'phone')
 
         widgets = {
@@ -213,6 +215,7 @@ from .models import Booking1, Booking2, Booking3, Booking4
 class Booking3Form(forms.ModelForm):
     class Meta:
         model = Booking3
+        exclude = ['user'] 
         fields = ('user', 'crowdfund', 'name', 'amount', 'starting', 'email', 'phone')
 
         widgets = {
@@ -237,6 +240,7 @@ class Booking3Form(forms.ModelForm):
 class Booking4Form(forms.ModelForm):
     class Meta:
         model = Booking4
+        exclude = ['user'] 
         fields = ('user', 'crowdfund', 'name', 'amount', 'starting', 'email', 'phone')
 
         widgets = {
