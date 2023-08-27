@@ -37,28 +37,28 @@ h5, td {
 
 <h5>Your Bookings 1:</h5>
 <ul>
-    {% for booking in user_bookings1 %}
+    {% for booking1 in user_bookings1 %}
         <li>{{ bookings1.amount }}</li>
     {% endfor %}
 </ul>
 
 <h5>Your Bookings 2:</h5>
 <ul>
-    {% for booking in user_bookings2 %}
+    {% for booking2 in user_bookings2 %}
         <li style="color: lightgreen">{{ bookings2.amount }}</li>
     {% endfor %}
 </ul>
 
 <h5>Your Bookings 3:</h5>
 <ul>
-    {% for booking in user_bookings3 %}
+    {% for booking3 in user_bookings3 %}
         <li style="color: lightgreen">{{ bookings3.amount }}</li>
     {% endfor %}
 </ul>
 
 <h5>Your Bookings 4:</h5>
 <ul>
-    {% for booking in user_bookings4 %}
+    {% for booking4 in user_bookings4 %}
         <li style="color: lightgreen">{{ bookings4.amount }}</li>
     {% endfor %}
 </ul>
@@ -72,3 +72,5 @@ h5, td {
 {% endif %}
 </body>
 {% endblock %}
+
+
