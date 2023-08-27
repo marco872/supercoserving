@@ -38,34 +38,34 @@ h5, td {
 <h5>Your Bookings 1:</h5>
 <ul>
     {% for booking in user_bookings1 %}
-        <li>{{ booking.name }}</li>
+        <li>{{ booking.amount }}</li>
     {% endfor %}
 </ul>
 
 <h5>Your Bookings 2:</h5>
 <ul>
     {% for booking in user_bookings2 %}
-        <li>{{ booking.name }}</li>
+        <li>{{ booking.amount }}</li>
     {% endfor %}
 </ul>
 
 <h5>Your Bookings 3:</h5>
 <ul>
     {% for booking in user_bookings3 %}
-        <li>{{ booking.name }}</li>
+        <li>{{ booking.amount }}</li>
     {% endfor %}
 </ul>
 
 <h5>Your Bookings 4:</h5>
 <ul>
     {% for booking in user_bookings4 %}
-        <li>{{ booking.name }}</li>
+        <li>{{ booking.amount }}</li>
     {% endfor %}
 </ul>
 <h5>Your Liquidity Submissions:</h5>
 <ul>
     {% for liquidity in user_liquidity_submissions %}
-        <li>{{ liquidity.name }}</li>
+        <li>{{ liquidity.collateral_amount }}</li>
     {% endfor %}
 </ul>-->
 
