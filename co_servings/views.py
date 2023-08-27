@@ -689,28 +689,29 @@ def news4(request):
 	return render(request, 'co_servings/news4.html',context)
 
 
+# views.py
 from co_servings.models import Booking1, Booking2, Booking3, Booking4, Liquidity
 from django.contrib.auth.decorators import login_required
-from django.db.models import Q
 
 @login_required
 def dashboard(request):
     user = request.user
 
     # Query data related to user's activity
-    user_bookings = (
-        Booking1.objects.filter(user=user) |
-        Booking2.objects.filter(user=user) |
-        Booking3.objects.filter(user=user) |
-        Booking4.objects.filter(user=user)
-    )
-
+    user_bookings1 = Booking1.objects.filter(user=user)
+    user_bookings2 = Booking2.objects.filter(user=user)
+    user_bookings3 = Booking3.objects.filter(user=user)
+    user_bookings4 = Booking4.objects.filter(user=user)
     user_liquidity_submissions = Liquidity.objects.filter(user=user)
 
     context = {
-        'user_bookings': user_bookings,
+        'user_bookings1': user_bookings1,
+        'user_bookings2': user_bookings2,
+        'user_bookings3': user_bookings3,
+        'user_bookings4': user_bookings4,
         'user_liquidity_submissions': user_liquidity_submissions
     }
 
     return render(request, 'co_servings/dashboard.html', context)
+
 
