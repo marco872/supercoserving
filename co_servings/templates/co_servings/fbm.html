@@ -52,7 +52,7 @@ h6 {
 <h6 style="color: white">// SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;</h6>
 
-    <h6 style="color: white">contract ProjectContract {
+    <h6 style="color: white"><small>contract ProjectContract {
     address public owner;
     address public designBuildCompany;
     address[] public stakeholders;
@@ -61,7 +61,7 @@ pragma solidity ^0.8.0;</h6>
     modifier onlyOwner() {
         require(msg.sender == owner, "Only the owner can call this function");
         _;
-    }</h6>
+    }
     
     modifier onlyDesignBuildCompany() {
         require(msg.sender == designBuildCompany, "Only the Design-Build Company can call this function");
@@ -78,16 +78,16 @@ pragma solidity ^0.8.0;</h6>
         }
         require(isStakeholder, "Only stakeholders can call this function");
         _;
-    }
+    }</small></h6>
     
-    <h6 style="color: white">// Constructor
+    <h6 style="color: white"><small>// Constructor
     constructor(address _designBuildCompany, address[] memory _stakeholders) {
         owner = msg.sender;
         designBuildCompany = _designBuildCompany;
         stakeholders = _stakeholders;
-    }</h6>
+    }</small></h6>
     
-    <h6 style="color: white">// Functions
+    <h6 style="color: white"><small>// Functions
     
     function deposit() external payable {
         // Implement deposit logic for Crowdfunding, Collaterals, Liquidity Pool
@@ -108,7 +108,7 @@ pragma solidity ^0.8.0;</h6>
     function transferOwnership(address newOwner) external onlyOwner {
         owner = newOwner;
     }
-}</h6>
+}</small></h6>
 
         <br>
         <br>
