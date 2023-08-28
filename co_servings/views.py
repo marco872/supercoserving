@@ -373,17 +373,17 @@ def add_liquidity(request):
 
 def payment1(request):
     submitted = False
-    form = LiquidityForm()
+    form = Payment1Form()
 
     if request.method == "POST":
-        form = LiquidityForm(request.POST)
+        form = Payment1Form(request.POST)
         if form.is_valid():
-            liquidity = form.save(commit=False)
+            payment1 = form.save(commit=False)
             # Here, associate the liquidity instance with a valid booking instance
-            liquidity.user = request.user
-            liquidity.save()
+            payment1.user = request.user
+            payment1.save()
 
-            return redirect('/liquidity?submitted=True')
+            return redirect('/payment1?submitted=True')
 
     else:
         form = LiquidityForm()
