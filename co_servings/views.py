@@ -386,7 +386,7 @@ def payment1(request):
             return redirect('/payment1?submitted=True')
 
     else:
-        form = LiquidityForm()
+        form = Payment1Form()
         if 'submitted' in request.GET:
             submitted = True
 
