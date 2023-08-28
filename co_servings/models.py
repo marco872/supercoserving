@@ -532,14 +532,21 @@ from django.contrib.auth.models import User
 
 
 class Payment1(models.Model):
+    BOOKING = (
+        ('Booking1', 'Booking1'),
+        ('Booking2', 'Booking2'),
+        ('Booking3', 'Booking3'),
+        ('Booking4', 'Booking4'),
+    )
     user = models.ForeignKey(User, on_delete=models.CASCADE, default=1)
     Design_Build_Project = models.CharField(max_length=200, blank=True, null=True)
     collateral_amount = models.DecimalField(max_digits=5, decimal_places=2, default=0)
-
+    booking = models.CharField(max_length=200, null=True, choices=BOOKING)
     date_created = models.DateTimeField(auto_now_add=True, null=True)
 
     def __str__(self):
         return self.name
+
 
 
 	
