@@ -192,8 +192,7 @@ def guestopportunity(request):
 def reservation(request):
 	return render(request, 'co_servings/reservation.html')
 
-def payment1(request):
-	return render(request, 'co_servings/payment1.html')
+
 
 def payment2(request):
 	return render(request, 'co_servings/payment2.html')
@@ -372,7 +371,39 @@ def add_liquidity(request):
 
 # views.py
 
+def payment1(request):
+	submitted = False
+    form = LiquidityForm()
 
+    if request.method == "POST":
+        form = LiquidityForm(request.POST)
+        if form.is_valid():
+            liquidity = form.save(commit=False)
+            # Here, associate the liquidity instance with a valid booking instance
+            liquidity.user = request.user
+            liquidity.save()
+
+            return redirect('/liquidity?submitted=True')
+
+    else:
+        form = LiquidityForm()
+        if 'submitted' in request.GET:
+            submitted = True
+
+        total_amount_booking1 = Booking1.objects.aggregate(Sum('amount'))['amount__sum']
+        total_amount_booking2 = Booking2.objects.aggregate(Sum('amount'))['amount__sum']
+        total_amount_booking3 = Booking3.objects.aggregate(Sum('amount'))['amount__sum']
+        total_amount_booking4 = Booking4.objects.aggregate(Sum('amount'))['amount__sum']
+
+    context = {
+        'form': form,
+        'submitted': submitted,
+        'total_amount_booking1': total_amount_booking1,
+        'total_amount_booking2': total_amount_booking2,
+        'total_amount_booking3': total_amount_booking3,
+        'total_amount_booking4': total_amount_booking4
+    }
+	return render(request, 'co_servings/payment1.html')
 
 def liquidity(request):
     submitted = False
@@ -716,3 +747,4 @@ def dashboard(request):
     return render(request, 'co_servings/dashboard.html', context)
 
 
+	
