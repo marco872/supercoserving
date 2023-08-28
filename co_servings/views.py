@@ -372,7 +372,7 @@ def add_liquidity(request):
 # views.py
 
 def payment1(request):
-	submitted = False
+    submitted = False
     form = LiquidityForm()
 
     if request.method == "POST":
@@ -403,7 +403,8 @@ def payment1(request):
         'total_amount_booking3': total_amount_booking3,
         'total_amount_booking4': total_amount_booking4
     }
-	return render(request, 'co_servings/payment1.html')
+    return render(request, 'co_servings/payment1.html', context)
+
 
 def liquidity(request):
     submitted = False
