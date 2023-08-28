@@ -538,8 +538,16 @@ class Payment1(models.Model):
         ('Crowdfunding3', 'Crowdfunding3'),
         ('Crowdfunding4', 'Crowdfunding4'),
     )
+
+    PROJECT = (
+        ('FBM-2', 'FBM-2'),
+        ('FBM-3', 'FBM-3'),
+        ('FBM-6', 'FBM-6'),
+        ('FBM-10', 'FBM-10'),
+    )
+
     user = models.ForeignKey(User, on_delete=models.CASCADE, default=1)
-    Design_Build_Project = models.CharField(max_length=200, blank=True, null=True)
+    Design_Build_Project = models.CharField(max_length=200, null=True, choices=PROJECT)
     collateral_amount = models.DecimalField(max_digits=5, decimal_places=2, default=0)
     crowdfunding= models.CharField(max_length=200, null=True, choices=CROWDFUNDING)
     date_created = models.DateTimeField(auto_now_add=True, null=True)
