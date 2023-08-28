@@ -49,21 +49,21 @@ h6 {
 
 <h4><u>Basic Code Structure</u> </h4>
 <br>
-<h5>// SPDX-License-Identifier: MIT
-pragma solidity ^0.8.0;</h5>
+<h6>// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;</h6>
 
-<h5>contract Crowdfunding {
-    mapping(address => uint256) public balances;</h5>
+<h6>contract Crowdfunding {
+    mapping(address => uint256) public balances;</h6>
 
-    <h5>function deposit(uint256 amount, uint256 projectId) external payable {
+    <h6>function deposit(uint256 amount, uint256 projectId) external payable {
         // Implement your logic here, considering fiat transactions
         // Update balances and emit events
     }
 
     // Other functions...
-}</h5>
+}</h6>
 
-<h5>contract CollateralInvestment {
+<h6>contract CollateralInvestment {
     mapping(address => uint256) public collateralAmounts;
 
     function createCollateral(uint256 amount, uint256 projectId) external {
@@ -72,9 +72,9 @@ pragma solidity ^0.8.0;</h5>
     }
 
     // Other functions...
-}</h5>
+}</h6>
 
-<h5>contract LiquidityPool {
+<h6>contract LiquidityPool {
     mapping(uint256 => uint256) public availableFunds;
 
     function borrow(uint256 amount, uint256 projectId) external {
@@ -88,7 +88,7 @@ pragma solidity ^0.8.0;</h5>
     }
 
     // Other functions...
-}</h5>
+}</h6>
 
         <br>
         <br>
