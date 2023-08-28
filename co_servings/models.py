@@ -269,8 +269,7 @@ class Reservation(models.Model):
 	def __str__(self):
 		return self.name
 
-class Payment1(models.Model):
-	name = models.CharField(max_length=200, blank=True, null=True)
+
 	
 	
 	def __str__(self):
@@ -530,6 +529,20 @@ class Booking(models.Model):
 
 
 from django.contrib.auth.models import User
+
+
+class Payment1(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE, default=1)
+    Design_Build_Project = models.CharField(max_length=200, blank=True, null=True)
+    collateral_amount = models.DecimalField(max_digits=5, decimal_places=2)
+    date_created = models.DateTimeField(auto_now_add=True, null=True)
+
+    def __str__(self):
+        return self.name
+
+
+	
+
 
 class Liquidity(models.Model):
 
