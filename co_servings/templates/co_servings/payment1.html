@@ -3,61 +3,56 @@
 {% block content %}
 <style type="text/css">
   /* Add this to your <style> tag or external CSS file */
-.form-field {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 10px;
-}
-
-h6 {
-    color:lightgreen;
+  .form-field {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 10px;
   }
 
+  h6 {
+      color: lightgreen;
+  }
 
-p {
-    color: white;
-
+  p {
+      color: white;
   }
 </style>
-<body style="background-color: #0E0E2C; ">
-<div class="container" style="background-color: #0E0E2C; max-width: 320px; ">
-{% if user.is_authenticated %}
-  <div style="margin-left: 0px">
-    <br><br>
-    <h4 style="margin-left: 0px; margin-top: 80px; color: lightgreen"> Borrowing</h4>
-    <br>
-    <!-- Navbar content here -->
-  </div>
-  <br/><br/>
-   {% if submitted %}
+<body style="background-color: #0E0E2C;">
+<div class="container" style="background-color: #0E0E2C; max-width: 320px;">
+  {% if user.is_authenticated %}
+    <div style="margin-left: 0px">
+      <br><br>
+      <h4 style="margin-left: 0px; margin-top: 80px; color: lightgreen"> Borrowing</h4>
+      <br>
+      <!-- Navbar content here -->
+    </div>
+    <br/><br/>
+    {% if submitted %}
       Your Borrowing was Submitted Successfully!!!
-  {% else %}
-  <form action="" style="color: white" method="POST">
-    {% csrf_token %}
-    {% for field in form %}
-        <div class="form-field">
+    {% else %}
+      <form action="" style="color: white" method="POST">
+        {% csrf_token %}
+        {% for field in form %}
+          <div class="form-field">
             {{ field.label_tag }}
             {{ field }}
-        </div>
-    {% endfor %}
-    <input type="submit" value="Submit" class="btn btn-secondary">
-</form>
-
-
-  <br>
-  <hr>
-  <h6>Total Amounts:</h6>
-  <p>Total Amount Crowdfunding 1: {{ total_amount_booking1 }}</p>
-  <p>Total Amount Crowdfunding 2: {{ total_amount_booking2 }}</p>
-  <p>Total Amount Crowdfunding 3: {{ total_amount_booking3 }}</p>
-  <p>Total Amount Crowdfunding 4: {{ total_amount_booking4 }}</p>
-   {% endif %}
-  <br/><br/>
-{% else %}
-<h1>Sorry! You Must Be Logged In To View This Page...</h1>
-<a href="{% url 'login' %}">Login Here</a>
-</div>
-{% endif %}
+          </div>
+        {% endfor %}
+        <input type="submit" value="Submit" class="btn btn-secondary">
+      </form>
+      <br>
+      <hr>
+      <h6>Total Amounts:</h6>
+      <p>Total Amount Crowdfunding 1: {{ total_amount_booking1 }}</p>
+      <p>Total Amount Crowdfunding 2: {{ total_amount_booking2 }}</p>
+      <p>Total Amount Crowdfunding 3: {{ total_amount_booking3 }}</p>
+      <p>Total Amount Crowdfunding 4: {{ total_amount_booking4 }}</p>
+    {% endif %}
+    <br/><br/>
+  {% else %}
+    <h1>Sorry! You Must Be Logged In To View This Page...</h1>
+    <a href="{% url 'login' %}">Login Here</a>
+  </div>
+  {% endif %}
 </body>
 {% endblock %}
-
