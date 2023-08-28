@@ -1,5 +1,5 @@
 {% extends 'co_servings/main.html' %}
-
+{% load static %}
 {% block content %}
 <style type="text/css">
 .button {
@@ -19,17 +19,17 @@
 
 
 h6 {
-    color:black;
+    color:white;
   }
 
 
   h1 {
-    color: black;
+    color: white;
 
   }
  
   h4, h5, td {
-    color: black;
+    color: white;
   }
  
 
@@ -40,35 +40,186 @@ h6 {
   
 </style>
 
+<body style="background-color: #0E0E2C; ">
 
-{% if user.is_authenticated %}
+<div class="container" style="background-color: #0E0E2C; margin-top: -30px;  max-width: 320px; " >  
+  <h1 style="color:red; margin-top: 150px;">Desing-Build Project </h1>
 
-  <h1>Select your Accomodation</h1>
-  <br/><br/>
-  {% if submitted %}
+  <hr>
 
-      Your SELECTION was Submitted Succefully!!!
+  <h2 style="color:green;">Flex Building Model </h2>
+  <div class="container" style="font-size: xx-small;">
 
-  {% else %}
+<h6 style="color:lightgreen;">Flex Building Model - Design-Build Construction Company</h6>
 
-	<form action=" " method="POST">
-	  	{% csrf_token %}
 
-	  	{{ form.as_p }}
 
-	  	<input type="submit" value="Submit" class="btn btn-secondary">
 
-	</form>
+</div>
+<style>
+.stacked-buttons {
+  display: block;
+  text-align: center;
+  width: 150px;
+  height: 50px;
+  line-height: 50px;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  margin: 10px auto;
+}
 
-   {% endif %}
+.stacked-buttons:first-child {
+  background-color:#FF8800;
+  color:white;
+}
 
-<br/><br/>
 
-{% else %}
-<h1>Sorry! You Must Be Logged In To View This Page...</h1>
-<a href="{% url 'login' %}">Login Here</a>
+</style>
+<a href="#">
+
+  <button class="button button4 stacked-buttons">Flex Building</button>
+</a>
+
+  <hr>
+
+ <br>
+<h2 style="color:green;">Flex Building Model Types: </h2>
+          <h3 style="color:green;">fbm-2</h3><h5 style="color:blue;"> "2-story building :"</h5> <h5>  4 duplexes/ cons.cost € 700.000 </h5>
+
+          <img src="{% static 'images/building 5.PNG' %}"
+            style="object-fit:contain;
+            width:400px;
+            height:300px;
+            "/>
+
+
+                
+                  <a href="{% url 'plan' %}">
+                    
+                    <button class="button button4">Plans</button>    
+
+                  </a> 
+
+                  
+                    
+               
+             <br>
+
+          <br>
+
+          <hr>
+          <br>
+
+          <h3 style="color:green;">fbm-3</h3><h5 style="color:blue;"> "4-story building :"</h5> <h5>  8 duplexes/ cons.cost € 1.000.000 </h5>
+
+          <img src="{% static 'images/building 4.PNG' %}"
+            style="object-fit:contain;
+            width:400px;
+            height:300px;
+           "/>
+
+
+
+                    <a href="{% url 'plan' %}">
+                    
+                      <button class="button button4">Plans</button>    
+
+                    </a> 
+
+                  
+              
+
+          <br>
+          <br>
+         
+
+    <hr>
+          
+
+          <br>
+          <br>
+          <h3 style="color:green;">fbm-6</h3><h5 style="color:blue;"> "6-story building :"</h5> <h5>  12 duplexes/ cons.cost € 2.000.000 </h5>
+
+
+
+          <img src="{% static 'images/building 3.PNG' %}"
+            style="object-fit:contain;
+            width:400px;
+            height:300px;
+           "/>
+
+
+
+                    
+                <a href="{% url 'plan' %}">
+                    
+                  <button class="button button4">Plans</button>    
+
+                </a> 
+
+                
+                
+          <br>
+          <br>
+
+         
 
   
-{% endif %}
+     <hr>
+          <br>
 
+          <h3 style="color:green;">fbm-10</h3><h5 style="color:blue;"> " fbm-3+fbm-6= 10-story development :"</h5> <h5>  20 duplexes/ cons.cost € 3.000.000 </h5>
+
+          <img src="{% static 'images/building 6.PNG' %}"
+            style="object-fit:contain;
+            width:400px;
+            height:300px;
+            "/>
+
+               
+
+
+                    <a href="{% url 'plan' %}">
+                    
+                      <button class="button button4">Plans</button>    
+
+                    </a> 
+
+                  
+                   
+               
+
+          <br>
+          <br>
+
+      <hr>
+          <br>
+
+          <h3 style="color:green;">fbm-16</h3><h5 style="color:blue;"> "fbm-3+fbm-6+fbm-6= 16-story development :"</h5> <h5>  32 duplexes/ cons.cost € 5.000.000 </h5>
+
+          <img src="{% static 'images/building 7.PNG' %}"
+            style="object-fit:contain;
+            width:400px;
+            height:300px;
+           "/>
+
+                
+                    <a href="{% url 'plan' %}">
+                    
+                      <button class="button button4">Plans</button>    
+
+                    </a> 
+
+                  
+                   
+               
+
+          <br>
+          <br> 
+          
+ </div> 
+         
 {% endblock %}
+</body>
