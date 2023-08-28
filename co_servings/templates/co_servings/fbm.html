@@ -52,42 +52,62 @@ h6 {
 <h6 style="color: white">// SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;</h6>
 
-<h6 style="color: white">contract Crowdfunding {
-    mapping(address => uint256) public balances;</h6>
-
-    <h6 style="color: white">function deposit(uint256 amount, uint256 projectId) external payable {
-        // Implement your logic here, considering fiat transactions
-        // Update balances and emit events
+    <h6 style="color: white">contract ProjectContract {
+    address public owner;
+    address public designBuildCompany;
+    address[] public stakeholders;
+    
+    // Modifiers
+    modifier onlyOwner() {
+        require(msg.sender == owner, "Only the owner can call this function");
+        _;
+    }</h6>
+    
+    modifier onlyDesignBuildCompany() {
+        require(msg.sender == designBuildCompany, "Only the Design-Build Company can call this function");
+        _;
     }
-
-    // Other functions...
-}</h6>
-
-<h6 style="color: white">contract CollateralInvestment {
-    mapping(address => uint256) public collateralAmounts;
-
-    function createCollateral(uint256 amount, uint256 projectId) external {
-        // Implement your logic here, considering fiat transactions
-        // Update collateralAmounts and emit events
+    
+    modifier onlyStakeholder() {
+        bool isStakeholder = false;
+        for (uint256 i = 0; i < stakeholders.length; i++) {
+            if (msg.sender == stakeholders[i]) {
+                isStakeholder = true;
+                break;
+            }
+        }
+        require(isStakeholder, "Only stakeholders can call this function");
+        _;
     }
-
-    // Other functions...
-}</h6>
-
-<h6 style="color: white">contract LiquidityPool {
-    mapping(uint256 => uint256) public availableFunds;
-
-    function borrow(uint256 amount, uint256 projectId) external {
-        // Implement your logic here, considering fiat transactions
-        // Update availableFunds and emit events
+    
+    <h6 style="color: white">// Constructor
+    constructor(address _designBuildCompany, address[] memory _stakeholders) {
+        owner = msg.sender;
+        designBuildCompany = _designBuildCompany;
+        stakeholders = _stakeholders;
+    }</h6>
+    
+    <h6 style="color: white">// Functions
+    
+    function deposit() external payable {
+        // Implement deposit logic for Crowdfunding, Collaterals, Liquidity Pool
     }
-
-    function repay(uint256 amount, uint256 projectId) external {
-        // Implement your logic here, considering fiat transactions
-        // Update availableFunds and emit events
+    
+    function borrow() external onlyDesignBuildCompany {
+        // Implement borrow logic for Construction Loans using Permissioned Private Blockchain financial Structure
     }
-
-    // Other functions...
+    
+    function repayLoan(uint256 amount) external onlyDesignBuildCompany {
+        // Implement repayLoan logic using Permissioned Private Blockchain Structure
+    }
+    
+    function distributeProfit() external onlyStakeholder {
+        // Implement distributeProfit logic among stakeholders using Permissioned Private Blockchain Structure
+    }
+    
+    function transferOwnership(address newOwner) external onlyOwner {
+        owner = newOwner;
+    }
 }</h6>
 
         <br>
