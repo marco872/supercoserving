@@ -349,8 +349,8 @@ def design5(request):
 
 from django.shortcuts import render, redirect
 from django.db.models import Sum
-from .models import Booking, Booking1, Booking2, Booking3, Booking4, Liquidity
-from .forms import Booking1Form, Booking2Form, Booking3Form, Booking4Form, LiquidityForm  # Import your forms
+from .models import Booking, Booking1, Booking2, Booking3, Booking4, Liquidity , Payment1
+from .forms import Booking1Form, Booking2Form, Booking3Form, Booking4Form, LiquidityForm, Payment1Form  # Import your forms
 def add_liquidity(request):
     submitted = False
     form = LiquidityForm()
