@@ -234,8 +234,7 @@ def owner(request):
 def gin(request):
 	return render(request, 'co_servings/gin.html')
 
-def pro(request):
-	return render(request, 'co_servings/pro.html')
+
 
 def ten(request):
 	projects = Project.objects.all()
@@ -748,4 +747,14 @@ def dashboard(request):
     return render(request, 'co_servings/dashboard.html', context)
 
 
-	
+ # Import your Payment1 model
+
+def pro(request):
+    user = request.user
+    
+    # Query Payment1 objects related to the current user
+    user_payment1 = Payment1.objects.filter(user=user)
+
+    context = {'user_payment1': user_payment1}
+
+    return render(request, 'co_servings/pro.html', context)
