@@ -1,261 +1,69 @@
-<!--{% extends 'co_servings/main.html' %}
+{% extends 'co_servings/main.html' %}
 {% load static %}
-
 
 {% block content %}
 <style type="text/css">
+    .button {
+        background-color: #0E0E2C;
+        border: none;
+        color: white;
+        padding: 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+    }
 
-   <style type="text/css">
-.button {
-  background-color: #0E0E2C;
-  border: none;
-  color: white;
-  padding: 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-}
+    .button1 {border-radius: 2px;}
+    .button2 {border-radius: 4px;}
+    .button3 {border-radius: 8px;}
+    .button4 {border-radius: 12px;}
+    .button5 {border-radius: 50%;}
 
-.button1 {border-radius: 2px;}
-.button2 {border-radius: 4px;}
-.button3 {border-radius: 8px;}
-.button4 {border-radius: 12px;}
-.button5 {border-radius: 50%;}
+    h5 {
+        color: white;
+    }
 
+    h1, h6 {
+        color: white;
+    }
 
-}
-
-
-
-
-h5 {
-    color: white;
-  }
-
-
-  h1, h6 {
-    color: white;
-  }
- 
-  h4, h5, td {
-    color: white;
-  }
-
-
-  
+    h4, h5, td {
+        color: white;
+    }
 </style>
-
-{% load static %}
-
-
-
-
-
-
-
-<br>
-
-
 
 <body style="background-color: #0E0E2C">
 
-<div class="container" style="background-color: #0E0E2C; margin-top: -30px;  max-width: 320px; " >
+<div class="container" style="background-color: #0E0E2C; margin-top: -30px; max-width: 320px;">
      
 {% if user.is_authenticated %}
-     <h6 style="color:white;margin-left: 0px; margin-top: 80px;"> <u>High level description of the functions in the smart contracts prepared by co-serving</u></h6>
-
-        <br>
-     
-
-        <br>
-
-        <p style="margin-left: 30px; color: white ; margin-top: -30px;"> 
-
-        <strong> deposit()</strong>:&nbsp&nbsp Provide capitals to Crowdfunding, Collaterals, Liquididy Pool</p>
-        <br>
-
-        <p style="margin-left: 30px; color: white ; margin-top: -30px;"> 
-        <strong>borrow()</strong>:&nbsp&nbsp Allows Design-Build Company to borrow Construction Loans using Permissioned Private Blockchain financial Structure</p>
-        <br>
-        <p style="margin-left: 30px; color: white ; margin-top: -30px;"> 
-        <strong>repayLoan()</strong>:&nbsp&nbsp Allows Design-Build Company to repay  borrowed funds  using Permissioned Private Blockchain Structure </p>
-        <br>
-        
-        <p style="margin-left:30px; color: white ; margin-top: -30px;"> 
-        <strong>distributeProfit()</strong>:&nbsp&nbsp Distributes the profit earned from the project among Stakeholders using Permissioned Private Blockchain Structure.</p>
-        <br>
-        <p style="margin-left: 30px; color: white; margin-top: -30px;"> 
-        <strong>transferOwnership()</strong>:&nbsp&nbsp Transfers the ownership of the project to the specified Stakeholders.</p>
-        <br>-->
-        
-
     <hr>
-    <h5 style= "margin-top: 80px">Approved Project:</h5>
+    <h5 style="margin-top: 80px">Approved Project:</h5>
     <ul>
     {% for payment1 in user_payment1 %}
         <li style="color: lightgreen">{{ payment1.Design_Build_Project }} - {{ payment1.collateral_lender }} - {{ payment1.crowdfunding }}</li>
     {% endfor %}
     </ul>
-
-    {% else %}
-    <div class="container" style="background-color: #0E0E2C; max-width: 320px; ">
-    <div style="margin: 120px 0; display: flex; flex-direction: column; align-items: center;">
-    <h6>Sorry! You Must Be Logged In To View This Page...</h6>
-    <a href="{% url 'login' %}">Login Here</a>
-    <!-- Non-authenticated content here -->
-    </div>
-    </div>
-    {% endif %}
-
-    <!--<h6> <strong>SC.1&nbsp&nbsp  </strong> Government: <em>exchange Fiat into FBM tokens for selected project<em></h6>
-
-    <h6> <strong>SC.2&nbsp&nbsp  </strong>  Investor: <em>create Liquidity Pool between FBM tokens and BNB coins.&nbsp Liquidity Pool to be used by P.O. to build selected project</em></h6>
-
-     <h6><strong>SC.3&nbsp&nbsp  </strong>  Property Owner: <em>exchange Fiat from selected project revenue into BNB coins</em></h6>
-     <h6> <strong>SC.4&nbsp&nbsp  </strong> Tenant: <em>exchange Fiat rent from selected project in BNB coins</em></h6>
-    <h6> <strong>SC.5&nbsp&nbsp  </strong> Tenant: <em>transfer BNB coins from selected project rent into Property owner wallet</em></h6>
-    <h6> <strong>SC.6&nbsp&nbsp  </strong>  Property Owner: <em>return BNB coins borrowed to create selected project  plus interests into Liquidity Pool</em></h6>
-    <h6> <strong>SC.7&nbsp&nbsp  </strong>  Property Owner: <em>return BNB coins from selected project profit as FBM tokens  into Government Wallet in FBM tokens</em></h6>
-    <h6> <strong>SC.8&nbsp&nbsp  </strong>  Government: <em>return 20% of FMB tokens from selected project profit  into Co-Serving Wallet</em></h6>
-    <h6> <strong>SC.9&nbsp&nbsp  </strong>  Government: <em>retain 40% of FMB tokens from  selected project profit   into Government Wallet</em></h6>
-    <h6> <strong>SC.10</strong>  Government: <em>return 20% of FMB tokens from selected project profit  into Property Owner Wallet</em></h6>
-    <h6> <strong>SC.11</strong>  Government: <em>return 20% of FMB tokens from selected project profit   into Tenant Wallet</em></h6>
-        <hr>
-
-   
-
-  
-
-
-      <div class="container" style="margin-left: : 100px; margin-bottom: -60px;" >
-  
-          <a href="{% url 'fbm' %}">
-                    
-                  <button class="button button4" style="background-color:darkgrey; color:white; margin-left: 150px; padding: 40px; margin-top: 40px;font-size: x-large;">  Smart Contracts </button>   
-                </a> 
-          
-                
-        </div> 
-
-
-<br>     
-<br>
-
-     
-
-
-
-</body>
-{% endblock %}-->
-
-
-
-
-{% extends 'co_servings/main.html' %}
-
-{% load static %}
-
-{% block content %}
-<style type="text/css">
-
-.circular-button {
-        width: 150px; /* Adjust the size of the button */
-        height: 150px; /* Adjust the size of the button */
-        border-radius: 150%;
-        transform: rotate(0deg); /* Adjust the rotation angle */
-    }
-
-.button {
-  margin: 4px 2px;
-  background-color: orange; /* Change this color to your desired button color */
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  border-radius: 12px;
-  cursor: pointer;
-}
-
-.button1 {border-radius: 2px;}
-.button2 {border-radius: 4px;}
-.button3 {border-radius: 8px;}
-.button4 {border-radius: 12px;}
-.button5 {border-radius: 50%;}
-
-h6 {
-    color:white;
-}
-
-h1 {
-    color: white;
-}
-
-h4, h5, td {
-    color: white;
-}
-/* Rest of your CSS styles here */
-/* ... other CSS styles ... */
-</style>
-
-<body style="background-color: #0E0E2C; ">
-  
-{% if user.is_authenticated %}
-<div class="container" style="background-color: #0E0E2C; max-width: 320px; ">
-  <div style="margin-left: 0px">
-    <br><br>
-    <h1>Welcome, {{ user.username }}!</h1>
-    <!-- Navbar content here -->
-  </div>
-
-  <div style="margin: 20px 0; display: flex; flex-direction: column; align-items: center;">
-
-    <a href="{% url 'booking1' %}">
-      <button class="button button4 stacked-buttons">Crowdfunding n°1</button>
-    </a>
-   
-    <a href="{% url 'booking2' %}">
-      <button class="button button4 stacked-buttons">Crowdfunding n°2</button>
-    </a>
-  
-    <a href="{% url 'booking3' %}">
-      <button class="button button4 stacked-buttons">Crowdfunding n°3</button>
-    </a>
-    <a href="{% url 'booking4' %}">
-      <button class="button button4 stacked-buttons">Crowdfunding n°4</button>
-    </a>
-    
-    <a href="{% url 'liquidity' %}">
-      <button class="button button4 stacked-buttons">Collateral Lenders</button>
-    </a>
-   
-    <a href="{% url 'dashboard' %}">
-      <button class="button button4 stacked-buttons"style= "background-color: lightblue ; color: darkblue" ;>Dashboard</button>
-      <br>
-      <br>
-    </a>
-    <a href="{% url 'payment1' %}">
-    <button class="button button4 stacked-buttons circular-button" style="background-color: lightgrey; color: darkblue;">Borrowing</button>
-    </a>
-
-    <br>
-    
-  </div>
-</div>
-
 {% else %}
-<div class="container" style="background-color: #0E0E2C; max-width: 320px; ">
-  <div style="margin: 120px 0; display: flex; flex-direction: column; align-items: center;">
-    <h6>Sorry! You Must Be Logged In To View This Page...</h6>
-    <a href="{% url 'login' %}">Login Here</a>
-    <!-- Non-authenticated content here -->
-  </div>
-</div>
+    <div class="container" style="background-color: #0E0E2C; max-width: 320px;">
+        <div style="margin: 120px 0; display: flex; flex-direction: column; align-items: center;">
+            <h6>Sorry! You Must Be Logged In To View This Page...</h6>
+            <a href="{% url 'login' %}">Login Here</a>
+        </div>
+    </div>
 {% endif %}
+</div>
+
+<div class="container" style="margin-left: 100px; margin-bottom: -60px;">
+    <a href="{% url 'fbm' %}">
+        <button class="button button4" style="background-color: darkgrey; color: white; margin-left: 150px; padding: 40px; margin-top: 40px; font-size: x-large;">Smart Contracts</button>
+    </a>
+</div>
+
+<br>
+<br>
 
 </body>
 {% endblock %}
