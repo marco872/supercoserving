@@ -5,6 +5,11 @@
 
 {% block content %}
 <style type="text/css">
+  
+.circular-button {
+        border-radius: 50%;
+    }
+
 .button {
   margin: 4px 2px;
   background-color: orange; /* Change this color to your desired button color */
@@ -77,8 +82,9 @@ h4, h5, td {
       <br>
     </a>
     <a href="{% url 'payment1' %}">
-      <button class="button button4 stacked-buttons"style= "background-color: lightgrey ; color: darkblue" ;>Borrowing</button>
+    <button class="button button4 stacked-buttons circular-button" style="background-color: lightgrey; color: darkblue;">Borrowing</button>
     </a>
+
     <br>
     
   </div>
