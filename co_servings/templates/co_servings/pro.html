@@ -38,7 +38,7 @@
 
 <div class="container" style="background-color: #0E0E2C; margin-top: -30px; max-width: 320px;">
      
-{% if user.is_authenticated %}
+
     <hr>
     <h5 style="margin-top: 80px">Approved Project:</h5>
     <ul>
@@ -46,14 +46,7 @@
         <li style="color: lightgreen">{{ payment1.Design_Build_Project }} - {{ payment1.collateral_lender }} - {{ payment1.crowdfunding }}</li>
     {% endfor %}
     </ul>
-{% else %}
-    <div class="container" style="background-color: #0E0E2C; max-width: 320px;">
-        <div style="margin: 120px 0; display: flex; flex-direction: column; align-items: center;">
-            <h6>Sorry! You Must Be Logged In To View This Page...</h6>
-            <a href="{% url 'login' %}">Login Here</a>
-        </div>
-    </div>
-{% endif %}
+
 </div>
 
 <div class="container" style="margin-left: 100px; margin-bottom: -60px;">
