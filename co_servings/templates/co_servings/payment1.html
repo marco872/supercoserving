@@ -11,15 +11,7 @@ function submitFormAndRedirect() {
 }
 </script>
 
-{% block content %}
-<!-- ... your existing content ... -->
-<form id="your-form-id" action="{% url 'your_form_submission_url' %}" style="color: white" method="POST">
-    {% csrf_token %}
-    <!-- ... your form fields ... -->
-    <input type="button" value="Submit and Go to FBM" class="btn btn-secondary" onclick="submitFormAndRedirect()">
-</form>
-<!-- ... rest of your content ... -->
-{% endblock %}
+
 
 
 {% block content %}
