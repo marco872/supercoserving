@@ -416,12 +416,7 @@ class Gin(models.Model):
 	def __str__(self):
 		return self.name
 
-class Pro(models.Model):
-	name = models.CharField(max_length=200, blank=True, null=True)
-	
-	
-	def __str__(self):
-		return self.name
+
 
 class Ten(models.Model):
 	name = models.CharField(max_length=200, blank=True, null=True)
@@ -530,6 +525,12 @@ class Booking(models.Model):
 
 from django.contrib.auth.models import User
 
+class Pro(models.Model):
+	name = models.CharField(max_length=200, blank=True, null=True)
+	
+	
+	def __str__(self):
+		return self.name
 
 class Payment1(models.Model):
     CROWDFUNDING = (

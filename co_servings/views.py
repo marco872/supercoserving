@@ -749,17 +749,12 @@ def dashboard(request):
 
  # Import your Payment1 model
 from django.shortcuts import render
-from django.contrib.auth.decorators import login_required  # Import login_required decorator
-from .models import Payment1
-
-@login_required  # Apply the login_required decorator to the view
+from .models import Payment1  # Import your Payment1 model
 def pro(request):
     user = request.user
     
-    if user.is_authenticated:
-        user_payment1 = Payment1.objects.filter(user=user)
-    else:
-        user_payment1 = []
+    # Query Payment1 objects related to the current user
+    user_payment1 = Payment1.objects.filter(user=user)
 
     context = {'user_payment1': user_payment1}
 
