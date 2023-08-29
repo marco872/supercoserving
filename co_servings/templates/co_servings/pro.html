@@ -1,4 +1,4 @@
-{% extends 'co_servings/main.html' %}
+<!--{% extends 'co_servings/main.html' %}
 {% load static %}
 
 
@@ -64,7 +64,7 @@ h5 {
 <div class="container" style="background-color: #0E0E2C; margin-top: -30px;  max-width: 320px; " >
      
 {% if user.is_authenticated %}
-      <!--<h6 style="color:white;margin-left: 0px; margin-top: 80px;"> <u>High level description of the functions in the smart contracts prepared by co-serving</u></h6>
+     <h6 style="color:white;margin-left: 0px; margin-top: 80px;"> <u>High level description of the functions in the smart contracts prepared by co-serving</u></h6>
 
         <br>
      
@@ -129,7 +129,7 @@ h5 {
   
 
 
-      --><div class="container" style="margin-left: : 100px; margin-bottom: -60px;" >
+      <div class="container" style="margin-left: : 100px; margin-bottom: -60px;" >
   
           <a href="{% url 'fbm' %}">
                     
@@ -148,9 +148,116 @@ h5 {
 
 
 </body>
+{% endblock %}-->
+
+
+
+
+{% extends 'co_servings/main.html' %}
+
+{% load static %}
+
+{% block content %}
+<style type="text/css">
+
+.circular-button {
+        width: 150px; /* Adjust the size of the button */
+        height: 150px; /* Adjust the size of the button */
+        border-radius: 150%;
+        transform: rotate(0deg); /* Adjust the rotation angle */
+    }
+
+.button {
+  margin: 4px 2px;
+  background-color: orange; /* Change this color to your desired button color */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.button1 {border-radius: 2px;}
+.button2 {border-radius: 4px;}
+.button3 {border-radius: 8px;}
+.button4 {border-radius: 12px;}
+.button5 {border-radius: 50%;}
+
+h6 {
+    color:white;
+}
+
+h1 {
+    color: white;
+}
+
+h4, h5, td {
+    color: white;
+}
+/* Rest of your CSS styles here */
+/* ... other CSS styles ... */
+</style>
+
+<body style="background-color: #0E0E2C; ">
+  
+{% if user.is_authenticated %}
+<div class="container" style="background-color: #0E0E2C; max-width: 320px; ">
+  <div style="margin-left: 0px">
+    <br><br>
+    <h1>Welcome, {{ user.username }}!</h1>
+    <!-- Navbar content here -->
+  </div>
+
+  <div style="margin: 20px 0; display: flex; flex-direction: column; align-items: center;">
+
+    <a href="{% url 'booking1' %}">
+      <button class="button button4 stacked-buttons">Crowdfunding n°1</button>
+    </a>
+   
+    <a href="{% url 'booking2' %}">
+      <button class="button button4 stacked-buttons">Crowdfunding n°2</button>
+    </a>
+  
+    <a href="{% url 'booking3' %}">
+      <button class="button button4 stacked-buttons">Crowdfunding n°3</button>
+    </a>
+    <a href="{% url 'booking4' %}">
+      <button class="button button4 stacked-buttons">Crowdfunding n°4</button>
+    </a>
+    
+    <a href="{% url 'liquidity' %}">
+      <button class="button button4 stacked-buttons">Collateral Lenders</button>
+    </a>
+   
+    <a href="{% url 'dashboard' %}">
+      <button class="button button4 stacked-buttons"style= "background-color: lightblue ; color: darkblue" ;>Dashboard</button>
+      <br>
+      <br>
+    </a>
+    <a href="{% url 'payment1' %}">
+    <button class="button button4 stacked-buttons circular-button" style="background-color: lightgrey; color: darkblue;">Borrowing</button>
+    </a>
+
+    <br>
+    
+  </div>
+</div>
+
+{% else %}
+<div class="container" style="background-color: #0E0E2C; max-width: 320px; ">
+  <div style="margin: 120px 0; display: flex; flex-direction: column; align-items: center;">
+    <h6>Sorry! You Must Be Logged In To View This Page...</h6>
+    <a href="{% url 'login' %}">Login Here</a>
+    <!-- Non-authenticated content here -->
+  </div>
+</div>
+{% endif %}
+
+</body>
 {% endblock %}
-
-
-
 
 
