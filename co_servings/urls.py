@@ -88,6 +88,7 @@ urlpatterns = [
     path('add_liquidity/', views.add_liquidity, name='add_liquidity'),
     path('liquidity/', views.liquidity, name='liquidity'),
     path('dashboard/', views.dashboard, name='dashboard'),
+    path('accounts/login/', auth_views.LoginView.as_view(), name='login'),
 
 
 ]   
