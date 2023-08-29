@@ -546,10 +546,16 @@ class Payment1(models.Model):
         ('FBM-10', 'FBM-10'),
     )
 
+    LENDER = (
+        ('TESTCOLL1', 'TESTCOLL1'),
+        ('TESTCOLL2', 'TESTCOLL2'),
+    )
+
     user = models.ForeignKey(User, on_delete=models.CASCADE, default=1)
     Design_Build_Project = models.CharField(max_length=200, null=True, choices=PROJECT)
-    collateral_amount = models.DecimalField(max_digits=5, decimal_places=2, default=0)
-    crowdfunding= models.CharField(max_length=200, null=True, choices=CROWDFUNDING)
+    #collateral_amount = models.DecimalField(max_digits=5, decimal_places=2, default=0)
+    collateral_lender = models.CharField(max_length=200, null=True, choices=LENDER)
+    crowdfunding = models.CharField(max_length=200, null=True, choices=CROWDFUNDING)
     date_created = models.DateTimeField(auto_now_add=True, null=True)
 
     def __str__(self):
