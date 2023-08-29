@@ -750,6 +750,7 @@ def dashboard(request):
  # Import your Payment1 model
 from django.shortcuts import render
 from .models import Payment1  # Import your Payment1 model
+@login_required
 def pro(request):
     user = request.user
     
