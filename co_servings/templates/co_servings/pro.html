@@ -99,7 +99,16 @@ h5 {
     {% endfor %}
     </ul>
 
-    
+    {% else %}
+    <div class="container" style="background-color: #0E0E2C; max-width: 320px; ">
+    <div style="margin: 120px 0; display: flex; flex-direction: column; align-items: center;">
+    <h6>Sorry! You Must Be Logged In To View This Page...</h6>
+    <a href="{% url 'login' %}">Login Here</a>
+    <!-- Non-authenticated content here -->
+    </div>
+    </div>
+    {% endif %}
+
     <!--<h6> <strong>SC.1&nbsp&nbsp  </strong> Government: <em>exchange Fiat into FBM tokens for selected project<em></h6>
 
     <h6> <strong>SC.2&nbsp&nbsp  </strong>  Investor: <em>create Liquidity Pool between FBM tokens and BNB coins.&nbsp Liquidity Pool to be used by P.O. to build selected project</em></h6>
@@ -137,7 +146,7 @@ h5 {
      
 
 
-{% endif %}
+
 </body>
 {% endblock %}
 
