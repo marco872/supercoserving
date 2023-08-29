@@ -62,13 +62,13 @@ class Payment1Form(forms.ModelForm):
         fields = '__all__'
 
     # Add the collateral_amount field to the form
-    collateral_amount = forms.DecimalField(max_digits=5, decimal_places=2)
+    #collateral_amount = forms.DecimalField(max_digits=5, decimal_places=2)
 
     def save(self, commit=True):
         instance = super(Payment1Form, self).save(commit=False)
 
         # Set the collateral_amount value from the form data
-        instance.collateral_amount = self.cleaned_data['collateral_amount']
+        #instance.collateral_amount = self.cleaned_data['collateral_amount']
 
         if commit:
             # Save the instance if commit is True
