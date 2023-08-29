@@ -1,19 +1,5 @@
 {% extends 'co_servings/main.html' %}
 
-<!-- Add this JavaScript code within a <script> tag in your template -->
-<script>
-function submitFormAndRedirect() {
-    // Submit the form
-    document.getElementById('your-form-id').submit();
-
-    // Redirect to the desired URL
-    window.location.href = "{% url 'fbm' %}";
-}
-</script>
-
-
-
-
 {% block content %}
 <style type="text/css">
   /* Add this to your <style> tag or external CSS file */
