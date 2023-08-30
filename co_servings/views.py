@@ -756,7 +756,8 @@ def pro(request):
     
     # Query Payment1 objects related to the current user
     user_payment1 = Payment1.objects.filter(user=user)
+    user_liquidity = Liquidity.objects.filter(user=user)
 
-    context = {'user_payment1': user_payment1}
+    context = {'user_payment1': user_payment1, 'user_liquidity': user_liquidity }
 
     return render(request, 'co_servings/pro.html', context)
